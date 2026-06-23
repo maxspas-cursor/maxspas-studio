@@ -1,0 +1,132 @@
+{
+  "brand": {
+    "name": "MAXSPAS Studio",
+    "tagline": "Сайты, Telegram-боты и цифровые решения под ключ",
+    "subBrand3d": "3D GRBNK",
+    "geo": {
+      "web": "Сайты и боты — работаем онлайн по всему миру",
+      "3d": "3D GRBNK — Горбунки и доставка по России"
+    }
+  },
+  "grbnk3d": {
+    "logo": "assets/logo-3dgrbnk.svg",
+    "title": "3DGRBNK",
+    "botUsername": "@maxspas_studio_bot",
+    "botUrl": "https://t.me/maxspas_studio_bot?start=3d",
+    "botLabel": "Telegram · заказ 3D"
+  },
+  "contacts": {
+    "telegram": "@Maxspas",
+    "telegramUrl": "https://t.me/Maxspas",
+    "botUsername": "@maxspas_studio_bot",
+    "botDisplayName": "MAXSPAS Studio Bot",
+    "botUrl": "https://t.me/maxspas_studio_bot",
+    "telegramChannel": "@maxspas_studio",
+    "telegramChannelUrl": "https://t.me/maxspas_studio",
+    "leadApiUrl": "",
+    "publicSiteUrl": "",
+    "email": "",
+    "emailNote": "Почту подключим после покупки домена",
+    "phone": "+7 (911) 715-60-06",
+    "phoneRaw": "79117156006",
+    "city": "Горбунки, Ленинградская область",
+    "selfEmployed": true
+  },
+  "accounts": {
+    "avito": "",
+    "vk": "",
+    "cults3d": "",
+    "sketchfab": "",
+    "kwork": ""
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Сайты и лендинги",
+      "desc": "Визитки, лендинги под рекламу, адаптив под телефон, формы заявок в Telegram",
+      "price": "от 8 000 ₽",
+      "days": "3–5 дней",
+      "features": [
+        "1–5 страниц",
+        "Мобильная версия",
+        "SEO-база",
+        "Форма заявки"
+      ]
+    },
+    {
+      "id": "bot",
+      "title": "Telegram-боты",
+      "desc": "Запись клиентов, приём заявок, уведомления вам в Telegram, простая админка",
+      "price": "от 5 000 ₽",
+      "days": "3–7 дней",
+      "features": [
+        "Запись / заявки",
+        "Уведомления",
+        "Админ-панель",
+        "Интеграция с сайтом"
+      ]
+    },
+    {
+      "id": "bundle",
+      "title": "Сайт + бот",
+      "desc": "Готовый комплект: лендинг и все заявки сразу приходят в Telegram",
+      "price": "от 18 000 ₽",
+      "days": "5–7 дней",
+      "features": [
+        "Лендинг + бот",
+        "1 месяц правок",
+        "Обучение",
+        "Под ключ"
+      ]
+    },
+    {
+      "id": "3d",
+      "title": "3D GRBNK",
+      "desc": "Модели для 3D-печати (STL), игровые ассеты, визуализация. Файлы и печать с доставкой по РФ",
+      "price": "от 300 ₽",
+      "days": "1–5 дней",
+      "features": [
+        "STL / OBJ / GLB",
+        "Проверка на печать",
+        "Паки моделей",
+        "Доставка по РФ"
+      ]
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "maxspas-site",
+      "title": "MAXSPAS Studio — сайт-визитка",
+      "desc": "Многостраничный сайт студии: услуги, цены, 3D GRBNK, форма заявки на сайте",
+      "tag": "Сайт",
+      "price": "Демо · 6 страниц",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, rgba(124,58,237,0.35), rgba(91,33,182,0.15))",
+      "url": "index.html"
+    },
+    {
+      "id": "maxspas-bot",
+      "title": "Бот приёма заявок",
+      "desc": "Telegram-бот с меню услуг, пересылкой заявок админу и уведомлениями",
+      "tag": "Бот",
+      "price": "Демо · @maxspas_studio_bot",
+      "icon": "bot",
+      "color": "linear-gradient(135deg, rgba(34,211,238,0.2), rgba(124,58,237,0.2))",
+      "url": "https://t.me/maxspas_studio_bot"
+    },
+    {
+      "id": "grbnk-3d",
+      "title": "3D GRBNK — каталог",
+      "desc": "Направление 3D-печати: STL/OBJ, печать с доставкой по РФ. Каталог на Cults3D — в разработке",
+      "tag": "3D",
+      "price": "от 300 ₽",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "botUrl": "https://t.me/maxspas_studio_bot?start=3d",
+      "botLabel": "Бот 3D GRBNK",
+      "color": "linear-gradient(135deg, rgba(251,146,60,0.15), rgba(124,58,237,0.12))",
+      "url": "grbnk.html"
+    }
+  ]
+}

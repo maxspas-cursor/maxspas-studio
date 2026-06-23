@@ -1,0 +1,18 @@
+Добавить бота админом канала (30 секунд)
+======================================
+
+1. Открой канал @maxspas_studio в Telegram
+2. Название канала -> Edit (карандаш)
+3. Administrators -> Add Administrator
+4. Найди: @maxspas_studio_bot
+5. Включи права:
+   - Post Messages (публикация)
+   - Edit Messages (редактирование)
+   - Edit Channel Info (аватар, описание)
+6. Сохрани
+
+После этого запусти:
+  python post_channel.py
+  python setup_telegram_branding.py
+
+Бот сможет публиковать посты в канал без твоего участия.

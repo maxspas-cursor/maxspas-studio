@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="3DGRBNK" shape-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="cube-top" x1="32" y1="10" x2="48" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#a5f3fc" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="cube-left" x1="16" y1="22" x2="32" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="cube-right" x1="32" y1="22" x2="50" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#c026d3"/>
+    </linearGradient>
+    <filter id="cube-glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#cube-glow)">
+    <path d="M32 11 48.5 21 32 31 15.5 21Z" fill="url(#cube-top)"/>
+    <path d="M15.5 21 32 31 32 51 15.5 41Z" fill="url(#cube-left)" fill-opacity="0.92"/>
+    <path d="M32 31 48.5 21 48.5 41 32 51Z" fill="url(#cube-right)" fill-opacity="0.92"/>
+    <path d="M32 11 48.5 21 48.5 41 32 51 15.5 41 15.5 21Z M32 31 15.5 21M32 31 48.5 21M32 31V51" stroke="#e9d5ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>

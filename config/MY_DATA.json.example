@@ -1,0 +1,26 @@
+{
+  "_comment": "Заполните и пришлите — обновлю сайт и базу продаж",
+  "telegram": "@ваш_ник",
+  "email": "ваш@email.ru",
+  "phone": "+7 ...",
+  "city": "Ваш город",
+  "accounts": {
+    "avito": "https://www.avito.ru/user/...",
+    "kwork": "https://kwork.ru/user/...",
+    "profi": "https://profi.ru/profile/...",
+    "fl": "https://www.fl.ru/users/...",
+    "cults3d": "https://cults3d.com/en/users/...",
+    "sketchfab": "https://sketchfab.com/...",
+    "gumroad": "https://gumroad.com/...",
+    "vk": "https://vk.com/...",
+    "boosty": "https://boosty.to/..."
+  },
+  "already_registered": [
+    "avito",
+    "kwork"
+  ],
+  "portfolio_links": {
+    "lorentz_site": "локальный проект lorentztech-site",
+    "demo_bot": "опишите или дайте ссылку на бота"
+  }
+}

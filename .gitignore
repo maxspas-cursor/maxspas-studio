@@ -1,0 +1,18 @@
+.DS_Store
+Thumbs.db
+
+# Secrets & Python
+.env
+maxspas-bot/.env
+maxspas-bot/venv/
+__pycache__/
+*.pyc
+
+# CloudPub CLI (download via publish-cloudpub.ps1)
+tools/cloudpub/clo.exe
+tools/cloudpub/clo.zip
+
+# Local / generated
+config/MY_DATA.json
+config/cloudpub.json
+maxspas-bot/*.log

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="3D GRBNK" shape-rendering="geometricPrecision">
+  <defs>
+    <linearGradient id="g-top" x1="16" y1="5" x2="23" y2="14" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5f3ff"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <linearGradient id="g-red" x1="8" y1="22" x2="24" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f87171"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <path d="M7 23.5 16 27.75 25 23.5 16 19.25Z" fill="url(#g-red)"/>
+  <path d="M7 23.5 16 19.25 16 27.75Z" fill="#b91c1c" fill-opacity="0.55"/>
+  <path d="M16 19.25 25 23.5 16 27.75Z" fill="#991b1b" fill-opacity="0.35"/>
+  <path d="M16 5.5L23.75 9.75L16 14.25L8.25 9.75Z" fill="url(#g-top)"/>
+  <path d="M8.25 9.75L16 14.25L16 23.25L8.25 20Z" fill="#5b21b6"/>
+  <path d="M16 14.25L23.75 9.75L23.75 20L16 23.25Z" fill="#7c3aed"/>
+  <path d="M16 5.5L23.75 9.75L23.75 20L16 23.25L8.25 20L8.25 9.75Z M16 14.25L8.25 9.75M16 14.25L23.75 9.75M16 14.25V23.25" stroke="#ede9fe" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

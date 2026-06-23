@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — MAXSPAS Studio</title>
+  <meta name="description" content="Связаться с MAXSPAS Studio — Telegram-бот, канал, телефон. Горбунки, работаем онлайн.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contacts">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="badge">Контакты</span>
+        <h1>Обсудим <span class="gradient-text">ваш проект</span></h1>
+        <p>Заполните форму — заявка сразу придёт нам в Telegram. Ответим в течение нескольких часов.</p>
+        <div class="page-hero__line"></div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container contact-grid">
+        <div>
+          <a class="contact-card" href="https://t.me/maxspas_studio_bot" target="_blank" rel="noopener">
+            <span>Бот заявок</span>
+            <strong>@maxspas_studio_bot</strong>
+          </a>
+          <a class="contact-card" href="https://t.me/maxspas_studio" target="_blank" rel="noopener">
+            <span>Telegram-канал</span>
+            <strong>@maxspas_studio</strong>
+          </a>
+          <a class="contact-card" href="https://t.me/Maxspas" target="_blank" rel="noopener">
+            <span>Личный Telegram</span>
+            <strong>@Maxspas</strong>
+          </a>
+          <a class="contact-card" href="tel:+79117156006">
+            <span>Телефон</span>
+            <strong>+7 (911) 715-60-06</strong>
+          </a>
+          <ul class="contact-note contact-note--list">
+            <li><span class="ms-icon-wrap" data-ms-icon="pin" data-ms-icon-label="Локация"></span><span>Горбунки, Ленинградская область</span></li>
+            <li><span class="ms-icon-wrap" data-ms-icon="globe" data-ms-icon-label="Онлайн по всему миру"></span><span>Сайты и боты — онлайн по всему миру</span></li>
+            <li><span class="ms-icon-wrap" data-ms-icon="verified" data-ms-icon-label="Самозанятость"></span><span>Самозанятость, чек по запросу</span></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="lead-form">
+          <h3 style="margin:0 0 4px">Заявка с сайта</h3>
+          <p class="form-hint" style="text-align:left;margin-bottom:8px">Все поля отправляются напрямую — бот открывать не нужно</p>
+          <div class="form-status" id="form-status" hidden></div>
+          <label>
+            Ваше имя *
+            <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required>
+          </label>
+          <label>
+            Телефон или email *
+            <input type="text" name="contact" placeholder="+7 911 … или name@mail.ru" inputmode="email" autocomplete="email" required>
+          </label>
+          <label>
+            Компания / проект
+            <input type="text" name="company" placeholder="Необязательно — салон, магазин, бренд" autocomplete="organization">
+          </label>
+          <label>
+            Услуга
+            <select name="service">
+              <option value="Сайт / лендинг">Сайт / лендинг</option>
+              <option value="Telegram-бот">Telegram-бот</option>
+              <option value="Сайт + бот">Сайт + бот</option>
+              <option value="3D GRBNK">3D GRBNK</option>
+              <option value="Другое">Другое</option>
+            </select>
+          </label>
+          <div class="form-row">
+            <label>
+              Бюджет
+              <select name="budget">
+                <option value="">Не указан</option>
+                <option value="до 10 000 ₽">до 10 000 ₽</option>
+                <option value="10 000 – 30 000 ₽">10 000 – 30 000 ₽</option>
+                <option value="30 000 – 80 000 ₽">30 000 – 80 000 ₽</option>
+                <option value="от 80 000 ₽">от 80 000 ₽</option>
+              </select>
+            </label>
+            <label>
+              Срок
+              <select name="deadline">
+                <option value="">Не важно</option>
+                <option value="Срочно (до 3 дней)">Срочно (до 3 дней)</option>
+                <option value="1–2 недели">1–2 недели</option>
+                <option value="В течение месяца">В течение месяца</option>
+                <option value="Пока присматриваюсь">Пока присматриваюсь</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Сообщение
+            <textarea name="message" rows="4" placeholder="Кратко опишите задачу, сроки, бюджет"></textarea>
+          </label>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="form-consent">
+            <input type="checkbox" name="consent" value="1" required>
+            <span>Согласен на обработку данных для связи по заявке</span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full" id="lead-submit">Отправить заявку</button>
+          <p class="form-hint">Заявка придёт вам в Telegram-бот администратора</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/icons.js"></script>
+  <script src="js/layout.js"></script>
+</body>
+</html>
