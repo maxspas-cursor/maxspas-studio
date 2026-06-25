@@ -1,5 +1,5 @@
 (function () {
-  const BASE = "";
+  const BASE = "/idei/maxspas-hybrid";
 
   const THEMES = {
     studio: {
@@ -13,7 +13,7 @@
       label: "3D GRBNK",
       sub: "Модели для печати",
       primary: { text: "Заказ 3D", href: `${BASE}/contacts` },
-      switch: { text: "MAXSPAS Studio →", href: "/" },
+      switch: { text: "MAXSPAS Studio →", href: BASE },
       logo: "/assets/logo-3dgrbnk.svg",
     },
   };
@@ -84,7 +84,7 @@
       <div id="scroll-progress" aria-hidden="true"></div>
       <div class="brand-watermark" aria-hidden="true">MAXSPAS</div>
       <div class="corner corner--tl">
-        <a class="brand-mark" href="/">
+        <a class="brand-mark" href="${BASE}">
           <img src="/assets/logo-mark.svg" alt="" width="32" height="32">
           <span class="brand-mark__stack">
             <span class="brand-mark__name">MAXSPAS</span>
@@ -146,7 +146,7 @@
     if (!url) return `${BASE}/works`;
     if (/^https?:\/\//i.test(url)) return url;
     const clean = String(url).replace(/^\//, "");
-    return clean ? `/${clean}` : "/";
+    return clean ? `${BASE}/${clean}` : BASE;
   }
 
   function assetSrc(path) {

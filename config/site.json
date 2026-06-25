@@ -13,7 +13,7 @@
     "title": "3DGRBNK",
     "botUsername": "@maxspas_studio_bot",
     "botUrl": "https://t.me/maxspas_studio_bot?start=3d",
-    "botLabel": "Telegram · заказ 3D"
+    "botLabel": "Бот · 3D →"
   },
   "contacts": {
     "telegram": "@Maxspas",
@@ -27,8 +27,8 @@
     "publicSiteUrl": "https://maxspas.ru",
     "domainPrimary": "maxspas.ru",
     "domainFuture": "maxspas.online",
-    "email": "",
-    "emailNote": "Почту подключим на maxspas.ru",
+    "email": "maxspas@bk.ru",
+    "emailNote": "Заявки с сайта приходят сюда",
     "phone": "+7 (911) 715-60-06",
     "phoneRaw": "79117156006",
     "city": "Горбунки, Ленинградская область",
@@ -46,7 +46,7 @@
       "id": "web",
       "title": "Сайты и лендинги",
       "desc": "Визитки, лендинги под рекламу, адаптив под телефон, формы заявок в Telegram",
-      "price": "от 8 000 ₽",
+      "price": "2 500 ₽",
       "days": "3–5 дней",
       "features": [
         "1–5 страниц",
@@ -59,7 +59,7 @@
       "id": "bot",
       "title": "Telegram-боты",
       "desc": "Запись клиентов, приём заявок, уведомления вам в Telegram, простая админка",
-      "price": "от 5 000 ₽",
+      "price": "от 1 500 ₽",
       "days": "3–7 дней",
       "features": [
         "Запись / заявки",
@@ -72,7 +72,7 @@
       "id": "bundle",
       "title": "Сайт + бот",
       "desc": "Готовый комплект: лендинг и все заявки сразу приходят в Telegram",
-      "price": "от 18 000 ₽",
+      "price": "от 5 000 ₽",
       "days": "5–7 дней",
       "features": [
         "Лендинг + бот",
@@ -98,37 +98,121 @@
   "portfolio": [
     {
       "id": "maxspas-site",
-      "title": "MAXSPAS Studio — сайт-визитка",
-      "desc": "Многостраничный сайт студии: услуги, цены, 3D GRBNK, форма заявки на сайте",
+      "title": "maxspas.ru",
+      "desc": "Сайт-визитка студии: услуги, цены, 3D GRBNK, форма заявки. Деплой на Vercel, домен и SSL",
       "tag": "Сайт",
-      "price": "Демо · 6 страниц",
+      "direction": "web",
+      "price": "6 страниц · прод",
       "icon": "web",
       "logo": true,
       "color": "linear-gradient(135deg, rgba(124,58,237,0.35), rgba(91,33,182,0.15))",
-      "url": "index.html"
+      "url": "https://maxspas.ru"
     },
     {
       "id": "maxspas-bot",
-      "title": "Бот приёма заявок",
-      "desc": "Telegram-бот с меню услуг, пересылкой заявок админу и уведомлениями",
+      "title": "@maxspas_studio_bot",
+      "desc": "Витрина студии: 20+ модулей — меню, калькулятор, FAQ, заявка по шагам, файлы, статус заказа",
       "tag": "Бот",
-      "price": "Демо · @maxspas_studio_bot",
+      "direction": "bot",
+      "price": "20+ функций · демо",
       "icon": "bot",
+      "logoAsset": "assets/logo-bot.svg",
       "color": "linear-gradient(135deg, rgba(34,211,238,0.2), rgba(124,58,237,0.2))",
       "url": "https://t.me/maxspas_studio_bot"
     },
     {
       "id": "grbnk-3d",
-      "title": "3D GRBNK — каталог",
-      "desc": "Направление 3D-печати: STL/OBJ, печать с доставкой по РФ. Каталог на Cults3D — в разработке",
+      "title": "3D GRBNK",
+      "desc": "Направление 3D-печати: модели STL/OBJ, проверка на печать, low-poly и доставка по РФ",
       "tag": "3D",
+      "direction": "3d",
       "price": "от 300 ₽",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "botUrl": "https://t.me/maxspas_studio_bot?start=3d",
-      "botLabel": "Бот 3D GRBNK",
+      "botLabel": "Заказ в боте",
       "color": "linear-gradient(135deg, rgba(251,146,60,0.15), rgba(124,58,237,0.12))",
-      "url": "grbnk.html"
+      "url": "/grbnk"
+    },
+    {
+      "id": "grbnk-bot",
+      "title": "@maxspas_studio_bot",
+      "desc": "Заказ 3D в Telegram: загрузка STL, расчёт, статус заказа и связь с мастерской",
+      "tag": "Бот · 3D",
+      "direction": "3d",
+      "price": "STL · заявки · демо",
+      "icon": "bot",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(139,157,200,0.22), rgba(251,146,60,0.12))",
+      "url": "https://t.me/maxspas_studio_bot?start=3d"
+    }
+  ],
+  "directions": [
+    {
+      "id": "web",
+      "label": "01 — Сайты",
+      "code": "MS-WEB-01",
+      "title": "Лендинги и визитки",
+      "lead": "Цифровая визитка и посадочные страницы — структура, вёрстка, публикация и приём заявок.",
+      "href": "prices",
+      "zone": "studio",
+      "portfolioIds": ["maxspas-site"],
+      "specs": [
+        { "k": "Формат", "v": "1–6 страниц" },
+        { "k": "Срок", "v": "3–5 дней" },
+        { "k": "Стек", "v": "HTML · CSS · JS" },
+        { "k": "Деплой", "v": "Vercel · SSL · домен" },
+        { "k": "Заявки", "v": "Telegram · email" }
+      ],
+      "bars": [
+        { "label": "Бюджет", "w": "72%", "value": "2.5k ₽" },
+        { "label": "Готовность", "w": "88%", "value": "Под ключ" }
+      ],
+      "tags": ["Адаптив", "SEO-base", "Формы", "Аналитика"]
+    },
+    {
+      "id": "bot",
+      "label": "02 — Боты",
+      "code": "MS-BOT-01",
+      "title": "Telegram под ключ",
+      "lead": "Автоматизация приёма заявок: меню услуг, уведомления и пересылка лидов без отдельного приложения.",
+      "href": "contacts",
+      "zone": "studio",
+      "portfolioIds": ["maxspas-bot"],
+      "specs": [
+        { "k": "Платформа", "v": "Telegram Bot API" },
+        { "k": "Модулей", "v": "20+ в демо" },
+        { "k": "Стек", "v": "Python · aiogram" },
+        { "k": "Уведомления", "v": "TG · почта" },
+        { "k": "Режим", "v": "24/7 на сервере" }
+      ],
+      "bars": [
+        { "label": "Бюджет", "w": "48%", "value": "от 1.5k ₽" },
+        { "label": "Функционал", "w": "95%", "value": "Расширенный" }
+      ],
+      "tags": ["FSM-формы", "Калькулятор", "FAQ", "Файлы STL"]
+    },
+    {
+      "id": "3d",
+      "label": "03 — 3D GRBNK",
+      "code": "GRBNK-3D",
+      "title": "Модели и печать",
+      "lead": "Подготовка моделей к FDM/SLA-печати, low-poly ассеты и доставка готовых изделий по России.",
+      "href": "grbnk",
+      "zone": "grbnk",
+      "portfolioIds": ["grbnk-3d", "grbnk-bot"],
+      "specs": [
+        { "k": "Форматы", "v": "STL · OBJ · GLB" },
+        { "k": "Срок", "v": "1–5 дней" },
+        { "k": "Контроль", "v": "Проверка на печать" },
+        { "k": "Доставка", "v": "По РФ" },
+        { "k": "Объём", "v": "Штучно и паки" }
+      ],
+      "bars": [
+        { "label": "Цена", "w": "38%", "value": "от 300 ₽" },
+        { "label": "Детализация", "w": "68%", "value": "Средняя" }
+      ],
+      "tags": ["FDM", "Low-poly", "Печать", "Паки STL"]
     }
   ]
 }

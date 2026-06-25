@@ -84,6 +84,68 @@ def _esc(text: str) -> str:
     return html.escape(text, quote=False)
 
 
+def _lead_plain(payload: LeadIn) -> str:
+    when = datetime.now(timezone.utc).astimezone().strftime("%d.%m.%Y %H:%M")
+    lines = [
+        "Новая заявка с сайта maxspas.ru",
+        "",
+        f"Имя: {payload.name}",
+        f"Контакт: {payload.contact}",
+    ]
+    if payload.company.strip():
+        lines.append(f"Компания: {payload.company.strip()}")
+    lines.append(f"Услуга: {payload.service}")
+    if payload.budget.strip():
+        lines.append(f"Бюджет: {payload.budget.strip()}")
+    if payload.deadline.strip():
+        lines.append(f"Срок: {payload.deadline.strip()}")
+    lines.append(f"Сообщение:\n{payload.message or '—'}")
+    if payload.page.strip():
+        lines.append(f"Страница: {payload.page.strip()}")
+    if payload.referrer.strip():
+        lines.append(f"Откуда: {payload.referrer.strip()}")
+    lines.append(f"Время: {when}")
+    return "\n".join(lines)
+
+
+async def _notify_email(payload: LeadIn) -> None:
+    api_key = os.getenv("RESEND_API_KEY", "").strip()
+    to_addr = os.getenv("LEAD_EMAIL_TO", "maxspas@bk.ru").strip()
+    if not api_key or not to_addr:
+        return
+
+    from_addr = os.getenv(
+        "LEAD_EMAIL_FROM", "MAXSPAS Studio <onboarding@resend.dev>"
+    )
+    body: dict = {
+        "from": from_addr,
+        "to": [to_addr],
+        "subject": f"Заявка с maxspas.ru: {payload.name.strip()}",
+        "text": _lead_plain(payload),
+    }
+    cc = os.getenv("LEAD_EMAIL_CC", "").strip()
+    if cc:
+        body["cc"] = [cc]
+
+    async with httpx.AsyncClient(timeout=20.0) as client:
+        resp = await client.post(
+            "https://api.resend.com/emails",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json=body,
+        )
+    if resp.status_code >= 400:
+        detail = "Email send failed"
+        try:
+            data = resp.json()
+            detail = data.get("message") or data.get("error") or detail
+        except Exception:
+            pass
+        raise HTTPException(status_code=502, detail=detail)
+
+
 async def _notify_admin(payload: LeadIn) -> None:
     if not BOT_TOKEN or not ADMIN_CHAT_ID:
         raise HTTPException(status_code=503, detail="Lead API is not configured")
@@ -137,4 +199,8 @@ async def submit_lead(payload: LeadIn) -> dict[str, bool]:
     if not is_valid_contact(payload.contact):
         raise HTTPException(status_code=400, detail="Укажите телефон (+7 …) или email")
     await _notify_admin(payload)
+    try:
+        await _notify_email(payload)
+    except Exception:
+        pass
     return {"ok": True}

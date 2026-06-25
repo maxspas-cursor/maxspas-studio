@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Идеи и черновики — MAXSPAS</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, sans-serif;
+      background: #0a0a0c;
+      color: #e8e8ec;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    main { max-width: 560px; width: 100%; }
+    h1 { font-size: 1.25rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    p { color: #888; font-size: 0.95rem; line-height: 1.55; }
+    h2 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #666; margin: 28px 0 10px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { margin-bottom: 10px; }
+    a.card {
+      display: block;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    a.card:hover { border-color: rgba(167,139,250,0.5); background: rgba(124,58,237,0.08); }
+    a.card strong { display: block; margin-bottom: 4px; }
+    a.card span { font-size: 0.85rem; color: #888; }
+    a.card.is-live { border-color: rgba(167,139,250,0.35); }
+    .tag { font-size: 0.65rem; color: #a78bfa; letter-spacing: 0.1em; text-transform: uppercase; }
+    .idea { padding: 14px 18px; border: 1px dashed rgba(255,255,255,0.1); border-radius: 12px; color: #777; font-size: 0.88rem; }
+    .back { margin-top: 32px; font-size: 0.85rem; }
+    .back a { color: #a78bfa; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Идеи / черновики</h1>
+    <p>Эксперименты не попадают на maxspas.ru, пока вы не скажете «в прод».</p>
+
+    <h2>Готовые к просмотру</h2>
+    <ul>
+      <li>
+        <a class="card is-live" href="/idei/maxspas-hybrid">
+          <span class="tag">новый · v3</span>
+          <strong>Hybrid · Fraxis + Калашников</strong>
+          <span>6 страниц, технические блоки, scroll-анимации, уголки на медиа — цвета MAXSPAS</span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Заморожено</h2>
+    <ul>
+      <li>
+        <a class="card" href="/idei/sincopa-draft">
+          <span class="tag">v1</span>
+          <strong>Sincopa · одностраничник</strong>
+          <span>Угловая навигация, скролл — не трогаем</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="/idei/maxspas-full">
+          <span class="tag">v2</span>
+          <strong>Полный сайт + Sincopa</strong>
+          <span>6 страниц без industrial-анимаций</span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Идеи на потом</h2>
+    <ul>
+      <li class="idea"><strong>Sincopa Light</strong> — белый хаб, split при клике (как на видео)</li>
+      <li class="idea"><strong>3D-сцена</strong> — как на kalashnikovgroup.ru: продукт в центре при скролле</li>
+      <li class="idea"><strong>Мастер заказа</strong> — шаги 1/5 как «Заказать» на Sincopa</li>
+      <li class="idea"><strong>Только лендинг</strong> — одна страница без меню, максимум конверсии в бот</li>
+    </ul>
+
+    <p class="back"><a href="/">← Текущий сайт (прод)</a></p>
+  </main>
+</body>
+</html>

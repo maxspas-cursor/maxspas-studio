@@ -16,3 +16,4 @@ tools/cloudpub/clo.zip
 config/MY_DATA.json
 config/cloudpub.json
 maxspas-bot/*.log
+.vercel

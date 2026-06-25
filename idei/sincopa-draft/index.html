@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAXSPAS — черновик (Sincopa-style)</title>
+  <meta name="robots" content="noindex, nofollow">
+  <base href="/idei/sincopa-draft/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="draft-badge" aria-hidden="true">DRAFT</div>
+
+  <!-- Углы: навигация как у immersive-сайтов (Sincopa) -->
+  <div class="corner corner--tl">
+    <a class="brand-mark" href="#top">
+      <img src="../../assets/logo-mark.svg" alt="">
+      MAXSPAS
+    </a>
+    <span class="pill">черновик · v1</span>
+  </div>
+
+  <div class="corner corner--tr">
+    <div class="lang" aria-label="Язык">
+      <button type="button" class="is-active">RU</button>
+      <span style="color:var(--muted)">/</span>
+      <button type="button">EN</button>
+    </div>
+    <a class="btn btn--ghost" href="/">Прод-сайт</a>
+    <a class="btn btn--ghost" href="../">Все идеи</a>
+  </div>
+
+  <nav class="side-nav" aria-label="Секции">
+    <a href="#top" class="is-active">Старт</a>
+    <a href="#services">Услуги</a>
+    <a href="#works">Работы</a>
+    <a href="#contact">Связь</a>
+  </nav>
+
+  <div class="corner corner--bl">
+    <div class="btn-row btn-row--vertical">
+      <a class="btn btn--ghost" href="https://t.me/maxspas_studio" target="_blank" rel="noopener">Канал</a>
+      <a class="btn btn--ghost" href="https://t.me/Maxspas" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn btn--ghost" href="mailto:maxspas@bk.ru">Почта</a>
+    </div>
+  </div>
+
+  <div class="corner corner--br">
+    <div class="btn-row btn-row--vertical">
+      <a class="btn btn--fill" href="#contact">Обсудить проект</a>
+      <a class="btn" href="/grbnk">3D GRBNK →</a>
+    </div>
+  </div>
+
+  <main id="top" class="stage" data-section>
+    <p class="stage__eyebrow">MAXSPAS Studio · 3D GRBNK</p>
+    <h1 class="stage__title">
+      Цифровые
+      <span>продукты</span>
+    </h1>
+    <p class="stage__lead" id="tagline">Сайты, Telegram-боты и 3D-модели — под ключ, без лишнего шума.</p>
+    <div class="stage__cta">
+      <a class="btn btn--fill" href="#contact">Начать проект</a>
+      <a class="btn" href="#services">Услуги</a>
+    </div>
+    <div class="visual" aria-hidden="true">
+      <div class="visual__ring"></div>
+      <div class="visual__ring"></div>
+      <div class="visual__core">
+        <img src="../../assets/logo-mark.svg" alt="">
+      </div>
+    </div>
+  </main>
+
+  <section id="services" class="section" data-section>
+    <div class="section__inner">
+      <p class="section__label">01 — Услуги</p>
+      <h2>Что делаем</h2>
+      <div class="cards" id="services-cards"></div>
+    </div>
+  </section>
+
+  <section id="works" class="section" data-section>
+    <div class="section__inner">
+      <p class="section__label">02 — Работы</p>
+      <h2>Демо и направления</h2>
+      <div class="cards" id="works-cards"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section" data-section>
+    <div class="section__inner" style="text-align:center">
+      <p class="section__label">03 — Связь</p>
+      <h2>Есть задача?</h2>
+      <p style="color:var(--muted);max-width:32em;margin:0 auto 32px">
+        Напишите в Telegram или на почту — ответим в течение дня.
+      </p>
+      <div class="stage__cta">
+        <a class="btn btn--fill" href="https://t.me/maxspas_studio_bot" target="_blank" rel="noopener">Бот заявок</a>
+        <a class="btn" href="tel:+79117156006">+7 (911) 715-60-06</a>
+        <a class="btn btn--ghost" href="/contacts">Форма на прод-сайте</a>
+      </div>
+    </div>
+  </section>
+
+  <p class="footer-note">
+    Черновик вдохновлён <a href="https://sincopa.space" target="_blank" rel="noopener">sincopa.space</a>
+    · не в проде · <a href="/">maxspas.ru</a>
+  </p>
+
+  <script src="app.js"></script>
+  <script>
+    fetch("../../config/site.json")
+      .then((r) => r.json())
+      .then((site) => {
+        const tag = document.getElementById("tagline");
+        if (tag && site.brand?.tagline) tag.textContent = site.brand.tagline;
+
+        const svc = document.getElementById("services-cards");
+        if (svc && site.services) {
+          svc.innerHTML = site.services
+            .map(
+              (s) => `
+            <article class="card">
+              <h3>${s.title}</h3>
+              <p>${s.desc}</p>
+              <div class="card__meta">${s.price} · ${s.days}</div>
+            </article>`
+            )
+            .join("");
+        }
+
+        const works = document.getElementById("works-cards");
+        if (works && site.portfolio) {
+          works.innerHTML = site.portfolio
+            .slice(0, 3)
+            .map(
+              (p) => `
+            <article class="card">
+              <h3>${p.title}</h3>
+              <p>${p.desc}</p>
+              <div class="card__meta">${p.tag} · ${p.price}</div>
+            </article>`
+            )
+            .join("");
+        }
+      })
+      .catch(() => {});
+  </script>
+</body>
+</html>

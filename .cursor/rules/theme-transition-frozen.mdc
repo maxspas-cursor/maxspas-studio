@@ -1,0 +1,42 @@
+---
+description: ЗАМОРОЖЕНО — анимация перехода Studio ↔ 3D GRBNK в maxspas-hybrid. Не менять без явной просьбы владельца.
+globs: idei/maxspas-hybrid/js/theme-transition.js,idei/maxspas-hybrid/js/portal-guard.js,idei/maxspas-hybrid/css/site.css
+alwaysApply: false
+---
+
+# Theme transition — FROZEN (maxspas-hybrid)
+
+**Статус: зафиксировано владельцем. Не править тайминги, эффекты, пороги и UX без прямого запроса «изменить переход».**
+
+## Файлы (единый блок)
+
+- `idei/maxspas-hybrid/js/theme-transition.js` — логика
+- `idei/maxspas-hybrid/js/portal-guard.js` — anti-flash при входе
+- `idei/maxspas-hybrid/css/site.css` — секции `#theme-portal`, `#theme-scroll-field`, `#theme-cta-switch.is-portal-source`, `.theme-portal-btn-fx`, `.theme-portal-burst`
+
+## Клик / телепорт (кнопка BR)
+
+1. Лого вылетают **из кнопки** `#theme-cta-switch` (`spawnPortalLogos` → `switchAnchor`).
+2. Кнопка: градиент, shimmer-рамка, **вращающиеся conic-gradient лучи** (`.theme-portal-btn-fx__rays` + `theme-portal-rays-spin`), ореол.
+3. Портал: radial wipe из кнопки, wipe-слои, scan; в центре **куб + label + sub** (без маленького лого над кубом).
+4. Навигация на полном покрытии (`navigate: true`, ~920 ms), без второй фазы wipe на исходной странице.
+5. Вход: `portal-guard.js` скрывает контент → `is-enter-only` wipe уходит, **core скрыт** на входе (нет мигания текста).
+
+## Скролл (только `data-page="home"`)
+
+1. **Нет** статичной «палки» / beam от кнопки к горизонту — удалено навсегда.
+2. Горизонт + glow + tag «3D GRBNK» по `--theme-mix`.
+3. Лого при mix ≥ 0.72 — **из горизонта портала (дно)**, хаотично, **~15 с** поток (`SCROLL_LOGO_STREAM_MS`), интервал ~1.1 с, полёт каждого 11–15 с с затуханием; потом стоп.
+4. Кнопка при скролле — только **лёгкое свечение** (`::after` radial), **без** вращающих лучей.
+5. Пороги: theme grbnk ≥ 0.55, burst ≥ 0.72, сброс burst < 0.12.
+
+## Запрещено без явного OK
+
+- Переносить лого телепорта в центр экрана.
+- Возвращать center-burst, cube-particles, scroll-beam, sigil к центру.
+- Менять `DURATION` (720), `navigateAt`, conic-rays на stretch-rays.
+- Трогать `portal-guard` / `is-portal-pending` без причины.
+
+## Константы
+
+`STORAGE_KEY = ms-theme-transition`, `DURATION = 720`, logos `/assets/logo-mark.svg` и `/assets/logo-3dgrbnk.svg`.

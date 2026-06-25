@@ -1,4 +1,6 @@
-/** Vercel serverless: contact form → Telegram admin */
+/** Vercel serverless: contact form → Telegram + email */
+
+import { notifyEmail } from "./notify-email.js";
 
 const EMAIL_RE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const PHONE_MIN = 10;
@@ -106,6 +108,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ detail: "Укажите телефон (+7 …) или email" });
     }
     await notifyAdmin(payload);
+    try {
+      await notifyEmail(payload);
+    } catch (emailErr) {
+      console.error("lead email:", emailErr.message);
+    }
     return res.status(200).json({ ok: true });
   } catch (e) {
     const status = e.status || 500;
