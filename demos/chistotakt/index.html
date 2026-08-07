@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЧистоТакт — калькулятор уборки</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top"><span class="logo">ЧистоТакт</span><a href="#calc">Считать</a></header>
+
+  <section class="hero">
+    <h1>Уборка с прозрачной ценой</h1>
+    <p>Посчитайте ориентир за 10 секунд — без звонка «узнать прайс».</p>
+  </section>
+
+  <section class="calc" id="calc">
+    <label>Площадь, м² <input type="range" id="area" min="20" max="200" value="55"><output id="areaOut">55</output></label>
+    <label>Тип
+      <select id="type">
+        <option value="1">Поддерживающая</option>
+        <option value="1.35">Генеральная</option>
+        <option value="1.6">После ремонта</option>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" id="windows"> Мытьё окон (+800 ₽)</label>
+    <label class="check"><input type="checkbox" id="fridge"> Холодильник (+500 ₽)</label>
+    <div class="total">
+      <span>Итого ориентир</span>
+      <strong id="sum">0 ₽</strong>
+    </div>
+    <a class="btn" id="cta" href="https://t.me/Maxspas" target="_blank" rel="noopener">Оставить заявку</a>
+  </section>
+
+  <footer class="foot">Демо MAXSPAS Studio · клининговый калькулятор</footer>
+  <script>
+    const base = 45; // ₽/м²
+    const $ = id => document.getElementById(id);
+    function calc() {
+      const area = +$("area").value;
+      $("areaOut").textContent = area;
+      let sum = area * base * +$("type").value;
+      if ($("windows").checked) sum += 800;
+      if ($("fridge").checked) sum += 500;
+      sum = Math.round(sum / 50) * 50;
+      $("sum").textContent = sum.toLocaleString("ru-RU") + " ₽";
+      $("cta").href = "https://t.me/Maxspas?text=" + encodeURIComponent(`Уборка ${area} м², ориентир ${sum} ₽`);
+    }
+    ["area","type","windows","fridge"].forEach(id => $(id).addEventListener("input", calc));
+    calc();
+  </script>
+</body>
+</html>

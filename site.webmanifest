@@ -1,0 +1,23 @@
+{
+  "name": "MAXSPAS Studio",
+  "short_name": "MAXSPAS",
+  "description": "Сайты, Telegram-боты и 3D GRBNK",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07050d",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

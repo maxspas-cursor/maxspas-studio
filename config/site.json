@@ -8,12 +8,188 @@
       "3d": "3D GRBNK — Горбунки и доставка по России"
     }
   },
+  "homeBudget": {
+    "studio": {
+      "title": "MAXSPAS Studio",
+      "items": [
+        { "label": "Лендинг", "value": "2k ₽", "w": "58%" },
+        { "label": "Сайт", "value": "2.5k ₽", "w": "65%" },
+        { "label": "Бот", "value": "от 1.5k ₽", "w": "48%" },
+        { "label": "Сайт+бот", "value": "от 5k ₽", "w": "88%" }
+      ]
+    },
+    "grbnk": {
+      "title": "3D GRBNK",
+      "subtitle": "Модели, печать и файлы",
+      "items": [
+        { "label": "STL / файл", "value": "от 300 ₽", "w": "38%" },
+        { "label": "Создание модели", "value": "от 2k ₽", "w": "62%" },
+        { "label": "Печать", "value": "от 500 ₽", "w": "52%" }
+      ]
+    }
+  },
   "grbnk3d": {
     "logo": "assets/logo-3dgrbnk.svg",
     "title": "3DGRBNK",
     "botUsername": "@maxspas_studio_bot",
     "botUrl": "https://t.me/maxspas_studio_bot?start=3d",
     "botLabel": "Бот · 3D →"
+  },
+  "grbnkShowroom": {
+    "watermark": "MAXSPAS 3D",
+    "lead": "Витрина моделей с просмотром как в конфигураторе — каталог, расчёт и заказ как в Telegram-боте.",
+    "models": [
+      {
+        "id": "benchy",
+        "title": "3DBenchy",
+        "tag": "Демо",
+        "price": "от 300 ₽",
+        "desc": "Тестовая модель для калибровки принтера — классика FDM (CC0, CreativeTools)",
+        "format": "STL",
+        "shape": "benchy",
+        "file": "/assets/models/benchy.stl",
+        "previewFile": "/assets/models/web/benchy.glb",
+        "days": "1–2 дня"
+      },
+      {
+        "id": "vase",
+        "title": "Blossom Vase Twist",
+        "tag": "Декор",
+        "price": "от 500 ₽",
+        "desc": "Витая ваза с blossom-узором — печать в vase mode (AndreasMass)",
+        "format": "STL",
+        "shape": "vase",
+        "file": "/assets/models/vase.stl",
+        "previewFile": "/assets/models/web/vase.glb",
+        "days": "2–3 дня"
+      },
+      {
+        "id": "gear",
+        "title": "Шестерня",
+        "tag": "Запчасть",
+        "price": "от 400 ₽",
+        "desc": "Эвольвентная шестерня 24 зуба, 20° — под печать (mdsSpurGear)",
+        "format": "STL",
+        "shape": "gear",
+        "file": "/assets/models/gear.stl",
+        "previewFile": "/assets/models/web/gear.glb",
+        "days": "1–3 дня"
+      },
+      {
+        "id": "axolotl",
+        "title": "Аксолотль",
+        "tag": "Фигурка",
+        "price": "от 600 ₽",
+        "desc": "Фигурка аксолотля — размеры S/M/L (15–30 г пластика)",
+        "format": "STL",
+        "shape": "figurine",
+        "file": "/assets/models/catalog/axolotl.stl",
+        "previewFile": "/assets/models/web/catalog/axolotl.glb",
+        "days": "2–4 дня"
+      },
+      {
+        "id": "shark",
+        "title": "Акула",
+        "tag": "Фигурка",
+        "price": "от 500 ₽",
+        "desc": "Фигурка акулы — размеры S/M/L (10–20 г пластика)",
+        "format": "STL",
+        "shape": "figurine",
+        "file": "/assets/models/catalog/shark.stl",
+        "previewFile": "/assets/models/web/catalog/shark.glb",
+        "days": "2–3 дня"
+      },
+      {
+        "id": "poison-dragon",
+        "title": "Ядовитый дракон",
+        "tag": "Фигурка",
+        "price": "от 700 ₽",
+        "desc": "Дракон с детализацией — размеры S/M/L (15–35 г пластика)",
+        "format": "STL",
+        "shape": "figurine",
+        "file": "/assets/models/catalog/poison-dragon.stl",
+        "previewFile": "/assets/models/web/catalog/poison-dragon.glb",
+        "days": "3–5 дней"
+      },
+      {
+        "id": "snake",
+        "title": "Змейка",
+        "tag": "Фигурка",
+        "price": "от 500 ₽",
+        "desc": "Гибкая змейка — мини / средняя / большая (15–35 г)",
+        "format": "STL",
+        "shape": "figurine",
+        "file": "/assets/models/catalog/snake.stl",
+        "previewFile": "/assets/models/web/catalog/snake.glb",
+        "days": "2–4 дня"
+      },
+      {
+        "id": "chameleon",
+        "title": "Хамелеон",
+        "tag": "Фигурка",
+        "price": "от 450 ₽",
+        "desc": "Фигурка хамелеона — S/M/L (15–30 г пластика)",
+        "format": "STL",
+        "shape": "figurine",
+        "file": "/assets/models/catalog/chameleon.stl",
+        "previewFile": "/assets/models/web/catalog/chameleon.glb",
+        "days": "2–3 дня"
+      },
+      {
+        "id": "yasher",
+        "title": "Ящер",
+        "tag": "Фигурка",
+        "price": "от 400 ₽",
+        "desc": "Фигурка ящера — XS/S/M (5–15 г пластика)",
+        "format": "STL",
+        "shape": "figurine",
+        "file": "/assets/models/catalog/yasher.stl",
+        "previewFile": "/assets/models/web/catalog/yasher.glb",
+        "days": "2–3 дня"
+      },
+      {
+        "id": "heart-holder",
+        "title": "Держатель «Сердце»",
+        "tag": "Аксессуар",
+        "price": "от 350 ₽",
+        "desc": "Держатель для телефона в форме сердца",
+        "format": "STL",
+        "shape": "holder",
+        "file": "/assets/models/catalog/heart-holder.stl",
+        "previewFile": "/assets/models/web/catalog/heart-holder.glb",
+        "days": "1–2 дня"
+      },
+      {
+        "id": "fox-holder",
+        "title": "Держатель «Лис»",
+        "tag": "Аксессуар",
+        "price": "от 400 ₽",
+        "desc": "Держатель / брелок «Лис» — несколько толщин корпуса телефона",
+        "format": "STL",
+        "shape": "holder",
+        "file": "/assets/models/catalog/fox-holder.stl",
+        "previewFile": "/assets/models/web/catalog/fox-holder.glb",
+        "days": "1–2 дня"
+      },
+      {
+        "id": "piggy-holder",
+        "title": "Держатель «Поросёнок»",
+        "tag": "Аксессуар",
+        "price": "от 450 ₽",
+        "desc": "Подставка-поросёнок для телефона + брелок",
+        "format": "STL",
+        "shape": "holder",
+        "file": "/assets/models/catalog/piggy-holder.stl",
+        "previewFile": "/assets/models/web/catalog/piggy-holder.glb",
+        "days": "1–2 дня"
+      }
+    ],
+    "calcOptions": [
+      { "id": "stl-file", "title": "STL / OBJ — готовый файл", "price": "от 300 ₽", "days": "1–2 дня", "w": "38%" },
+      { "id": "model", "title": "Создание модели", "price": "от 2 000 ₽", "days": "3–7 дней", "w": "62%" },
+      { "id": "print", "title": "Печать + доставка по РФ", "price": "от 500 ₽", "days": "2–5 дней", "w": "52%" },
+      { "id": "custom", "title": "Модель по вашему ТЗ", "price": "от 2 000 ₽", "days": "3–7 дней", "w": "68%" }
+    ]
   },
   "contacts": {
     "telegram": "@Maxspas",
@@ -32,7 +208,15 @@
     "phone": "+7 (911) 715-60-06",
     "phoneRaw": "79117156006",
     "city": "Горбунки, Ленинградская область",
-    "selfEmployed": true
+    "selfEmployed": true,
+    "payment": {
+      "method": "transfer",
+      "bank": "Т‑Банк",
+      "phone": "+7 (911) 715-60-06",
+      "phoneRaw": "79117156006",
+      "note": "Перевод по номеру телефона (СБП). В комментарии — имя или услуга. Чек НПД после оплаты.",
+      "prepaid": "50% до старта, 50% после сдачи. Мелкая 3D-печать — 100% до печати (от 500 ₽)."
+    }
   },
   "accounts": {
     "avito": "",
@@ -84,13 +268,13 @@
     {
       "id": "3d",
       "title": "3D GRBNK",
-      "desc": "Модели для 3D-печати (STL), игровые ассеты, визуализация. Файлы и печать с доставкой по РФ",
+      "desc": "FDM и SLA-печать, модели STL/OBJ, визуализация. Файлы и изделия с доставкой по РФ",
       "price": "от 300 ₽",
       "days": "1–5 дней",
       "features": [
+        "FDM · SLA (смола)",
         "STL / OBJ / GLB",
         "Проверка на печать",
-        "Паки моделей",
         "Доставка по РФ"
       ]
     }
@@ -122,29 +306,163 @@
     },
     {
       "id": "grbnk-3d",
-      "title": "3D GRBNK",
-      "desc": "Направление 3D-печати: модели STL/OBJ, проверка на печать, low-poly и доставка по РФ",
+      "title": "3D GRBNK — витрина",
+      "desc": "Каталог моделей с 3D-просмотром, расчёт и заказ. FDM + SLA, доставка по РФ",
       "tag": "3D",
       "direction": "3d",
       "price": "от 300 ₽",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
-      "botUrl": "https://t.me/maxspas_studio_bot?start=3d",
-      "botLabel": "Заказ в боте",
       "color": "linear-gradient(135deg, rgba(251,146,60,0.15), rgba(124,58,237,0.12))",
       "url": "/grbnk"
     },
     {
-      "id": "grbnk-bot",
-      "title": "@maxspas_studio_bot",
-      "desc": "Заказ 3D в Telegram: загрузка STL, расчёт, статус заказа и связь с мастерской",
+      "id": "maxspas-bot-3d",
+      "title": "@MAXSPAS_BOT",
+      "desc": "Розничный бот 3D: каталог, расчёт материала (пластик + граммы), заказ печати",
       "tag": "Бот · 3D",
       "direction": "3d",
-      "price": "STL · заявки · демо",
+      "price": "калькулятор · заказы",
       "icon": "bot",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(139,157,200,0.22), rgba(251,146,60,0.12))",
-      "url": "https://t.me/maxspas_studio_bot?start=3d"
+      "url": "https://t.me/MAXSPAS_BOT"
+    },
+    {
+      "id": "demo-severny-bereg",
+      "title": "Северный Берег",
+      "desc": "Демо-лендинг бани у воды: hero на весь экран, бронь в Telegram. Пример сайта для локального сервиса",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "лендинг 1 страница",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, rgba(94,200,192,0.25), rgba(10,18,24,0.9))",
+      "url": "/demos/severny-bereg/"
+    },
+    {
+      "id": "demo-velokuhnya",
+      "title": "ВелоКухня",
+      "desc": "Демо-лендинг мастерской + кофе: услуги, цены, запись. Пример яркого локального бренда",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "лендинг 1 страница",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, rgba(214,255,63,0.2), rgba(17,19,15,0.95))",
+      "url": "/demos/velokuhnya/"
+    },
+    {
+      "id": "demo-barber-noir",
+      "title": "BARBER NOIR",
+      "desc": "Чёрно-белый барбершоп: выбор мастера и слотов времени, запись в Telegram",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "запись онлайн",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, #222, #000)",
+      "url": "/demos/barber-noir/"
+    },
+    {
+      "id": "demo-shkola",
+      "title": "Школа Смысла",
+      "desc": "Онлайн-курс: тарифы Start/Pro/Team и модалка записи",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "тарифы + modal",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, rgba(31,111,235,0.25), #f4f7fb)",
+      "url": "/demos/shkola-smysla/"
+    },
+    {
+      "id": "demo-chistotakt",
+      "title": "ЧистоТакт",
+      "desc": "Клининг с калькулятором: площадь, тип уборки, допы → ориентир цены",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "калькулятор",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, rgba(15,159,110,0.3), #f7fffb)",
+      "url": "/demos/chistotakt/"
+    },
+    {
+      "id": "demo-kadr",
+      "title": "Студия КАДР",
+      "desc": "Фото-портфолио: фильтр жанров и lightbox просмотр",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "галерея",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, #2a2c33, #0e0f12)",
+      "url": "/demos/studio-kadr/"
+    },
+    {
+      "id": "demo-domremont",
+      "title": "ДомРемонт",
+      "desc": "Квиз-смета в 3 шага: комната → объём → контакт и ориентир цены",
+      "tag": "Сайт · демо",
+      "direction": "web",
+      "price": "мультишаг",
+      "icon": "web",
+      "logo": true,
+      "color": "linear-gradient(135deg, rgba(255,122,24,0.35), #14171c)",
+      "url": "/demos/domremont/"
+    },
+    {
+      "id": "tech-clips",
+      "title": "Клипсы и крепёж кабеля",
+      "desc": "Серийные клипсы Ø6–16, P-клипсы, strain relief — под цех и жгуты. Печать PETG под заказ",
+      "tag": "3D · тех",
+      "direction": "3d",
+      "price": "партия от 50 шт",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(37,99,235,0.25), rgba(15,23,42,0.4))",
+      "url": "/grbnk",
+      "status": "photo-soon"
+    },
+    {
+      "id": "tech-din",
+      "title": "DIN и щитовая мелочь",
+      "desc": "Клипсы на DIN-рейку 35 мм, заглушки, разделители модулей — для щитов и автоматики",
+      "tag": "3D · тех",
+      "direction": "3d",
+      "price": "под заказ",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(22,163,74,0.22), rgba(15,23,42,0.4))",
+      "url": "/grbnk",
+      "status": "photo-soon"
+    },
+    {
+      "id": "tech-pcb",
+      "title": "Спейсеры и корпуса PCB",
+      "desc": "Стойки M3, уголки плат, прототипы корпусов — для электроники и оснастки",
+      "tag": "3D · тех",
+      "direction": "3d",
+      "price": "от 500 ₽ печать",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(124,58,237,0.25), rgba(15,23,42,0.4))",
+      "url": "/grbnk",
+      "status": "photo-soon"
+    },
+    {
+      "id": "keychain-soon",
+      "title": "Брелки и литофания",
+      "desc": "Фирменные брелки и литофания с рамкой. Фото готовых работ — на этой неделе",
+      "tag": "3D · мерч",
+      "direction": "3d",
+      "price": "от 150 / 2000 ₽",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(244,114,182,0.2), rgba(124,58,237,0.15))",
+      "url": "https://t.me/MAXSPAS_BOT",
+      "status": "photo-soon"
     }
   ],
   "directions": [
@@ -156,7 +474,7 @@
       "lead": "Цифровая визитка и посадочные страницы — структура, вёрстка, публикация и приём заявок.",
       "href": "prices",
       "zone": "studio",
-      "portfolioIds": ["maxspas-site"],
+      "portfolioIds": ["maxspas-site", "demo-severny-bereg", "demo-velokuhnya", "demo-barber-noir", "demo-chistotakt"],
       "specs": [
         { "k": "Формат", "v": "1–6 страниц" },
         { "k": "Срок", "v": "3–5 дней" },
@@ -200,19 +518,19 @@
       "lead": "Подготовка моделей к FDM/SLA-печати, low-poly ассеты и доставка готовых изделий по России.",
       "href": "grbnk",
       "zone": "grbnk",
-      "portfolioIds": ["grbnk-3d", "grbnk-bot"],
+      "portfolioIds": ["grbnk-3d", "maxspas-bot-3d", "tech-clips"],
       "specs": [
+        { "k": "Технологии", "v": "FDM · SLA" },
         { "k": "Форматы", "v": "STL · OBJ · GLB" },
         { "k": "Срок", "v": "1–5 дней" },
         { "k": "Контроль", "v": "Проверка на печать" },
-        { "k": "Доставка", "v": "По РФ" },
-        { "k": "Объём", "v": "Штучно и паки" }
+        { "k": "Доставка", "v": "По РФ" }
       ],
       "bars": [
         { "label": "Цена", "w": "38%", "value": "от 300 ₽" },
-        { "label": "Детализация", "w": "68%", "value": "Средняя" }
+        { "label": "Детализация", "w": "92%", "value": "SLA высокая" }
       ],
-      "tags": ["FDM", "Low-poly", "Печать", "Паки STL"]
+      "tags": ["FDM", "SLA", "Печать", "STL"]
     }
   ]
 }

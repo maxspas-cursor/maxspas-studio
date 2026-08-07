@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BARBER NOIR — запись онлайн</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#">BARBER NOIR</a>
+    <a class="top__link" href="#book">Запись</a>
+  </header>
+
+  <section class="hero">
+    <p class="logo logo--hero">BARBER NOIR</p>
+    <h1>Стрижка.<br>Без ожидания.</h1>
+    <p class="lead">Выберите мастера и слот — подтвердим в Telegram.</p>
+  </section>
+
+  <section class="book" id="book">
+    <h2>Онлайн-запись</h2>
+    <div class="masters" id="masters">
+      <button type="button" class="chip is-on" data-master="Илья">Илья</button>
+      <button type="button" class="chip" data-master="Марк">Марк</button>
+      <button type="button" class="chip" data-master="Сергей">Сергей</button>
+    </div>
+    <div class="slots" id="slots"></div>
+    <a class="btn" id="bookBtn" href="https://t.me/Maxspas" target="_blank" rel="noopener">Записаться · Telegram</a>
+    <p class="hint" id="hint">Выберите время</p>
+  </section>
+
+  <footer class="foot">Демо MAXSPAS Studio · не реальный барбершоп</footer>
+  <script>
+    const slots = ["12:00","13:30","15:00","16:30","18:00","19:30"];
+    const box = document.getElementById("slots");
+    let master = "Илья", time = "";
+    box.innerHTML = slots.map(t => `<button type="button" class="slot" data-t="${t}">${t}</button>`).join("");
+    document.getElementById("masters").onclick = e => {
+      const b = e.target.closest(".chip"); if (!b) return;
+      document.querySelectorAll(".chip").forEach(c => c.classList.toggle("is-on", c===b));
+      master = b.dataset.master;
+      sync();
+    };
+    box.onclick = e => {
+      const b = e.target.closest(".slot"); if (!b) return;
+      document.querySelectorAll(".slot").forEach(c => c.classList.toggle("is-on", c===b));
+      time = b.dataset.t;
+      sync();
+    };
+    function sync() {
+      const btn = document.getElementById("bookBtn");
+      const h = document.getElementById("hint");
+      if (!time) { h.textContent = "Выберите время"; return; }
+      h.textContent = `${master} · сегодня ${time}`;
+      btn.href = `https://t.me/Maxspas?text=${encodeURIComponent("Запись BARBER NOIR: "+master+" "+time)}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+:root {
+  --bg: #0a1218;
+  --ink: #e8eef2;
+  --muted: #8fa3b0;
+  --line: rgba(232, 238, 242, 0.14);
+  --accent: #5ec8c0;
+  --deep: #061016;
+  --font: "Manrope", system-ui, sans-serif;
+  --display: "Syne", "Manrope", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.top {
+  position: absolute;
+  z-index: 5;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px clamp(18px, 4vw, 40px);
+}
+.logo {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.nav {
+  display: flex;
+  gap: 18px;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.nav a:hover { color: var(--ink); }
+.top__phone {
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding: 0 clamp(18px, 4vw, 40px) 56px;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(8, 28, 36, 0.35), transparent 45%),
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(94, 200, 192, 0.18), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1200' viewBox='0 0 800 1200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230d2430'/%3E%3Cstop offset='1' stop-color='%23061218'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='800' height='1200'/%3E%3Cpath fill='%231a3a48' opacity='.45' d='M0 780c80-40 160-20 240-50s160-90 240-70 160 70 240 50 80-40 80-40v460H0z'/%3E%3Cpath fill='%235ec8c0' opacity='.08' d='M0 900c120-30 200 20 320-10s200-80 320-40v350H0z'/%3E%3C/svg%3E") center/cover;
+  transform: scale(1.02);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 16, 22, 0.25) 0%, rgba(6, 16, 22, 0.55) 45%, rgba(6, 16, 22, 0.92) 100%);
+}
+.hero__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 18ch;
+}
+.logo--hero {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+.hero h1 {
+  margin: 0 0 14px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.hero__lead {
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 28ch;
+}
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: transform 0.2s, background 0.2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--light {
+  background: var(--ink);
+  color: var(--deep);
+}
+.btn--ghost {
+  border-color: var(--line);
+  color: var(--ink);
+  background: rgba(255,255,255,0.03);
+}
+
+.strip {
+  padding: 56px clamp(18px, 4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+.strip__label {
+  margin: 0 0 24px;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.strip__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+}
+.strip__list li {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.strip__list strong {
+  font-family: var(--display);
+  font-size: 1.35rem;
+}
+.strip__list span { color: var(--muted); }
+
+.story {
+  display: grid;
+  gap: 28px;
+  padding: 20px clamp(18px, 4vw, 40px) 64px;
+}
+.story h2 {
+  margin: 0 0 12px;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+.story p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 42ch;
+  font-size: 1.05rem;
+}
+.story__panel {
+  display: grid;
+  gap: 10px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(145deg, rgba(94, 200, 192, 0.1), transparent 50%),
+    var(--deep);
+  min-height: 200px;
+  align-content: end;
+}
+.story__panel span {
+  font-family: var(--display);
+  font-size: 1.4rem;
+}
+
+.booking {
+  padding: 56px clamp(18px, 4vw, 40px);
+  background: #0e1a22;
+  border-top: 1px solid var(--line);
+}
+.booking h2 {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-size: 2rem;
+}
+.booking > p {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+.form {
+  display: grid;
+  gap: 14px;
+  max-width: 420px;
+}
+.form label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.form input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--deep);
+  color: var(--ink);
+  font: inherit;
+}
+.form input:focus {
+  outline: 2px solid rgba(94, 200, 192, 0.45);
+  border-color: transparent;
+}
+
+.foot {
+  padding: 28px clamp(18px, 4vw, 40px) 40px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.foot a { color: var(--accent); }
+
+@keyframes drift {
+  from { transform: scale(1.02) translate3d(0, 0, 0); }
+  to { transform: scale(1.06) translate3d(-1.5%, 1%, 0); }
+}
+
+@media (min-width: 860px) {
+  .nav { display: flex; }
+  .strip__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .strip__list li {
+    border-bottom: 0;
+    padding-bottom: 0;
+    border-right: 1px solid var(--line);
+    padding-right: 24px;
+  }
+  .strip__list li:last-child { border-right: 0; }
+  .story {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: end;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav { display: none; }
+  .top__phone { font-size: 0.72rem; }
+}

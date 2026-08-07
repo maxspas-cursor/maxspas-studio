@@ -4,68 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Цены — MAXSPAS Studio</title>
+  <meta name="description" content="Цены на сайты, Telegram-ботов и 3D-модели GRBNK. Прозрачные пакеты от MAXSPAS Studio.">
   <base href="/">
   <script src="js/portal-guard.js"></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAXSPAS Studio">
+  <meta property="og:url" content="https://maxspas.ru/prices">
+  <meta property="og:title" content="Цены — MAXSPAS Studio">
+  <meta property="og:description" content="Цены на сайты, Telegram-ботов и 3D-модели GRBNK. Прозрачные пакеты от MAXSPAS Studio.">
+  <meta property="og:image" content="https://maxspas.ru/assets/favicon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://maxspas.ru/assets/favicon-512.png">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="prices">
   <div id="site-chrome"></div>
   <main>
     <section class="page-hero">
-      <span class="badge">Цены</span>
-      <h1>Пакеты <span class="gradient-text">без сюрпризов</span></h1>
-      <p>Фиксированные цены на старте. Предоплата 50%. Самозанятость — с чеком.</p>
+      <span class="badge" data-i18n="prices.badge">Цены</span>
+      <h1 data-i18n="prices.title" data-i18n-mode="html">Пакеты <span class="gradient-text">без сюрпризов</span></h1>
+      <p data-i18n="prices.sub">Фиксированные цены на старте. Предоплата 50%. Самозанятость — с чеком.</p>
       <div class="page-hero__line"></div>
     </section>
     <section class="section section--tight">
       <div class="pricing">
         <article class="price-card">
-          <h3>Старт</h3>
+          <h3 data-i18n="prices.start.title">Старт</h3>
           <p class="price-card__price">2 000 – 2 500 ₽</p>
-          <p>Лендинг или визитка + заявка в Telegram</p>
+          <p data-i18n="prices.start.desc">Лендинг или визитка + заявка в Telegram</p>
           <ul>
             <li>Лендинг — от 2 000 ₽</li>
             <li>Визитка — от 2 000 ₽</li>
             <li>Сайт — от 2 500 ₽</li>
             <li>3–5 дней</li>
           </ul>
-          <a href="contacts" class="btn btn--ghost btn--block">Заказать</a>
+          <a href="contacts" class="btn btn--ghost btn--block" data-i18n="prices.start.btn">Заказать</a>
         </article>
         <article class="price-card price-card--featured">
-          <span class="price-card__badge">Популярно</span>
-          <h3>Бизнес</h3>
+          <span class="price-card__badge" data-i18n="prices.biz.badge">Популярно</span>
+          <h3 data-i18n="prices.biz.title">Бизнес</h3>
           <p class="price-card__price">от 5 000 ₽</p>
-          <p>Сайт + Telegram-бот</p>
+          <p data-i18n="prices.biz.desc">Сайт + Telegram-бот</p>
           <ul>
             <li>Сайт от 2 500 ₽</li>
             <li>Бот от 1 500 ₽</li>
             <li>Комплект под ключ</li>
             <li>5–7 дней</li>
           </ul>
-          <a href="contacts" class="btn btn--fill btn--block">Заказать</a>
+          <a href="contacts" class="btn btn--fill btn--block" data-i18n="prices.biz.btn">Заказать</a>
         </article>
         <article class="price-card">
           <h3>3D GRBNK</h3>
           <p class="price-card__price">от 300 ₽</p>
-          <p>Модели для 3D-печати</p>
+          <p data-i18n="prices.grbnk.desc">Модели для 3D-печати</p>
           <ul>
             <li>STL / OBJ</li>
             <li>Доставка файлов</li>
             <li>Паки и подписка</li>
           </ul>
-          <a href="grbnk" class="btn btn--ghost btn--block">Подробнее</a>
+          <a href="grbnk" class="btn btn--ghost btn--block" data-i18n="prices.grbnk.btn">Подробнее</a>
         </article>
+      </div>
+      <div class="pay-box pay-box--wide" id="payment">
+        <h3>Как оплатить</h3>
+        <p>Пока принимаем <strong>перевод на Т‑Банк</strong> по номеру <a href="tel:+79117156006">+7 (911) 715-60-06</a> (СБП).</p>
+        <p class="pay-box__hint">Предоплата 50% до старта · остаток после сдачи · чек самозанятого. Мелкая печать — 100% до запуска.</p>
+        <a href="contacts#payment" class="btn btn--ghost">Реквизиты и заявка</a>
       </div>
       <div class="cta-band">
         <div>
-          <h3>Индивидуальный расчёт?</h3>
-          <p>Напишите задачу — ответим в течение дня</p>
+          <h3 data-i18n="prices.cta.title">Индивидуальный расчёт?</h3>
+          <p data-i18n="prices.cta.sub">Напишите задачу — ответим в течение дня</p>
         </div>
-        <a href="contacts" class="btn btn--fill">Получить расчёт</a>
+        <a href="contacts" class="btn btn--fill" data-i18n="prices.cta.btn">Получить расчёт</a>
       </div>
     </section>
   </main>
+  <script src="js/i18n.js"></script>
   <script src="/js/icons.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/motion.js"></script>

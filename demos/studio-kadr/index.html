@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Студия КАДР — портфолио фотографа</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">КАДР</a>
+    <nav class="filters" id="filters">
+      <button type="button" class="is-on" data-f="all">Все</button>
+      <button type="button" data-f="portrait">Портрет</button>
+      <button type="button" data-f="report">Репортаж</button>
+      <button type="button" data-f="product">Предмет</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Свет. Лицо.<br>История кадра.</h1>
+    <p>Демо-галерея фотографа с фильтром жанров.</p>
+  </section>
+
+  <section class="gallery" id="gallery"></section>
+
+  <div class="lightbox" id="lb" hidden>
+    <button type="button" id="lbClose" aria-label="Закрыть">×</button>
+    <div class="lightbox__frame" id="lbFrame"></div>
+    <p id="lbCap"></p>
+  </div>
+
+  <section class="cta">
+    <a class="btn" href="https://t.me/Maxspas" target="_blank" rel="noopener">Обсудить съёмку</a>
+  </section>
+  <footer class="foot">Демо MAXSPAS Studio · фото-портфолио</footer>
+
+  <script>
+    const items = [
+      { t: "Портрет у окна", f: "portrait", c: "#2a3344" },
+      { t: "Свадебный день", f: "report", c: "#3d2f2a" },
+      { t: "Косметика", f: "product", c: "#1f2e28" },
+      { t: "Деловой портрет", f: "portrait", c: "#243040" },
+      { t: "Концерт", f: "report", c: "#2b1f36" },
+      { t: "Упаковка", f: "product", c: "#2a2a2a" },
+    ];
+    const gal = document.getElementById("gallery");
+    function render(filter="all") {
+      gal.innerHTML = items.filter(i => filter==="all" || i.f===filter).map((i,idx) =>
+        `<button type="button" class="tile" data-i="${idx}" style="--c:${i.c}"><span>${i.t}</span></button>`
+      ).join("");
+    }
+    render();
+    document.getElementById("filters").onclick = e => {
+      const b = e.target.closest("button"); if (!b) return;
+      document.querySelectorAll(".filters button").forEach(x => x.classList.toggle("is-on", x===b));
+      render(b.dataset.f);
+    };
+    const lb = document.getElementById("lb");
+    gal.onclick = e => {
+      const t = e.target.closest(".tile"); if (!t) return;
+      const i = items[+t.dataset.i];
+      document.getElementById("lbFrame").style.background = i.c;
+      document.getElementById("lbCap").textContent = i.t;
+      lb.hidden = false;
+    };
+    document.getElementById("lbClose").onclick = () => lb.hidden = true;
+    lb.onclick = e => { if (e.target === lb) lb.hidden = true; };
+  </script>
+</body>
+</html>

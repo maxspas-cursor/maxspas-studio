@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ДомРемонт — оценка за 3 шага</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top"><strong>ДомРемонт</strong><span id="stepLabel">Шаг 1/3</span></header>
+
+  <section class="hero">
+    <h1>Смета за три шага</h1>
+    <p>Мультишаговая заявка — как квиз на лендинге.</p>
+  </section>
+
+  <form class="wizard" id="wizard">
+    <fieldset class="step is-on" data-step="1">
+      <legend>Что ремонтируем?</legend>
+      <label><input type="radio" name="room" value="Кухня" required> Кухня</label>
+      <label><input type="radio" name="room" value="Ванная"> Ванная</label>
+      <label><input type="radio" name="room" value="Комната"> Комната</label>
+      <button type="button" class="btn next">Далее</button>
+    </fieldset>
+
+    <fieldset class="step" data-step="2">
+      <legend>Объём работ</legend>
+      <label><input type="radio" name="scope" value="Косметика" required> Косметика</label>
+      <label><input type="radio" name="scope" value="Капитальный"> Капитальный</label>
+      <label><input type="radio" name="scope" value="Под ключ"> Под ключ</label>
+      <div class="row">
+        <button type="button" class="btn btn--ghost prev">Назад</button>
+        <button type="button" class="btn next">Далее</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="step" data-step="3">
+      <legend>Контакт</legend>
+      <input name="contact" placeholder="Telegram или телефон" required>
+      <p class="estimate" id="estimate">Ориентир: —</p>
+      <div class="row">
+        <button type="button" class="btn btn--ghost prev">Назад</button>
+        <button type="submit" class="btn">Отправить в Telegram</button>
+      </div>
+    </fieldset>
+  </form>
+
+  <footer class="foot">Демо MAXSPAS Studio · квиз-смета</footer>
+  <script>
+    const rates = { "Кухня": 45000, "Ванная": 38000, "Комната": 28000 };
+    const mult = { "Косметика": 1, "Капитальный": 1.6, "Под ключ": 2.2 };
+    let step = 1;
+    const form = document.getElementById("wizard");
+    function show(n) {
+      step = n;
+      document.getElementById("stepLabel").textContent = `Шаг ${n}/3`;
+      form.querySelectorAll(".step").forEach(s => s.classList.toggle("is-on", +s.dataset.step === n));
+      if (n === 3) {
+        const room = form.room.value;
+        const scope = form.scope.value;
+        const sum = Math.round((rates[room] || 0) * (mult[scope] || 1));
+        document.getElementById("estimate").textContent = `Ориентир: от ${sum.toLocaleString("ru-RU")} ₽`;
+      }
+    }
+    form.querySelectorAll(".next").forEach(b => b.onclick = () => {
+      const fs = form.querySelector(`.step[data-step="${step}"]`);
+      if (!fs.reportValidity()) return;
+      show(step + 1);
+    });
+    form.querySelectorAll(".prev").forEach(b => b.onclick = () => show(step - 1));
+    form.onsubmit = e => {
+      e.preventDefault();
+      const room = form.room.value, scope = form.scope.value, contact = form.contact.value;
+      const sum = Math.round((rates[room] || 0) * (mult[scope] || 1));
+      location.href = "https://t.me/Maxspas?text=" + encodeURIComponent(`Ремонт: ${room}, ${scope}, от ${sum} ₽. Контакт: ${contact}`);
+    };
+  </script>
+</body>
+</html>

@@ -4,29 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Работы — MAXSPAS Studio</title>
+  <meta name="description" content="Портфолио MAXSPAS Studio — сайты, Telegram-боты и 3D-проекты.">
   <base href="/">
   <script src="js/portal-guard.js"></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAXSPAS Studio">
+  <meta property="og:url" content="https://maxspas.ru/works">
+  <meta property="og:title" content="Работы — MAXSPAS Studio">
+  <meta property="og:description" content="Портфолио MAXSPAS Studio — сайты, Telegram-боты и 3D-проекты.">
+  <meta property="og:image" content="https://maxspas.ru/assets/favicon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://maxspas.ru/assets/favicon-512.png">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="works">
   <div id="site-chrome"></div>
   <main>
     <section class="page-hero">
-      <span class="badge">Портфолио</span>
-      <h1>Наши <span class="gradient-text">работы</span></h1>
-      <p>Наши проекты: сайт студии, бот заявок, бот 3D GRBNK и линейка печати</p>
+      <span class="badge" data-i18n="works.badge">Портфолио</span>
+      <h1 data-i18n="works.title" data-i18n-mode="html">Наши <span class="gradient-text">работы</span></h1>
+      <p data-i18n="works.sub">Сайт, боты, 3D-печать и технические модели под заказ</p>
       <div class="page-hero__line"></div>
     </section>
     <section class="section section--tight">
-      <div class="empty-state" id="portfolio-empty">
-        <h3>Кейсы по направлениям</h3>
-        <p>Сайт maxspas.ru, бот @maxspas_studio_bot и заказ 3D в том же боте</p>
-        <a href="contacts" class="btn btn--fill">Стать первым клиентом</a>
+      <div class="portfolio-filters" id="portfolio-filters" role="tablist" aria-label="Фильтр портфолио">
+        <button type="button" class="portfolio-filter is-active" data-filter="all">Все</button>
+        <button type="button" class="portfolio-filter" data-filter="web">Сайты</button>
+        <button type="button" class="portfolio-filter" data-filter="bot">Боты</button>
+        <button type="button" class="portfolio-filter" data-filter="3d">3D</button>
+      </div>
+      <div class="empty-state" id="portfolio-empty" hidden>
+        <h3 data-i18n="works.empty.title">Кейсы по направлениям</h3>
+        <p data-i18n="works.empty.desc">Сайт maxspas.ru, бот @maxspas_studio_bot и заказ 3D в том же боте</p>
+        <a href="contacts" class="btn btn--fill" data-i18n="works.empty.cta">Стать первым клиентом</a>
       </div>
       <div class="portfolio-grid" id="portfolio-grid"></div>
+      <p class="portfolio-note" id="portfolio-note">
+        Фото печатных изделий добавим на этой неделе. Сейчас — рабочие кейсы инфраструктуры и заказ через бота.
+      </p>
     </section>
   </main>
+  <script src="js/i18n.js"></script>
   <script src="/js/icons.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/motion.js"></script>

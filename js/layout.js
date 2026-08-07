@@ -20,11 +20,29 @@
 
   let activeTheme = "studio";
   let site = null;
+  let localeEn = null;
+
+  const CHROME_RU = { channel: "Канал", telegram: "Telegram", mail: "Почта" };
+  const STUDIO_BUDGET_KEYS = ["landing", "site", "bot", "siteBot"];
+  const GRBNK_BUDGET_KEYS = ["stl", "model", "print"];
+
+  function isEn() {
+    return window.MSI18n?.getLang() === "en";
+  }
+
+  function ui(key, ru) {
+    if (isEn() && localeEn?.ui?.[key]) return localeEn.ui[key];
+    return ru;
+  }
 
   async function loadSite() {
-    const res = await fetch("/config/site.json");
-    if (!res.ok) throw new Error("site.json");
-    site = await res.json();
+    const [siteRes, enRes] = await Promise.all([
+      fetch("/config/site.json"),
+      fetch("/config/locale-en.json"),
+    ]);
+    if (!siteRes.ok) throw new Error("site.json");
+    site = await siteRes.json();
+    if (enRes.ok) localeEn = await enRes.json();
     return site;
   }
 
@@ -34,6 +52,18 @@
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
+  }
+
+  function themeStrings(theme) {
+    const base = THEMES[theme];
+    const en = isEn() && localeEn?.themes?.[theme];
+    if (!en) return base;
+    return {
+      ...base,
+      sub: en.sub || base.sub,
+      primary: { ...base.primary, text: en.primary || base.primary.text },
+      switch: { ...base.switch, text: en.switch || base.switch.text },
+    };
   }
 
   function setTheme(theme, { fromScroll = false } = {}) {
@@ -53,7 +83,7 @@
       );
     }
 
-    const t = THEMES[theme];
+    const t = themeStrings(theme);
     const label = document.getElementById("theme-label");
     const sub = document.getElementById("theme-sub");
     const primary = document.getElementById("theme-cta-primary");
@@ -72,6 +102,17 @@
       switchBtn.textContent = sw.text;
       switchBtn.href = sw.href;
     }
+    const mobilePrimary = document.getElementById("mobile-cta-primary");
+    const mobileSwitch = document.getElementById("mobile-cta-switch");
+    if (mobilePrimary) {
+      mobilePrimary.textContent = t.primary.text;
+      mobilePrimary.href = t.primary.href;
+    }
+    if (mobileSwitch) {
+      const sw = fromScroll && page === "home" ? THEMES.studio.switch : t.switch;
+      mobileSwitch.textContent = page === "grbnk" || theme === "grbnk" ? (isEn() ? "Studio →" : "Studio →") : "3D →";
+      mobileSwitch.href = sw.href;
+    }
     if (heroLogo) heroLogo.src = t.logo;
   }
 
@@ -80,9 +121,16 @@
     const el = document.getElementById("site-chrome");
     if (!el) return;
 
+    const watermarkText =
+      page === "grbnk"
+        ? site?.grbnkShowroom?.watermark || localeEn?.chrome?.watermarkBrand3d || "MAXSPAS 3D"
+        : "MAXSPAS";
+    const watermarkClass = page === "grbnk" ? "brand-watermark brand-watermark--grbnk" : "brand-watermark";
+    const langLabel = isEn() ? "Language" : "Язык";
+
     el.innerHTML = `
       <div id="scroll-progress" aria-hidden="true"></div>
-      <div class="brand-watermark" aria-hidden="true">MAXSPAS</div>
+      <div class="${watermarkClass}" aria-hidden="true">${esc(watermarkText)}</div>
       <div class="corner corner--tl">
         <a class="brand-mark" href="/">
           <img src="/assets/logo-mark.svg" alt="" width="32" height="32">
@@ -93,17 +141,17 @@
         </a>
       </div>
       <div class="corner corner--tr">
-        <div class="lang" aria-label="Язык">
-          <button type="button" class="is-active">RU</button>
+        <div class="lang" aria-label="${esc(langLabel)}">
+          <button type="button"${isEn() ? "" : ' class="is-active"'}>RU</button>
           <span style="color:var(--muted)">/</span>
-          <button type="button">EN</button>
+          <button type="button"${isEn() ? ' class="is-active"' : ""}>EN</button>
         </div>
       </div>
       <div class="corner corner--bl">
         <div class="btn-row btn-row--vertical">
-          <a class="btn btn--ghost" href="${c.telegramChannelUrl}" target="_blank" rel="noopener">Канал</a>
-          <a class="btn btn--ghost" href="${c.telegramUrl}" target="_blank" rel="noopener">Telegram</a>
-          <a class="btn btn--ghost" href="mailto:${esc(c.email)}">Почта</a>
+          <a class="btn btn--ghost" href="${c.telegramChannelUrl}" target="_blank" rel="noopener">${esc(isEn() && localeEn?.chrome?.channel ? localeEn.chrome.channel : CHROME_RU.channel)}</a>
+          <a class="btn btn--ghost" href="${c.telegramUrl}" target="_blank" rel="noopener">${esc(isEn() && localeEn?.chrome?.telegram ? localeEn.chrome.telegram : CHROME_RU.telegram)}</a>
+          <a class="btn btn--ghost" href="mailto:${esc(c.email)}">${esc(isEn() && localeEn?.chrome?.mail ? localeEn.chrome.mail : CHROME_RU.mail)}</a>
         </div>
       </div>
       <div class="corner corner--br">
@@ -115,17 +163,27 @@
           <a class="btn btn--fill" id="theme-cta-primary" href="${BASE}/contacts">Заявка</a>
           <a class="btn" id="theme-cta-switch" href="${BASE}/grbnk">3D GRBNK →</a>
         </div>
-      </div>`;
+      </div>
+      <nav class="mobile-dock" aria-label="${isEn() ? "Quick actions" : "Быстрые действия"}">
+        <a class="mobile-dock__link" href="${c.telegramUrl}" target="_blank" rel="noopener">${esc(isEn() && localeEn?.chrome?.telegram ? localeEn.chrome.telegram : CHROME_RU.telegram)}</a>
+        <a class="mobile-dock__link" href="mailto:${esc(c.email)}">${esc(isEn() && localeEn?.chrome?.mail ? localeEn.chrome.mail : CHROME_RU.mail)}</a>
+        <a class="mobile-dock__cta btn btn--fill" id="mobile-cta-primary" href="${BASE}/contacts">Заявка</a>
+        <a class="mobile-dock__link" id="mobile-cta-switch" href="${BASE}/grbnk">3D →</a>
+      </nav>`;
 
     const initialTheme = page === "grbnk" ? "grbnk" : "studio";
     setTheme(initialTheme);
 
     el.querySelectorAll(".lang button").forEach((btn) => {
       btn.addEventListener("click", () => {
-        el.querySelectorAll(".lang button").forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
+        const next = btn.textContent.trim() === "EN" ? "en" : "ru";
+        if (window.MSI18n) window.MSI18n.setLang(next);
       });
     });
+
+    if (window.MSI18n) window.MSI18n.applyStatic();
+
+    window.MSAppLocale = localeEn;
 
     document.dispatchEvent(new CustomEvent("mschrome:ready"));
   }
@@ -137,9 +195,68 @@
     return `<img src="${esc(logo)}" alt="" class="${className}" width="${size}" height="${size}" loading="lazy">`;
   }
 
+  function localizeDirection(dir) {
+    const en = isEn() && localeEn?.directions?.[dir.id];
+    if (!en) return dir;
+    return {
+      ...dir,
+      label: en.label ?? dir.label,
+      title: en.title ?? dir.title,
+      lead: en.lead ?? dir.lead ?? dir.desc,
+      specs: en.specs ?? dir.specs,
+      bars: en.bars ?? dir.bars,
+      tags: en.tags ?? dir.tags,
+    };
+  }
+
+  function localizePortfolioItem(item) {
+    const en = isEn() && localeEn?.portfolio?.[item.id];
+    if (!en) return item;
+    return { ...item, desc: en.desc ?? item.desc, tag: en.tag ?? item.tag };
+  }
+
+  function budgetLabel(keys, index, fallback) {
+    const key = keys[index];
+    if (isEn() && key && localeEn?.homeBudget?.items?.[key]) return localeEn.homeBudget.items[key];
+    return fallback;
+  }
+
   function renderHome() {
-    const tag = document.getElementById("hero-tagline");
-    if (tag) tag.textContent = site.brand.tagline;
+    const budget = site.homeBudget;
+    if (!budget) return;
+
+    function renderBudgetBars(containerId, items, grbnk, keys) {
+      const box = document.getElementById(containerId);
+      if (!box || !items?.length) return;
+      const fillClass = grbnk ? " spec-bar__fill--grbnk" : "";
+      box.innerHTML = items
+        .map(
+          (item, i) => `
+        <div class="spec-bar" style="--spec-w:${esc(item.w || "50%")}">
+          <span>${esc(budgetLabel(keys, i, item.label))}</span>
+          <div class="spec-bar__track"><div class="spec-bar__fill${fillClass}"></div></div>
+          <span class="spec-bar__value">${esc(item.value)}</span>
+        </div>`
+        )
+        .join("");
+    }
+
+    if (budget.studio) {
+      const t = document.getElementById("home-budget-studio-title");
+      if (t && budget.studio.title) t.textContent = budget.studio.title;
+      renderBudgetBars("home-budget-studio", budget.studio.items, false, STUDIO_BUDGET_KEYS);
+    }
+    if (budget.grbnk) {
+      const t = document.getElementById("home-budget-grbnk-title");
+      const s = document.getElementById("home-budget-grbnk-sub");
+      if (t && budget.grbnk.title) t.textContent = budget.grbnk.title;
+      const sub =
+        isEn() && localeEn?.homeBudget?.grbnk?.subtitle
+          ? localeEn.homeBudget.grbnk.subtitle
+          : budget.grbnk.subtitle;
+      if (s && sub) s.textContent = sub;
+      renderBudgetBars("home-budget-grbnk", budget.grbnk.items, true, GRBNK_BUDGET_KEYS);
+    }
   }
 
   function resolveHref(url) {
@@ -217,13 +334,19 @@
   }
 
   function directionCard(dir, portfolioById) {
-    const works = (dir.portfolioIds || []).map((id) => portfolioById[id]).filter(Boolean);
+    const works = (dir.portfolioIds || [])
+      .map((id) => portfolioById[id] && localizePortfolioItem(portfolioById[id]))
+      .filter(Boolean);
     const worksHtml = works.map(directionWork).join("");
     const grbnk = dir.zone === "grbnk";
     const grbnkClass = grbnk ? " direction-card--grbnk" : "";
     const code = dir.code ? `<span class="direction-card__code">${esc(dir.code)}</span>` : "";
     const linkLabel =
-      dir.id === "3d" ? "Спецификация 3D" : dir.id === "bot" ? "Заказать бота" : "Цены и пакеты";
+      dir.id === "3d"
+        ? ui("directionLink3d", "Спецификация 3D")
+        : dir.id === "bot"
+          ? ui("directionLinkBot", "Заказать бота")
+          : ui("directionLinkWeb", "Цены и пакеты");
     return `
       <article class="direction-card reveal${grbnkClass}" data-theme-zone="${esc(dir.zone || "studio")}">
         <span class="direction-card__corner direction-card__corner--tl"></span>
@@ -241,7 +364,7 @@
         ${directionSpecs(dir.specs)}
         ${directionBars(dir.bars, grbnk)}
         ${directionTags(dir.tags)}
-        ${worksHtml ? `<div class="direction-card__case"><span class="direction-card__case-label">Референс</span>${worksHtml}</div>` : ""}
+        ${worksHtml ? `<div class="direction-card__case"><span class="direction-card__case-label">${esc(ui("reference", "Референс"))}</span>${worksHtml}</div>` : ""}
         <a href="${esc(resolveHref(dir.href))}" class="direction-card__link">${esc(linkLabel)} →</a>
       </article>`;
   }
@@ -251,36 +374,42 @@
     const dirs = site.directions || [];
     if (!grid || !dirs.length) return;
     const portfolioById = Object.fromEntries((site.portfolio || []).map((p) => [p.id, p]));
-    grid.innerHTML = dirs.map((d) => directionCard(d, portfolioById)).join("");
+    grid.innerHTML = dirs.map((d) => directionCard(localizeDirection(d), portfolioById)).join("");
     if (window.MSMotion?.refresh) window.MSMotion.refresh();
   }
 
   function portfolioCard(item) {
-    const iconName = item.icon || item.emoji || "sparkle";
+    const loc = localizePortfolioItem(item);
+    const iconName = loc.icon || loc.emoji || "sparkle";
     let visualIcon;
-    if (item.logoAsset || item.logo || item.id === "maxspas-site") {
-      const src = item.logoAsset ? assetSrc(item.logoAsset) : "/assets/logo-mark.svg";
+    if (loc.logoAsset || loc.logo || loc.id === "maxspas-site") {
+      const src = loc.logoAsset ? assetSrc(loc.logoAsset) : "/assets/logo-mark.svg";
       visualIcon = `<img src="${src}" alt="" class="portfolio-card__logo" width="64" height="64" loading="lazy">`;
     } else if (window.MSIcons) {
       visualIcon = `<span class="portfolio-card__icon-host">${MSIcons.icon(iconName, { xl: true })}</span>`;
     } else {
-      visualIcon = `<span class="portfolio-card__emoji">${esc(item.emoji || "✨")}</span>`;
+      visualIcon = `<span class="portfolio-card__emoji">${esc(loc.emoji || "✨")}</span>`;
     }
-    const tag = item.tag ? `<span class="portfolio-card__tag">${esc(item.tag)}</span>` : "";
-    const isExternal = /^https?:\/\//i.test(item.url || "");
-    const link = item.url
-      ? `<a href="${esc(resolveHref(item.url))}" class="btn btn--ghost btn--sm"${isExternal ? ' target="_blank" rel="noopener"' : ""}>Смотреть</a>`
+    const tag = loc.tag ? `<span class="portfolio-card__tag">${esc(loc.tag)}</span>` : "";
+    const soon =
+      loc.status === "photo-soon"
+        ? `<span class="portfolio-card__soon">${esc(isEn() ? "Photos soon" : "Фото скоро")}</span>`
+        : "";
+    const isExternal = /^https?:\/\//i.test(loc.url || "");
+    const link = loc.url
+      ? `<a href="${esc(resolveHref(loc.url))}" class="btn btn--ghost btn--sm"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${esc(ui("view", "Смотреть"))}</a>`
       : "";
     return `
-      <article class="portfolio-card">
-        <div class="portfolio-card__visual" style="background:${esc(item.color || "rgba(124,58,237,0.08)")}">
+      <article class="portfolio-card" data-direction="${esc(loc.direction || "all")}">
+        <div class="portfolio-card__visual" style="background:${esc(loc.color || "rgba(124,58,237,0.08)")}">
           ${visualIcon}
+          ${soon}
         </div>
         <div class="portfolio-card__body">
           ${tag}
-          <h3>${esc(item.title)}</h3>
-          <p>${esc(item.desc)}</p>
-          <div class="portfolio-card__meta">${esc(item.price || "")}</div>
+          <h3>${esc(loc.title)}</h3>
+          <p>${esc(loc.desc)}</p>
+          <div class="portfolio-card__meta">${esc(loc.price || "")}</div>
           <div class="portfolio-card__actions">${link}</div>
         </div>
       </article>`;
@@ -289,10 +418,29 @@
   function renderPortfolio() {
     const grid = document.getElementById("portfolio-grid");
     const items = site.portfolio || [];
-    if (!grid || !items.length) return;
+    if (!grid) return;
+    if (!items.length) {
+      const empty = document.getElementById("portfolio-empty");
+      if (empty) empty.hidden = false;
+      return;
+    }
     grid.innerHTML = items.map(portfolioCard).join("");
     const empty = document.getElementById("portfolio-empty");
-    if (empty) empty.style.display = "none";
+    if (empty) empty.hidden = true;
+
+    const filters = document.getElementById("portfolio-filters");
+    if (!filters || filters.dataset.bound === "1") return;
+    filters.dataset.bound = "1";
+    filters.addEventListener("click", (e) => {
+      const btn = e.target.closest(".portfolio-filter");
+      if (!btn) return;
+      filters.querySelectorAll(".portfolio-filter").forEach((b) => b.classList.toggle("is-active", b === btn));
+      const filter = btn.dataset.filter || "all";
+      grid.querySelectorAll(".portfolio-card").forEach((card) => {
+        const dir = card.dataset.direction || "all";
+        card.hidden = filter !== "all" && dir !== filter;
+      });
+    });
   }
 
   function isValidEmail(value) {
@@ -316,7 +464,7 @@
     if (!g) return;
 
     const visual = document.getElementById("grbnk-visual");
-    if (visual) {
+    if (visual && !document.getElementById("grbnk-viewer")) {
       visual.innerHTML = `
         <div class="grbnk-visual__card grbnk-visual__card--cube">
           <div class="cube-scene">
@@ -348,8 +496,37 @@
     const brandBot = document.getElementById("grbnk-brand-bot");
     if (brandBot) {
       brandBot.href = g.botUrl;
-      brandBot.textContent = g.botLabel || g.botUsername;
+      const enLabel = localeEn?.portfolio?.["grbnk-bot"]?.botLabel;
+      brandBot.textContent = isEn() && enLabel ? enLabel : g.botLabel || g.botUsername;
     }
+  }
+
+  function refreshLocalized() {
+    const page = document.body.dataset.page || "home";
+    const wm = document.querySelector(".brand-watermark");
+    if (wm && page === "grbnk") {
+      wm.textContent =
+        site?.grbnkShowroom?.watermark || localeEn?.chrome?.watermarkBrand3d || "MAXSPAS 3D";
+    }
+    const ch = localeEn?.chrome;
+    const bl = document.querySelector(".corner--bl");
+    if (bl && ch) {
+      const links = bl.querySelectorAll(".btn");
+      if (links[0]) links[0].textContent = isEn() ? ch.channel : CHROME_RU.channel;
+      if (links[1]) links[1].textContent = isEn() ? ch.telegram : CHROME_RU.telegram;
+      if (links[2]) links[2].textContent = isEn() ? ch.mail : CHROME_RU.mail;
+    }
+    setTheme(activeTheme);
+    renderDirections();
+    renderHome();
+    renderPortfolio();
+    renderGrbnk();
+    if (window.MSI18n) {
+      window.MSI18n.applyStatic();
+      window.MSI18n.applyTicker();
+    }
+    if (window.MSMotion?.refresh) window.MSMotion.refresh();
+    document.dispatchEvent(new CustomEvent("msapp:lang", { detail: { site, page } }));
   }
 
   function bindContactForm() {
@@ -369,6 +546,9 @@
       status.textContent = text;
       status.className = "form-status " + (ok ? "form-status--ok" : "form-status--err");
     }
+
+    const submitLabel = () =>
+      window.MSI18n?.t("contacts.form.submit") || "Отправить заявку";
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -423,9 +603,27 @@
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Отправить заявку";
+          submitBtn.textContent = submitLabel();
         }
       }
+    });
+  }
+
+  function bindPayCopy() {
+    document.querySelectorAll("[data-copy]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const value = btn.getAttribute("data-copy") || "";
+        try {
+          await navigator.clipboard.writeText(value);
+          const prev = btn.textContent;
+          btn.textContent = "Скопировано";
+          setTimeout(() => {
+            btn.textContent = prev;
+          }, 1600);
+        } catch {
+          btn.textContent = value;
+        }
+      });
     });
   }
 
@@ -444,8 +642,17 @@
     renderPortfolio();
     renderGrbnk();
     bindContactForm();
+    bindPayCopy();
     if (window.MSIcons) MSIcons.hydrate();
+    if (window.MSMotion?.refresh) window.MSMotion.refresh();
     loadCursorGrid();
+    window.MSAppLocale = localeEn;
+    if (window.MSI18n) {
+      window.MSI18n.applyStatic();
+      window.MSI18n.applyTicker();
+    }
+    document.dispatchEvent(new CustomEvent("msapp:ready", { detail: { site, page } }));
+    document.addEventListener("mslang:change", refreshLocalized);
   }
 
   function loadCursorGrid() {

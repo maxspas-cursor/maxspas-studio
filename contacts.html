@@ -4,49 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — MAXSPAS Studio</title>
+  <meta name="description" content="Связаться с MAXSPAS Studio — Telegram, телефон, заявка с сайта. Горбунки, работаем онлайн.">
   <base href="/">
   <script src="js/portal-guard.js"></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAXSPAS Studio">
+  <meta property="og:url" content="https://maxspas.ru/contacts">
+  <meta property="og:title" content="Контакты — MAXSPAS Studio">
+  <meta property="og:description" content="Связаться с MAXSPAS Studio — Telegram, телефон, заявка с сайта. Горбунки, работаем онлайн.">
+  <meta property="og:image" content="https://maxspas.ru/assets/favicon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://maxspas.ru/assets/favicon-512.png">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="contacts">
   <div id="site-chrome"></div>
   <main>
     <section class="page-hero">
-      <span class="badge">Контакты</span>
-      <h1>Обсудим <span class="gradient-text">проект</span></h1>
-      <p>Заявка уйдёт в Telegram и на maxspas@bk.ru</p>
+      <span class="badge" data-i18n="contacts.badge">Контакты</span>
+      <h1 data-i18n="contacts.title" data-i18n-mode="html">Обсудим <span class="gradient-text">проект</span></h1>
+      <p data-i18n="contacts.sub">Заявка уйдёт в Telegram и на maxspas@bk.ru</p>
       <div class="page-hero__line"></div>
     </section>
     <section class="section section--tight">
       <div class="contact-grid">
         <div>
           <a class="contact-card" href="https://t.me/maxspas_studio_bot" target="_blank" rel="noopener">
-            <span>Бот заявок</span><strong>@maxspas_studio_bot</strong>
+            <span data-i18n="contacts.card.bot">Бот заявок</span><strong>@maxspas_studio_bot</strong>
           </a>
           <a class="contact-card contact-card--grbnk" href="https://t.me/maxspas_studio_bot?start=3d" target="_blank" rel="noopener">
-            <span>Бот · 3D GRBNK</span><strong>@maxspas_studio_bot</strong>
+            <span data-i18n="contacts.card.bot3d">Бот · 3D GRBNK</span><strong>@maxspas_studio_bot</strong>
           </a>
           <a class="contact-card" href="https://t.me/maxspas_studio" target="_blank" rel="noopener">
-            <span>Канал</span><strong>@maxspas_studio</strong>
+            <span data-i18n="contacts.card.channel">Канал</span><strong>@maxspas_studio</strong>
           </a>
           <a class="contact-card" href="https://t.me/Maxspas" target="_blank" rel="noopener">
-            <span>Telegram</span><strong>@Maxspas</strong>
+            <span data-i18n="contacts.card.tg">Telegram</span><strong>@Maxspas</strong>
           </a>
           <a class="contact-card" href="mailto:maxspas@bk.ru">
-            <span>Email</span><strong>maxspas@bk.ru</strong>
+            <span data-i18n="contacts.card.email">Email</span><strong>maxspas@bk.ru</strong>
           </a>
           <a class="contact-card" href="tel:+79117156006">
-            <span>Телефон</span><strong>+7 (911) 715-60-06</strong>
+            <span data-i18n="contacts.card.phone">Телефон</span><strong>+7 (911) 715-60-06</strong>
           </a>
           <ul class="contact-note--list">
             <li>Горбунки · сайты и боты — онлайн по всему миру</li>
             <li>Самозанятость, чек по запросу</li>
           </ul>
+          <div class="pay-box" id="payment">
+            <h3>Оплата</h3>
+            <p>Перевод на <strong>Т‑Банк</strong> по номеру телефона:</p>
+            <p class="pay-box__num">
+              <a href="tel:+79117156006">+7 (911) 715-60-06</a>
+              <button type="button" class="pay-box__copy" data-copy="79117156006" aria-label="Скопировать номер">Копировать</button>
+            </p>
+            <ul>
+              <li>СБП / перевод по номеру · банк получателя Т‑Банк</li>
+              <li>В комментарии — ваше имя или услуга</li>
+              <li>После оплаты напишите в <a href="https://t.me/Maxspas" target="_blank" rel="noopener">@Maxspas</a> — вышлем чек НПД</li>
+              <li>Сайты/боты: предоплата 50%. Мелкая 3D-печать: 100% до печати (от 500 ₽)</li>
+            </ul>
+          </div>
         </div>
         <form class="contact-form" id="lead-form">
-          <h3 style="margin:0 0 4px">Заявка с сайта</h3>
-          <p class="form-hint" style="text-align:left">Данные отправляются напрямую</p>
+          <h3 style="margin:0 0 4px" data-i18n="contacts.form.title">Заявка с сайта</h3>
+          <p class="form-hint" style="text-align:left" data-i18n="contacts.form.hint">Данные отправляются напрямую</p>
           <div class="form-status" id="form-status" hidden></div>
           <label>Имя *<input type="text" name="name" required autocomplete="name"></label>
           <label>Телефон или email *<input type="text" name="contact" required></label>
@@ -67,11 +97,12 @@
           <label>Сообщение<textarea name="message" rows="4"></textarea></label>
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off">
           <label class="form-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку данных для связи</span></label>
-          <button type="submit" class="btn btn--fill btn--block" id="lead-submit">Отправить заявку</button>
+          <button type="submit" class="btn btn--fill btn--block" id="lead-submit" data-i18n="contacts.form.submit">Отправить заявку</button>
         </form>
       </div>
     </section>
   </main>
+  <script src="js/i18n.js"></script>
   <script src="/js/icons.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/motion.js"></script>

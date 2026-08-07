@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Курс «Запуск бота» — онлайн-школа</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">Школа Смысла</a>
+    <button class="btn btn--sm" type="button" id="openModal">Записаться</button>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Онлайн-курс · 4 недели</p>
+    <h1>Telegram-бот<br>для своего дела</h1>
+    <p class="lead">От идеи до рабочей воронки заявок — без кода «с нуля», с шаблонами.</p>
+    <div class="price-row">
+      <strong>12 900 ₽</strong>
+      <span>или 3 × 4 500 ₽</span>
+    </div>
+  </section>
+
+  <section class="grid">
+    <article class="card" data-tier="start">
+      <h2>Старт</h2>
+      <p>Базовый бот + меню + заявка</p>
+      <ul><li>4 модуля</li><li>Чат поддержки</li></ul>
+      <button type="button" class="btn pick" data-plan="Старт · 12900">Выбрать</button>
+    </article>
+    <article class="card card--hot" data-tier="pro">
+      <h2>Про</h2>
+      <p>Калькулятор, статусы, файлы</p>
+      <ul><li>8 модулей</li><li>Разбор ДЗ</li></ul>
+      <button type="button" class="btn pick" data-plan="Про · 18900">Выбрать</button>
+    </article>
+    <article class="card" data-tier="team">
+      <h2>Команда</h2>
+      <p>Для студии / агентства</p>
+      <ul><li>Всё из Про</li><li>Созвон 1:1</li></ul>
+      <button type="button" class="btn pick" data-plan="Команда · 34900">Выбрать</button>
+    </article>
+  </section>
+
+  <dialog id="modal">
+    <form method="dialog" class="modal">
+      <h3>Запись на курс</h3>
+      <p id="planLabel">Тариф: —</p>
+      <input name="name" placeholder="Имя" required>
+      <input name="contact" placeholder="Telegram или телефон" required>
+      <menu>
+        <button value="cancel" class="btn btn--ghost">Закрыть</button>
+        <a class="btn" id="sendTg" href="https://t.me/Maxspas" target="_blank" rel="noopener">В Telegram</a>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer class="foot">Демо MAXSPAS Studio · учебный лендинг</footer>
+  <script>
+    const modal = document.getElementById("modal");
+    let plan = "";
+    document.getElementById("openModal").onclick = () => modal.showModal();
+    document.querySelectorAll(".pick").forEach(b => b.onclick = () => {
+      plan = b.dataset.plan;
+      document.getElementById("planLabel").textContent = "Тариф: " + plan;
+      document.getElementById("sendTg").href = "https://t.me/Maxspas?text=" + encodeURIComponent("Курс бота: " + plan);
+      modal.showModal();
+    });
+  </script>
+</body>
+</html>
