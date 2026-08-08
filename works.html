@@ -31,15 +31,22 @@
     <section class="page-hero">
       <span class="badge" data-i18n="works.badge">Портфолио</span>
       <h1 data-i18n="works.title" data-i18n-mode="html">Наши <span class="gradient-text">работы</span></h1>
-      <p data-i18n="works.sub">Сайт, боты, 3D-печать и технические модели под заказ</p>
+      <p data-i18n="works.sub">Сайты, боты, 3D, логотипы, презентации, стикеры, афиши и спрайты</p>
       <div class="page-hero__line"></div>
     </section>
     <section class="section section--tight">
-      <div class="portfolio-filters" id="portfolio-filters" role="tablist" aria-label="Фильтр портфолио">
-        <button type="button" class="portfolio-filter is-active" data-filter="all">Все</button>
-        <button type="button" class="portfolio-filter" data-filter="web">Сайты</button>
-        <button type="button" class="portfolio-filter" data-filter="bot">Боты</button>
-        <button type="button" class="portfolio-filter" data-filter="3d">3D</button>
+      <div class="portfolio-filters" id="portfolio-filters" role="tablist" data-i18n-aria="works.filtersAria" aria-label="Фильтр портфолио">
+        <button type="button" class="portfolio-filter is-active" data-filter="all" data-i18n="works.filter.all">Все</button>
+        <button type="button" class="portfolio-filter" data-filter="web" data-i18n="works.filter.web">Сайты</button>
+        <button type="button" class="portfolio-filter" data-filter="bot" data-i18n="works.filter.bot">Боты</button>
+        <button type="button" class="portfolio-filter" data-filter="3d" data-i18n="works.filter.3d">3D</button>
+        <button type="button" class="portfolio-filter" data-filter="logo" data-i18n="works.filter.logo">Логотипы</button>
+        <button type="button" class="portfolio-filter" data-filter="market" data-i18n="works.filter.market">Маркет</button>
+        <button type="button" class="portfolio-filter" data-filter="print" data-i18n="works.filter.print">Печать</button>
+        <button type="button" class="portfolio-filter" data-filter="stickers" data-i18n="works.filter.stickers">Стикеры</button>
+        <button type="button" class="portfolio-filter" data-filter="present" data-i18n="works.filter.present">Презентации</button>
+        <button type="button" class="portfolio-filter" data-filter="game" data-i18n="works.filter.game">Спрайты</button>
+        <button type="button" class="portfolio-filter" data-filter="poster" data-i18n="works.filter.poster">Афиши</button>
       </div>
       <div class="empty-state" id="portfolio-empty" hidden>
         <h3 data-i18n="works.empty.title">Кейсы по направлениям</h3>
@@ -47,8 +54,8 @@
         <a href="contacts" class="btn btn--fill" data-i18n="works.empty.cta">Стать первым клиентом</a>
       </div>
       <div class="portfolio-grid" id="portfolio-grid"></div>
-      <p class="portfolio-note" id="portfolio-note">
-        Фото печатных изделий добавим на этой неделе. Сейчас — рабочие кейсы инфраструктуры и заказ через бота.
+      <p class="portfolio-note" id="portfolio-note" data-i18n="works.note">
+        Фильтры по направлениям: сайты, боты, 3D и дизайн (лого, маркет, печать, стикеры, презентации, спрайты, афиши). Новые работы добавляем сюда же.
       </p>
     </section>
   </main>

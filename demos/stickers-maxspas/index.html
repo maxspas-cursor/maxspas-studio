@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Стикеры MAXSPAS — Telegram</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0a0b10; --card:#141722; --text:#f2f4f8; --muted:#9aa3b5; --accent:#a78bfa; --line:rgba(255,255,255,.1); }
+    *{box-sizing:border-box} body{margin:0;font-family:"DM Sans",sans-serif;background:radial-gradient(700px 360px at 20% -10%,rgba(167,139,250,.18),transparent 50%),var(--bg);color:var(--text)}
+    .wrap{width:min(980px,calc(100% - 32px));margin:0 auto;padding:24px 0 56px}
+    a{color:inherit;text-decoration:none}
+    .top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:28px}
+    .top a.back{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:.82rem}
+    h1{font-family:Syne,sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.04em;margin:0 0 10px;line-height:1.05}
+    .lead{color:var(--muted);max-width:54ch;margin:0 0 22px}
+    .note{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(167,139,250,.35);border-radius:16px;background:rgba(167,139,250,.08);margin-bottom:28px}
+    .note strong{display:block;margin-bottom:4px}
+    .note p{margin:0;color:var(--muted);font-size:.92rem}
+    .sheet{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#1a1030}
+    .sheet img{width:100%;display:block}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .chip{padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--card);font-size:.86rem;color:var(--muted)}
+    .chip b{display:block;color:var(--text);margin-bottom:4px;font-family:Syne,sans-serif}
+    .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;padding:12px 18px;border-radius:999px;background:var(--accent);color:#0a0b10;font-weight:700}
+    .btn--ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+    @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a href="/">MAXSPAS Studio</a>
+      <a class="back" href="/works">← Работы</a>
+    </div>
+    <h1>Стикер-пак студии</h1>
+    <p class="lead">Набор персонажей и реакций под MAXSPAS Studio — для чата, канала и ответа клиентам.</p>
+    <div class="note">
+      <div>
+        <strong>Telegram-стикеры</strong>
+        <p>Делаем стикерпаки для Telegram: персонажи бренда, реакции, акции. От идеи до файла под @Stickers — можно заказать отдельным паком.</p>
+      </div>
+    </div>
+    <div class="sheet">
+      <img src="assets/sheet.png" alt="Стикер-пак MAXSPAS" width="1024" height="1024">
+    </div>
+    <div class="grid">
+      <div class="chip"><b>Формат</b>PNG с прозрачностью · эмодзи-сетка</div>
+      <div class="chip"><b>Срок</b>от 1–2 дней на пак</div>
+      <div class="chip"><b>Цена</b>от 800 ₽ · Telegram-пак отдельно</div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="/contacts">Заказать стикеры</a>
+      <a class="btn btn--ghost" href="https://t.me/maxspas_studio_bot" target="_blank" rel="noopener">Написать в бот</a>
+    </div>
+  </div>
+</body>
+</html>

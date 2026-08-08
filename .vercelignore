@@ -5,3 +5,18 @@ serve.bat
 WORK_SUMMARY.md
 config/cloudpub.json
 idei/
+archive/
+node_modules/
+scripts/decimate-stl.py
+scripts/import-catalog.py
+scripts/generate_favicons.py
+
+# Old broken previews
+assets/models/lite/
+assets/models/catalog/lite/
+
+# Full STL for print — viewer uses assets/models/web/*.glb
+assets/models/benchy.stl
+assets/models/vase.stl
+assets/models/gear.stl
+assets/models/catalog/*.stl

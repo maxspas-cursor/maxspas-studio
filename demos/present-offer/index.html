@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Презентация — КП 3D GRBNK</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090b10;--card:#12161f;--text:#eef2f8;--muted:#8f9bb0;--a:#8b9dc8;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box} html,body{height:100%;margin:0}
+    body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);overflow:hidden}
+    .deck{height:100%;display:grid;place-items:center;padding:20px}
+    .slide{width:min(960px,100%);aspect-ratio:16/9;border-radius:18px;border:1px solid var(--line);background:linear-gradient(150deg,#152033,var(--card));padding:clamp(24px,5vw,56px);display:none;flex-direction:column;justify-content:center}
+    .slide.is-on{display:flex}
+    .kicker{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a);margin:0 0 14px}
+    h1,h2{font-family:Syne,sans-serif;letter-spacing:-.04em;margin:0 0 14px;line-height:1.05}
+    h1{font-size:clamp(2rem,5vw,3.2rem)} h2{font-size:clamp(1.45rem,3.4vw,2.3rem)}
+    p{margin:0;color:var(--muted);font-size:clamp(.95rem,1.6vw,1.12rem);max-width:44ch;line-height:1.5}
+    .rows{margin-top:18px;display:grid;gap:8px}
+    .row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25)}
+    .nav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:rgba(9,11,16,.85);border:1px solid var(--line);padding:8px 12px;border-radius:999px}
+    button{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:#182030;color:var(--text);cursor:pointer}
+    .count{min-width:52px;text-align:center;font-size:.8rem;color:var(--muted)}
+    .top{position:fixed;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;z-index:2}
+    .top a{color:var(--muted);font-size:.82rem;text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:999px}
+    @media(max-width:700px){.slide{aspect-ratio:auto;min-height:70vh}}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <a href="/works">← Работы</a>
+    <a href="/contacts">Заказать</a>
+  </div>
+  <div class="deck">
+    <section class="slide is-on">
+      <p class="kicker">3D GRBNK · коммерческое</p>
+      <h1>Печать и модели<br>под ваш заказ</h1>
+      <p>FDM · SLA · доставка по РФ. Краткое КП для партнёра или клиента.</p>
+    </section>
+    <section class="slide">
+      <p class="kicker">Что входит</p>
+      <h2>От файла до изделия</h2>
+      <div class="rows">
+        <div class="row"><span>Подготовка STL / OBJ / GLB</span><span>проверка</span></div>
+        <div class="row"><span>Печать FDM или SLA</span><span>1–5 дней</span></div>
+        <div class="row"><span>Мерч: брелки, литофания, магниты</span><span>под заказ</span></div>
+      </div>
+    </section>
+    <section class="slide">
+      <p class="kicker">Ориентир</p>
+      <h2>от 300 ₽</h2>
+      <p>Точная цена — после файла или фото. Заказ на сайте и в @MAXSPAS_BOT.</p>
+    </section>
+    <section class="slide">
+      <p class="kicker">Контакт</p>
+      <h2>Горбунки · MAXSPAS</h2>
+      <p>+7 (911) 715-60-06 · maxspas.ru/grbnk</p>
+    </section>
+  </div>
+  <div class="nav">
+    <button type="button" id="prev" aria-label="Назад">←</button>
+    <span class="count"><span id="cur">1</span>/<span id="total">4</span></span>
+    <button type="button" id="next" aria-label="Вперёд">→</button>
+  </div>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    let i=0; const cur=document.getElementById('cur'); document.getElementById('total').textContent=slides.length;
+    function show(n){i=(n+slides.length)%slides.length;slides.forEach((s,x)=>s.classList.toggle('is-on',x===i));cur.textContent=i+1}
+    document.getElementById('prev').onclick=()=>show(i-1);
+    document.getElementById('next').onclick=()=>show(i+1);
+    window.onkeydown=e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();show(i+1)} if(e.key==='ArrowLeft')show(i-1)};
+  </script>
+</body>
+</html>

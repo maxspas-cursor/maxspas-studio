@@ -17,3 +17,12 @@ config/MY_DATA.json
 config/cloudpub.json
 maxspas-bot/*.log
 .vercel
+
+.chrome-shot-profile/
+node_modules/
+maxspas-bot/.bot.lock
+assets/models/catalog/
+assets/models/lite/
+assets/models/*.stl
+docs/_*.txt
+

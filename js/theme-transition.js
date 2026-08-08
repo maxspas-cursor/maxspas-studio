@@ -27,12 +27,22 @@
   const PARTICLE_MIN = 8;
   const PARTICLE_MAX = 14;
   const SCROLL_LOGO_STREAM_MS = 15000;
-  const SCROLL_LOGO_INTERVAL_MS = 1100;
+  const SCROLL_LOGO_PAUSE_MS = 3000;
+  const SCROLL_LOGO_INTERVAL_MS = 850;
+  const SCROLL_LOGO_MIX_ON = 0.4;
+  const SCROLL_LOGO_MIX_OFF = 0.1;
+
+  function scrollMix() {
+    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--theme-mix")) || 0;
+  }
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let scrollLogoInterval = null;
   let scrollLogoStopTimeout = null;
+  let scrollLogoCycleTimeout = null;
   let scrollLogoStreamActive = false;
+  let scrollLogoLoopEnabled = false;
   let entranceTimer = null;
+  let scrollTick = null;
 
   function themeOfPath(path) {
     const normalized = path.replace(/\.html$/, "").replace(/\/$/, "");
@@ -140,6 +150,7 @@
   }
 
   function clearScrollLogoStream() {
+    scrollLogoLoopEnabled = false;
     if (scrollLogoInterval) {
       window.clearInterval(scrollLogoInterval);
       scrollLogoInterval = null;
@@ -148,8 +159,54 @@
       window.clearTimeout(scrollLogoStopTimeout);
       scrollLogoStopTimeout = null;
     }
+    if (scrollLogoCycleTimeout) {
+      window.clearTimeout(scrollLogoCycleTimeout);
+      scrollLogoCycleTimeout = null;
+    }
     scrollLogoStreamActive = false;
+    document.querySelectorAll(".theme-portal__logo-fly--scroll").forEach((el) => el.remove());
     document.getElementById("theme-portal-burst-scroll")?.remove();
+  }
+
+  function runScrollLogoBurst() {
+    if (reducedMotion.matches || !scrollLogoLoopEnabled) return;
+    if (scrollLogoInterval) {
+      window.clearInterval(scrollLogoInterval);
+      scrollLogoInterval = null;
+    }
+    if (scrollLogoStopTimeout) {
+      window.clearTimeout(scrollLogoStopTimeout);
+      scrollLogoStopTimeout = null;
+    }
+    scrollLogoStreamActive = true;
+    appendScrollPortalLogo();
+    appendScrollPortalLogo();
+    scrollLogoInterval = window.setInterval(() => {
+      appendScrollPortalLogo();
+      if (Math.random() > 0.35) appendScrollPortalLogo();
+    }, SCROLL_LOGO_INTERVAL_MS);
+    scrollLogoStopTimeout = window.setTimeout(() => {
+      if (scrollLogoInterval) {
+        window.clearInterval(scrollLogoInterval);
+        scrollLogoInterval = null;
+      }
+      scrollLogoStreamActive = false;
+      scrollLogoStopTimeout = null;
+      if (!scrollLogoLoopEnabled) {
+        document.getElementById("theme-portal-burst-scroll")?.remove();
+        return;
+      }
+      scrollLogoCycleTimeout = window.setTimeout(() => {
+        scrollLogoCycleTimeout = null;
+        if (scrollLogoLoopEnabled) runScrollLogoBurst();
+      }, SCROLL_LOGO_PAUSE_MS);
+    }, SCROLL_LOGO_STREAM_MS);
+  }
+
+  function enableScrollLogoLoop() {
+    if (reducedMotion.matches || scrollLogoLoopEnabled) return;
+    scrollLogoLoopEnabled = true;
+    runScrollLogoBurst();
   }
 
   function ensureScrollLogoContainer() {
@@ -165,46 +222,27 @@
   }
 
   function portalSpawnPoint() {
-    const mouth = document.getElementById("theme-scroll-portal-mouth");
-    if (mouth) {
-      const r = mouth.getBoundingClientRect();
-      if (r.width > 0 && r.height > 0) {
-        return {
-          x: r.left + Math.random() * r.width,
-          y: r.top + Math.random() * r.height,
-        };
-      }
-    }
-    const tag = document.querySelector(".theme-scroll-field__tag");
-    if (tag) {
-      const r = tag.getBoundingClientRect();
-      const spreadX = Math.max(r.width, window.innerWidth * 0.4);
-      const spreadY = Math.max(r.height, 16);
-      return {
-        x: r.left + r.width / 2 + (Math.random() - 0.5) * spreadX,
-        y: r.top + r.height / 2 + (Math.random() - 0.5) * spreadY,
-      };
-    }
+    const vh = window.innerHeight;
+    const vw = window.innerWidth;
+    const mix = scrollMix();
+    const spread = Math.min(vw * 0.52, 440);
+    const baseY = vh - (28 + mix * vh * 0.04) - Math.random() * 20;
     return {
-      x: window.innerWidth * (0.25 + Math.random() * 0.5),
-      y: window.innerHeight - 48 + (Math.random() - 0.5) * 24,
+      x: vw * 0.5 + (Math.random() - 0.5) * spread,
+      y: baseY,
     };
   }
 
   function appendScrollPortalLogo() {
     if (reducedMotion.matches) return;
-    const container = ensureScrollLogoContainer();
     const { x, y } = portalSpawnPoint();
-    const maxDist = Math.min(window.innerWidth, window.innerHeight) * 0.42;
-    const angle = Math.random() * Math.PI * 2;
-    const dist = maxDist * (0.25 + Math.random() * 0.75);
-    let dx = Math.cos(angle) * dist;
-    let dy = Math.sin(angle) * dist;
-    if (dy > -dist * 0.08) dy = -(Math.random() * 0.75 + 0.2) * dist;
-    const size = 14 + Math.random() * 16;
+    const maxDist = Math.min(window.innerWidth, window.innerHeight) * 0.38;
+    const dx = (Math.random() - 0.5) * maxDist * 1.15;
+    const dy = -(Math.random() * 0.72 + 0.18) * maxDist;
+    const size = 28 + Math.random() * 16;
     const rot = Math.random() * 360 - 180;
-    const dur = 11000 + Math.random() * 4000;
-    const delay = Math.random() * 400;
+    const dur = 9000 + Math.random() * 3000;
+    const delay = Math.random() * 200;
 
     const el = document.createElement("div");
     el.className = "theme-portal__logo-fly theme-portal__logo-fly--scroll";
@@ -216,30 +254,16 @@
     el.style.setProperty("--lg-size", `${size.toFixed(0)}px`);
     el.style.setProperty("--lg-dur", `${dur.toFixed(0)}ms`);
     el.style.setProperty("--lg-delay", `${delay.toFixed(0)}ms`);
-    el.innerHTML = `<img src="${LOGOS.grbnk}" alt="" width="48" height="48">`;
-    container.appendChild(el);
+    el.innerHTML = `<img src="${LOGOS.grbnk}" alt="" width="40" height="40" decoding="async">`;
+    document.body.appendChild(el);
+    window.requestAnimationFrame(() => {
+      void el.offsetWidth;
+    });
     window.setTimeout(() => el.remove(), dur + delay + 200);
   }
 
   function startScrollLogoStream() {
-    if (reducedMotion.matches || scrollLogoStreamActive) return;
-    scrollLogoStreamActive = true;
-    appendScrollPortalLogo();
-    scrollLogoInterval = window.setInterval(() => {
-      appendScrollPortalLogo();
-    }, SCROLL_LOGO_INTERVAL_MS);
-    scrollLogoStopTimeout = window.setTimeout(() => {
-      if (scrollLogoInterval) {
-        window.clearInterval(scrollLogoInterval);
-        scrollLogoInterval = null;
-      }
-      scrollLogoStreamActive = false;
-      window.setTimeout(() => {
-        if (!scrollLogoStreamActive) {
-          document.getElementById("theme-portal-burst-scroll")?.remove();
-        }
-      }, 14000);
-    }, SCROLL_LOGO_STREAM_MS);
+    enableScrollLogoLoop();
   }
 
   function mountButtonFX(btn, to) {
@@ -263,7 +287,6 @@
 
   function clearPortalBurst() {
     document.getElementById("theme-portal-burst-btn")?.remove();
-    clearScrollLogoStream();
   }
 
   function createLogoBurst({
@@ -274,8 +297,8 @@
     countMin = PARTICLE_MIN,
     countMax = PARTICLE_MAX,
     distScale = 0.48,
-    sizeMin = 28,
-    sizeRange = 32,
+    sizeMin = 36,
+    sizeRange = 40,
     durMin = 780,
     durRange = 520,
   }) {
@@ -435,7 +458,6 @@
     document.body.appendChild(field);
 
     let chromeTheme = "studio";
-    let scrollStreamStarted = false;
     let raf = 0;
 
     function update() {
@@ -462,17 +484,10 @@
         window.MSTheme?.setTheme("studio", { fromScroll: true });
       }
 
-      if (mix >= 0.72 && !scrollStreamStarted) {
-        scrollStreamStarted = true;
-        startScrollLogoStream();
-      }
-      if (mix < 0.45) {
-        scrollStreamStarted = false;
-        if (!scrollLogoStreamActive) clearScrollLogoStream();
-      }
-      if (mix < 0.12 && scrollLogoStreamActive) {
+      if (mix >= SCROLL_LOGO_MIX_ON) {
+        enableScrollLogoLoop();
+      } else if (mix < SCROLL_LOGO_MIX_OFF) {
         clearScrollLogoStream();
-        scrollStreamStarted = false;
       }
     }
 
@@ -484,6 +499,7 @@
       { passive: true }
     );
     window.addEventListener("resize", update, { passive: true });
+    scrollTick = update;
     update();
   }
 
@@ -508,6 +524,7 @@
     }
     clearPortalSource();
     clearPortalBurst();
+    clearScrollLogoStream();
   }
 
   function runEntrance() {
@@ -541,11 +558,23 @@
     runEntrance();
   }
 
+  function onChromeReady() {
+    if (scrollTick) {
+      window.requestAnimationFrame(() => {
+        scrollTick();
+        window.requestAnimationFrame(scrollTick);
+      });
+      return;
+    }
+    initScrollTheme();
+    if (scrollTick) window.requestAnimationFrame(scrollTick);
+  }
+
   window.addEventListener("pageshow", (e) => {
     if (e.persisted) resetPortalFromBfcache();
   });
 
-  document.addEventListener("mschrome:ready", initScrollTheme);
+  document.addEventListener("mschrome:ready", onChromeReady);
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot);

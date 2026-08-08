@@ -12,19 +12,47 @@
     "studio": {
       "title": "MAXSPAS Studio",
       "items": [
-        { "label": "Лендинг", "value": "2k ₽", "w": "58%" },
-        { "label": "Сайт", "value": "2.5k ₽", "w": "65%" },
-        { "label": "Бот", "value": "от 1.5k ₽", "w": "48%" },
-        { "label": "Сайт+бот", "value": "от 5k ₽", "w": "88%" }
+        {
+          "label": "Лендинг",
+          "value": "2k ₽",
+          "w": "58%"
+        },
+        {
+          "label": "Сайт",
+          "value": "2.5k ₽",
+          "w": "65%"
+        },
+        {
+          "label": "Бот",
+          "value": "от 1.5k ₽",
+          "w": "48%"
+        },
+        {
+          "label": "Сайт+бот",
+          "value": "от 5k ₽",
+          "w": "88%"
+        }
       ]
     },
     "grbnk": {
       "title": "3D GRBNK",
       "subtitle": "Модели, печать и файлы",
       "items": [
-        { "label": "STL / файл", "value": "от 300 ₽", "w": "38%" },
-        { "label": "Создание модели", "value": "от 2k ₽", "w": "62%" },
-        { "label": "Печать", "value": "от 500 ₽", "w": "52%" }
+        {
+          "label": "STL / файл",
+          "value": "от 300 ₽",
+          "w": "38%"
+        },
+        {
+          "label": "Создание модели",
+          "value": "от 2k ₽",
+          "w": "62%"
+        },
+        {
+          "label": "Печать",
+          "value": "от 500 ₽",
+          "w": "52%"
+        }
       ]
     }
   },
@@ -185,10 +213,34 @@
       }
     ],
     "calcOptions": [
-      { "id": "stl-file", "title": "STL / OBJ — готовый файл", "price": "от 300 ₽", "days": "1–2 дня", "w": "38%" },
-      { "id": "model", "title": "Создание модели", "price": "от 2 000 ₽", "days": "3–7 дней", "w": "62%" },
-      { "id": "print", "title": "Печать + доставка по РФ", "price": "от 500 ₽", "days": "2–5 дней", "w": "52%" },
-      { "id": "custom", "title": "Модель по вашему ТЗ", "price": "от 2 000 ₽", "days": "3–7 дней", "w": "68%" }
+      {
+        "id": "stl-file",
+        "title": "STL / OBJ — готовый файл",
+        "price": "от 300 ₽",
+        "days": "1–2 дня",
+        "w": "38%"
+      },
+      {
+        "id": "model",
+        "title": "Создание модели",
+        "price": "от 2 000 ₽",
+        "days": "3–7 дней",
+        "w": "62%"
+      },
+      {
+        "id": "print",
+        "title": "Печать + доставка по РФ",
+        "price": "от 500 ₽",
+        "days": "2–5 дней",
+        "w": "52%"
+      },
+      {
+        "id": "custom",
+        "title": "Модель по вашему ТЗ",
+        "price": "от 2 000 ₽",
+        "days": "3–7 дней",
+        "w": "68%"
+      }
     ]
   },
   "contacts": {
@@ -277,8 +329,133 @@
         "Проверка на печать",
         "Доставка по РФ"
       ]
+    },
+    {
+      "id": "logo",
+      "title": "Логотип и аватар",
+      "desc": "Знак, аватар для соцсетей и площадок. ИИ + ручная правка в стиле студии",
+      "price": "от 1 500 ₽",
+      "days": "1–3 дня",
+      "features": [
+        "Лого / аватар",
+        "PNG · SVG",
+        "2–3 варианта",
+        "Правки"
+      ]
+    },
+    {
+      "id": "market",
+      "title": "Карточки маркетплейсов",
+      "desc": "Оформление карточек WB / Ozon: обложка, инфографика, единый стиль",
+      "price": "от 1 000 ₽",
+      "days": "1–2 дня",
+      "features": [
+        "Главное фото",
+        "Инфо-слайды",
+        "Адаптив под сетку",
+        "Правки"
+      ]
+    },
+    {
+      "id": "print",
+      "title": "Макеты печати",
+      "desc": "Листовки, флаеры, визитки, меню, грамоты и сертификаты — макет под печать",
+      "price": "от 900 ₽",
+      "days": "1–3 дня",
+      "features": [
+        "A5 / A4",
+        "Визитка",
+        "Грамота / сертификат",
+        "PDF в печать"
+      ]
+    },
+    {
+      "id": "stickers",
+      "title": "Стикеры и вектор",
+      "desc": "Стикер-паки, простые принты, отрисовка лого и иконок в вектор",
+      "price": "от 800 ₽",
+      "days": "1–2 дня",
+      "features": [
+        "Стикеры",
+        "Иконки",
+        "SVG / PDF",
+        "Под печать"
+      ]
+    },
+    {
+      "id": "present",
+      "title": "Презентации",
+      "desc": "Слайды под питч и продажу: структура, визуал, единый стиль",
+      "price": "от 1 000 ₽",
+      "days": "2–4 дня",
+      "features": [
+        "10–20 слайдов",
+        "Шаблон правки",
+        "PDF / PPTX",
+        "Единый стиль"
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Спрайты и ассеты игр",
+      "desc": "Иконки, UI-элементы, low-poly и спрайты по узкому ТЗ — не игра целиком",
+      "price": "от 1 500 ₽",
+      "days": "2–5 дней",
+      "features": [
+        "Спрайты",
+        "UI-иконки",
+        "Low-poly",
+        "По ТЗ"
+      ]
+    },
+    {
+      "id": "poster",
+      "title": "Афиши, постеры и обложки",
+      "desc": "Афиши, постеры и превью к видео: YouTube 16:9, Reels / Shorts 9:16",
+      "price": "от 1 200 ₽",
+      "days": "1–3 дня",
+      "features": [
+        "Афиша / постер",
+        "YouTube 16:9",
+        "Reels 9:16",
+        "PDF · PNG"
+      ]
     }
   ],
+  "designBranches": {
+    "now": [
+      "Логотипы и аватары",
+      "Стикеры, принты, вектор",
+      "Telegram-стикерпаки",
+      "Веб: баннеры и иконки",
+      "Карточки маркетплейсов",
+      "Листовки, флаеры, визитки",
+      "Грамоты, сертификаты, дипломы",
+      "Меню и прайсы",
+      "Презентации",
+      "Афиши и постеры",
+      "Обложки к видео / превью",
+      "Спрайты / ассеты игр — узкое ТЗ",
+      "Сайты и Telegram-боты",
+      "3D-модели и печать",
+      "Литофания, брелки, магниты"
+    ],
+    "later": [
+      "Фирменный стиль / брендбук",
+      "Сложная инфографика",
+      "Карты и схемы",
+      "Брошюры, каталоги, книги",
+      "Упаковка и этикетки (макет)",
+      "Сувенирка — только макет",
+      "Серии ИИ-иллюстраций"
+    ],
+    "skip": [
+      "Тату-принты под тело",
+      "Билборды, стенды, витрины, вывески под ключ",
+      "Игра целиком",
+      "Тираж и монтаж полиграфии"
+    ]
+  },
   "portfolio": [
     {
       "id": "maxspas-site",
@@ -288,9 +465,9 @@
       "direction": "web",
       "price": "6 страниц · прод",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, rgba(124,58,237,0.35), rgba(91,33,182,0.15))",
-      "url": "https://maxspas.ru"
+      "url": "https://maxspas.ru",
+      "cover": "assets/shots/site.png"
     },
     {
       "id": "maxspas-bot",
@@ -302,7 +479,8 @@
       "icon": "bot",
       "logoAsset": "assets/logo-bot.svg",
       "color": "linear-gradient(135deg, rgba(34,211,238,0.2), rgba(124,58,237,0.2))",
-      "url": "https://t.me/maxspas_studio_bot"
+      "url": "https://t.me/maxspas_studio_bot",
+      "cover": "assets/shots/bot-ui.png"
     },
     {
       "id": "grbnk-3d",
@@ -314,7 +492,8 @@
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(251,146,60,0.15), rgba(124,58,237,0.12))",
-      "url": "/grbnk"
+      "url": "/grbnk",
+      "cover": "assets/shots/grbnk.png"
     },
     {
       "id": "maxspas-bot-3d",
@@ -326,7 +505,8 @@
       "icon": "bot",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(139,157,200,0.22), rgba(251,146,60,0.12))",
-      "url": "https://t.me/MAXSPAS_BOT"
+      "url": "https://t.me/MAXSPAS_BOT",
+      "cover": "assets/shots/bot-ui.png"
     },
     {
       "id": "demo-severny-bereg",
@@ -336,9 +516,9 @@
       "direction": "web",
       "price": "лендинг 1 страница",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, rgba(94,200,192,0.25), rgba(10,18,24,0.9))",
-      "url": "/demos/severny-bereg/"
+      "url": "/demos/severny-bereg/",
+      "cover": "assets/shots/severny.png"
     },
     {
       "id": "demo-velokuhnya",
@@ -348,9 +528,9 @@
       "direction": "web",
       "price": "лендинг 1 страница",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, rgba(214,255,63,0.2), rgba(17,19,15,0.95))",
-      "url": "/demos/velokuhnya/"
+      "url": "/demos/velokuhnya/",
+      "cover": "assets/shots/velo.png"
     },
     {
       "id": "demo-barber-noir",
@@ -360,9 +540,9 @@
       "direction": "web",
       "price": "запись онлайн",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, #222, #000)",
-      "url": "/demos/barber-noir/"
+      "url": "/demos/barber-noir/",
+      "cover": "assets/shots/barber.png"
     },
     {
       "id": "demo-shkola",
@@ -372,9 +552,9 @@
       "direction": "web",
       "price": "тарифы + modal",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, rgba(31,111,235,0.25), #f4f7fb)",
-      "url": "/demos/shkola-smysla/"
+      "url": "/demos/shkola-smysla/",
+      "cover": "assets/shots/shkola.png"
     },
     {
       "id": "demo-chistotakt",
@@ -384,9 +564,9 @@
       "direction": "web",
       "price": "калькулятор",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, rgba(15,159,110,0.3), #f7fffb)",
-      "url": "/demos/chistotakt/"
+      "url": "/demos/chistotakt/",
+      "cover": "assets/shots/chisto.png"
     },
     {
       "id": "demo-kadr",
@@ -396,9 +576,9 @@
       "direction": "web",
       "price": "галерея",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, #2a2c33, #0e0f12)",
-      "url": "/demos/studio-kadr/"
+      "url": "/demos/studio-kadr/",
+      "cover": "assets/shots/kadr.png"
     },
     {
       "id": "demo-domremont",
@@ -408,59 +588,326 @@
       "direction": "web",
       "price": "мультишаг",
       "icon": "web",
-      "logo": true,
       "color": "linear-gradient(135deg, rgba(255,122,24,0.35), #14171c)",
-      "url": "/demos/domremont/"
+      "url": "/demos/domremont/",
+      "cover": "assets/shots/dom.png"
     },
     {
-      "id": "tech-clips",
-      "title": "Клипсы и крепёж кабеля",
-      "desc": "Серийные клипсы Ø6–16, P-клипсы, strain relief — под цех и жгуты. Печать PETG под заказ",
-      "tag": "3D · тех",
-      "direction": "3d",
-      "price": "партия от 50 шт",
-      "icon": "grbnk",
-      "logoAsset": "assets/logo-3dgrbnk.svg",
-      "color": "linear-gradient(135deg, rgba(37,99,235,0.25), rgba(15,23,42,0.4))",
-      "url": "/grbnk",
-      "status": "photo-soon"
+      "id": "demo-logo-nord",
+      "title": "NORD BREW",
+      "desc": "Знак specialty-кофе: геометрическая N, спокойная палитра, аватар 1:1 для площадок",
+      "tag": "Логотип",
+      "direction": "logo",
+      "price": "знак · SVG",
+      "icon": "sparkle",
+      "logoAsset": "demos/design-pack/assets/logo-nord.svg",
+      "color": "linear-gradient(135deg, rgba(61,220,151,0.22), #0f2a2e)",
+      "url": "/demos/design-pack/#logo-nord",
+      "cover": "assets/shots/logo-nord.png"
     },
     {
-      "id": "tech-din",
-      "title": "DIN и щитовая мелочь",
-      "desc": "Клипсы на DIN-рейку 35 мм, заглушки, разделители модулей — для щитов и автоматики",
-      "tag": "3D · тех",
-      "direction": "3d",
-      "price": "под заказ",
-      "icon": "grbnk",
-      "logoAsset": "assets/logo-3dgrbnk.svg",
-      "color": "linear-gradient(135deg, rgba(22,163,74,0.22), rgba(15,23,42,0.4))",
-      "url": "/grbnk",
-      "status": "photo-soon"
+      "id": "demo-logo-volt",
+      "title": "VOLT LAB",
+      "desc": "Tech-знак для гаджетов: молния на чёрном, удобно как аватар и на карточке товара",
+      "tag": "Логотип",
+      "direction": "logo",
+      "price": "знак · SVG",
+      "icon": "sparkle",
+      "logoAsset": "demos/design-pack/assets/logo-volt.svg",
+      "color": "linear-gradient(135deg, rgba(245,255,61,0.2), #111)",
+      "url": "/demos/design-pack/#logo-volt",
+      "cover": "assets/shots/logo-volt.png"
     },
     {
-      "id": "tech-pcb",
-      "title": "Спейсеры и корпуса PCB",
-      "desc": "Стойки M3, уголки плат, прототипы корпусов — для электроники и оснастки",
-      "tag": "3D · тех",
+      "id": "demo-logo-flora",
+      "title": "FLORA HOME",
+      "desc": "Мягкий знак для растений и ухода: лист, тёплый акцент, спокойный тон бренда",
+      "tag": "Логотип",
+      "direction": "logo",
+      "price": "знак · SVG",
+      "icon": "sparkle",
+      "logoAsset": "demos/design-pack/assets/logo-flora.svg",
+      "color": "linear-gradient(135deg, rgba(143,191,143,0.28), #1c2b24)",
+      "url": "/demos/design-pack/#logo-flora",
+      "cover": "assets/shots/logo-flora.png"
+    },
+    {
+      "id": "demo-mkt-buds",
+      "title": "Pulse X — WB / Ozon",
+      "desc": "Карточка наушников: фото товара, цена и слайды выгод под сетку маркетплейса",
+      "tag": "Маркетплейс",
+      "direction": "market",
+      "price": "обложка + слайды",
+      "icon": "sparkle",
+      "cover": "assets/shots/mkt-buds.png",
+      "logoAsset": "demos/design-pack/assets/logo-volt.svg",
+      "color": "linear-gradient(135deg, rgba(245,255,61,0.15), #151515)",
+      "url": "/demos/design-pack/#mkt-buds",
+      "coverFit": "cover"
+    },
+    {
+      "id": "demo-mkt-brew",
+      "title": "Пуровер NORD BREW",
+      "desc": "Карточка керамического пуровера: предметное фото, характеристики и выгоды",
+      "tag": "Маркетплейс",
+      "direction": "market",
+      "price": "обложка + слайды",
+      "icon": "sparkle",
+      "cover": "assets/shots/mkt-brew.png",
+      "logoAsset": "demos/design-pack/assets/logo-nord.svg",
+      "color": "linear-gradient(135deg, rgba(61,220,151,0.18), #0c2225)",
+      "url": "/demos/design-pack/#mkt-brew",
+      "coverFit": "cover"
+    },
+    {
+      "id": "demo-mkt-plant",
+      "title": "Набор «Старт»",
+      "desc": "Карточка набора горшок + грунт: живое фото товара и короткие преимущества",
+      "tag": "Маркетплейс",
+      "direction": "market",
+      "price": "обложка + слайды",
+      "icon": "sparkle",
+      "cover": "assets/shots/mkt-plant.png",
+      "logoAsset": "demos/design-pack/assets/logo-flora.svg",
+      "color": "linear-gradient(135deg, rgba(143,191,143,0.2), #142018)",
+      "url": "/demos/design-pack/#mkt-plant",
+      "coverFit": "cover"
+    },
+    {
+      "id": "demo-print-card",
+      "title": "Визитка NORD BREW",
+      "desc": "Макет 90×50: знак, название и контакты — файл под типографию",
+      "tag": "Печать",
+      "direction": "print",
+      "price": "визитка",
+      "icon": "sparkle",
+      "logoAsset": "demos/design-pack/assets/logo-nord.svg",
+      "color": "linear-gradient(135deg, rgba(61,220,151,0.16), #12141b)",
+      "url": "/demos/design-pack/#print-card",
+      "cover": "assets/shots/print-card.png"
+    },
+    {
+      "id": "demo-print-flyer",
+      "title": "Листовка VOLT LAB",
+      "desc": "Промо A5 со скидкой и кодом — контрастная подача под раздачу",
+      "tag": "Печать",
+      "direction": "print",
+      "price": "листовка A5",
+      "icon": "sparkle",
+      "logoAsset": "demos/design-pack/assets/logo-volt.svg",
+      "color": "linear-gradient(135deg, rgba(245,255,61,0.14), #0a0a0a)",
+      "url": "/demos/design-pack/#print-flyer",
+      "cover": "assets/shots/print-flyer.png"
+    },
+    {
+      "id": "demo-print-cert",
+      "title": "Грамота FLORA HOME",
+      "desc": "Сертификат мастер-класса: рамка, знак и имя участника",
+      "tag": "Печать",
+      "direction": "print",
+      "price": "грамота A5",
+      "icon": "sparkle",
+      "logoAsset": "demos/design-pack/assets/logo-flora.svg",
+      "color": "linear-gradient(135deg, rgba(232,160,160,0.18), #1c2b24)",
+      "url": "/demos/design-pack/#print-cert",
+      "cover": "assets/shots/print-cert.png"
+    },
+    {
+      "id": "demo-stickers",
+      "title": "Стикеры MAXSPAS",
+      "desc": "Стикер-пак студии для Telegram: персонажи, реакции, чат и канал",
+      "tag": "Стикеры",
+      "direction": "stickers",
+      "price": "от 800 ₽",
+      "icon": "sparkle",
+      "cover": "assets/shots/stickers.png",
+      "logoAsset": "assets/logo-mark.svg",
+      "color": "linear-gradient(135deg, rgba(167,139,250,0.3), #1a1030)",
+      "url": "/demos/stickers-maxspas/"
+    },
+    {
+      "id": "demo-present-pitch",
+      "title": "Питч: сайт + бот",
+      "desc": "Короткая презентация для локального бизнеса — проблема, решение, пакет",
+      "tag": "Презентация",
+      "direction": "present",
+      "price": "от 1 000 ₽",
+      "icon": "sparkle",
+      "logoAsset": "assets/logo-mark.svg",
+      "color": "linear-gradient(135deg, rgba(167,139,250,0.28), #151925)",
+      "url": "/demos/present-pitch/",
+      "cover": "assets/shots/present.png"
+    },
+    {
+      "id": "demo-present-offer",
+      "title": "КП: 3D GRBNK",
+      "desc": "Коммерческое предложение по печати и моделям — слайды под партнёра",
+      "tag": "Презентация",
+      "direction": "present",
+      "price": "от 1 000 ₽",
+      "icon": "sparkle",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(139,157,200,0.25), #12161f)",
+      "url": "/demos/present-offer/",
+      "cover": "assets/shots/present-offer.png"
+    },
+    {
+      "id": "demo-sprites-mc",
+      "title": "Инвентарь · ресурспак",
+      "desc": "Иконки инструментов и еды в стиле современного ресурспака",
+      "tag": "Спрайты",
+      "direction": "game",
+      "price": "от 1 500 ₽",
+      "icon": "sparkle",
+      "cover": "assets/shots/sprites-mc.png",
+      "color": "linear-gradient(135deg, rgba(56,189,248,0.2), #0a0b0f)",
+      "url": "/demos/sprites-pack/#mc"
+    },
+    {
+      "id": "demo-sprites-rpg",
+      "title": "Пак предметов RPG",
+      "desc": "Кольца, зелья, сумки, книги, ключи — единый item-pack для UI",
+      "tag": "Спрайты",
+      "direction": "game",
+      "price": "от 1 500 ₽",
+      "icon": "sparkle",
+      "cover": "assets/shots/sprites-rpg.png",
+      "color": "linear-gradient(135deg, rgba(180,83,9,0.25), #1a120c)",
+      "url": "/demos/sprites-pack/#rpg"
+    },
+    {
+      "id": "demo-poster-cosmos",
+      "title": "Постер «КОСМОС»",
+      "desc": "Ретро-пропаганда про космос — без привязки к студии, чистая тема",
+      "tag": "Афиша",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/poster-cosmos.png",
+      "color": "linear-gradient(135deg, rgba(249,115,22,0.25), #0b1220)",
+      "url": "/demos/posters/#cosmos"
+    },
+    {
+      "id": "demo-poster-orbit",
+      "title": "Постер «ОРБИТА»",
+      "desc": "Силуэт ракеты и типографика — графический постер на свободную тему",
+      "tag": "Афиша",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/poster-orbit.png",
+      "color": "linear-gradient(135deg, rgba(148,163,184,0.2), #1c1917)",
+      "url": "/demos/posters/#orbit"
+    },
+    {
+      "id": "demo-poster-print",
+      "title": "Афиша «ПЕЧАТЬ»",
+      "desc": "Индустриальный характер и крупная типографика",
+      "tag": "Афиша",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/poster-print.png",
+      "color": "linear-gradient(135deg, rgba(239,68,68,0.2), #111)",
+      "url": "/demos/posters/#print-poster"
+    },
+    {
+      "id": "demo-poster-space",
+      "title": "Постер «Студия в сети»",
+      "desc": "Пример постера под бренд — ретро-космос",
+      "tag": "Афиша",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/poster-space.png",
+      "color": "linear-gradient(135deg, rgba(249,115,22,0.25), #0b1220)",
+      "url": "/demos/posters/#space"
+    },
+    {
+      "id": "demo-cover-yt-print",
+      "title": "Превью · Печать 3D",
+      "desc": "Обложка YouTube 16:9 — крупный текст и объект, чтобы кликали в ленте",
+      "tag": "Обложка",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/cover-yt-print.png",
+      "color": "linear-gradient(135deg, rgba(250,204,21,0.2), #111)",
+      "url": "/demos/posters/#yt-print"
+    },
+    {
+      "id": "demo-cover-yt-bot",
+      "title": "Превью · Бот",
+      "desc": "Обложка ролика про Telegram-бота — премиальный thumbnail под клик",
+      "tag": "Обложка",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/cover-yt-bot.png",
+      "color": "linear-gradient(135deg, rgba(167,139,250,0.25), #0b0d14)",
+      "url": "/demos/posters/#yt-bot"
+    },
+    {
+      "id": "demo-cover-reels",
+      "title": "Превью · Reels",
+      "desc": "Вертикальная обложка 9:16 для Reels / Shorts — читается с телефона",
+      "tag": "Обложка",
+      "direction": "poster",
+      "price": "от 1 200 ₽",
+      "icon": "poster",
+      "cover": "assets/shots/cover-reels.png",
+      "color": "linear-gradient(135deg, rgba(167,139,250,0.3), #1a1030)",
+      "url": "/demos/posters/#reels"
+    },
+    {
+      "id": "lithophane-soon",
+      "title": "Литофания",
+      "desc": "Светящийся портрет или фото в рамке. Примеры работ подключим отдельно",
+      "tag": "3D · мерч",
       "direction": "3d",
-      "price": "от 500 ₽ печать",
+      "price": "от 2 000 ₽",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
-      "color": "linear-gradient(135deg, rgba(124,58,237,0.25), rgba(15,23,42,0.4))",
-      "url": "/grbnk",
+      "color": "linear-gradient(135deg, rgba(251,191,36,0.2), rgba(124,58,237,0.12))",
+      "url": "https://t.me/MAXSPAS_BOT",
       "status": "photo-soon"
     },
     {
       "id": "keychain-soon",
-      "title": "Брелки и литофания",
-      "desc": "Фирменные брелки и литофания с рамкой. Фото готовых работ — на этой неделе",
+      "title": "Брелки",
+      "desc": "Фирменные и сувенирные брелки под печать. Фото работ — позже",
       "tag": "3D · мерч",
       "direction": "3d",
-      "price": "от 150 / 2000 ₽",
+      "price": "от 150 ₽",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(244,114,182,0.2), rgba(124,58,237,0.15))",
+      "url": "https://t.me/MAXSPAS_BOT",
+      "status": "photo-soon"
+    },
+    {
+      "id": "magnet-soon",
+      "title": "Магниты",
+      "desc": "Сувенирные магниты с лого или фото. Примеры подключим, когда будут фото",
+      "tag": "3D · мерч",
+      "direction": "3d",
+      "price": "под заказ",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(56,189,248,0.2), rgba(124,58,237,0.12))",
+      "url": "https://t.me/MAXSPAS_BOT",
+      "status": "photo-soon"
+    },
+    {
+      "id": "plate-keychain-soon",
+      "title": "Брелок — номер авто",
+      "desc": "Брелок с номером автомобиля. Макет и печать — когда согласуем образец",
+      "tag": "3D · мерч",
+      "direction": "3d",
+      "price": "под заказ",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(248,113,113,0.18), rgba(15,23,42,0.4))",
       "url": "https://t.me/MAXSPAS_BOT",
       "status": "photo-soon"
     }
@@ -471,66 +918,641 @@
       "label": "01 — Сайты",
       "code": "MS-WEB-01",
       "title": "Лендинги и визитки",
-      "lead": "Цифровая визитка и посадочные страницы — структура, вёрстка, публикация и приём заявок.",
+      "lead": "Посадочные под рекламу и цифровые визитки: структура, вёрстка, адаптив под телефон, SEO-база, деплой и формы заявок в Telegram.",
       "href": "prices",
       "zone": "studio",
-      "portfolioIds": ["maxspas-site", "demo-severny-bereg", "demo-velokuhnya", "demo-barber-noir", "demo-chistotakt"],
+      "cta": "directionLinkWeb",
+      "portfolioIds": [
+        "maxspas-site",
+        "demo-severny-bereg"
+      ],
       "specs": [
-        { "k": "Формат", "v": "1–6 страниц" },
-        { "k": "Срок", "v": "3–5 дней" },
-        { "k": "Стек", "v": "HTML · CSS · JS" },
-        { "k": "Деплой", "v": "Vercel · SSL · домен" },
-        { "k": "Заявки", "v": "Telegram · email" }
+        {
+          "k": "Формат",
+          "v": "1–6 страниц"
+        },
+        {
+          "k": "Срок",
+          "v": "3–5 дней"
+        },
+        {
+          "k": "Стек",
+          "v": "HTML · CSS · JS"
+        },
+        {
+          "k": "Деплой",
+          "v": "Vercel · SSL · домен"
+        },
+        {
+          "k": "Заявки",
+          "v": "Telegram · email"
+        },
+        {
+          "k": "Включено",
+          "v": "Адаптив · SEO · аналитика"
+        }
       ],
       "bars": [
-        { "label": "Бюджет", "w": "72%", "value": "2.5k ₽" },
-        { "label": "Готовность", "w": "88%", "value": "Под ключ" }
+        {
+          "label": "Бюджет",
+          "w": "72%",
+          "value": "от 2.5k ₽"
+        },
+        {
+          "label": "Готовность",
+          "w": "90%",
+          "value": "Под ключ"
+        }
       ],
-      "tags": ["Адаптив", "SEO-base", "Формы", "Аналитика"]
+      "tags": [
+        "Лендинг",
+        "Визитка",
+        "Адаптив",
+        "SEO",
+        "Формы"
+      ]
     },
     {
       "id": "bot",
       "label": "02 — Боты",
       "code": "MS-BOT-01",
       "title": "Telegram под ключ",
-      "lead": "Автоматизация приёма заявок: меню услуг, уведомления и пересылка лидов без отдельного приложения.",
+      "lead": "Меню услуг, запись и заявки по шагам, калькулятор, FAQ, файлы и уведомления вам в чат — без отдельного приложения. Работает 24/7 на сервере.",
       "href": "contacts",
       "zone": "studio",
-      "portfolioIds": ["maxspas-bot"],
+      "cta": "directionLinkBot",
+      "portfolioIds": [
+        "maxspas-bot"
+      ],
       "specs": [
-        { "k": "Платформа", "v": "Telegram Bot API" },
-        { "k": "Модулей", "v": "20+ в демо" },
-        { "k": "Стек", "v": "Python · aiogram" },
-        { "k": "Уведомления", "v": "TG · почта" },
-        { "k": "Режим", "v": "24/7 на сервере" }
+        {
+          "k": "Платформа",
+          "v": "Telegram Bot API"
+        },
+        {
+          "k": "Модулей",
+          "v": "20+ в демо"
+        },
+        {
+          "k": "Стек",
+          "v": "Python · aiogram"
+        },
+        {
+          "k": "Уведомления",
+          "v": "TG · почта"
+        },
+        {
+          "k": "Режим",
+          "v": "24/7 на VPS"
+        },
+        {
+          "k": "Интеграция",
+          "v": "Сайт → бот"
+        }
       ],
       "bars": [
-        { "label": "Бюджет", "w": "48%", "value": "от 1.5k ₽" },
-        { "label": "Функционал", "w": "95%", "value": "Расширенный" }
+        {
+          "label": "Бюджет",
+          "w": "48%",
+          "value": "от 1.5k ₽"
+        },
+        {
+          "label": "Функционал",
+          "w": "95%",
+          "value": "Расширенный"
+        }
       ],
-      "tags": ["FSM-формы", "Калькулятор", "FAQ", "Файлы STL"]
+      "tags": [
+        "FSM-формы",
+        "Калькулятор",
+        "FAQ",
+        "Запись",
+        "Уведомления"
+      ]
+    },
+    {
+      "id": "bundle",
+      "label": "03 — Комплект",
+      "code": "MS-PACK-01",
+      "title": "Сайт + бот под ключ",
+      "lead": "Готовый связный комплект: лендинг принимает заявки, бот ведёт клиента и сразу пишет вам. Месяц правок и короткое обучение после сдачи.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkBundle",
+      "portfolioIds": [
+        "maxspas-site",
+        "maxspas-bot"
+      ],
+      "specs": [
+        {
+          "k": "Состав",
+          "v": "Лендинг + Telegram-бот"
+        },
+        {
+          "k": "Срок",
+          "v": "5–7 дней"
+        },
+        {
+          "k": "Правки",
+          "v": "1 месяц после сдачи"
+        },
+        {
+          "k": "Обучение",
+          "v": "Как принимать заявки"
+        },
+        {
+          "k": "Деплой",
+          "v": "Сайт + бот на сервере"
+        },
+        {
+          "k": "Оплата",
+          "v": "Предоплата 50%"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "78%",
+          "value": "от 5k ₽"
+        },
+        {
+          "label": "Связка",
+          "w": "96%",
+          "value": "Сайт ↔ бот"
+        }
+      ],
+      "tags": [
+        "Под ключ",
+        "Заявки",
+        "Обучение",
+        "Правки"
+      ]
+    },
+    {
+      "id": "logo",
+      "label": "04 — Логотип",
+      "code": "MS-LOGO-01",
+      "title": "Логотип и аватар",
+      "lead": "Знак и аватар для соцсетей, Авито, Kwork и канала. ИИ-черновик плюс ручная правка в стиле студии — 2–3 варианта и правки.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-logo-nord",
+        "demo-logo-volt"
+      ],
+      "specs": [
+        {
+          "k": "Формат",
+          "v": "PNG · SVG"
+        },
+        {
+          "k": "Срок",
+          "v": "1–3 дня"
+        },
+        {
+          "k": "Варианты",
+          "v": "2–3 эскиза"
+        },
+        {
+          "k": "Правки",
+          "v": "Включены"
+        },
+        {
+          "k": "Дополнительно",
+          "v": "Аватар · площадки"
+        },
+        {
+          "k": "Цена",
+          "v": "от 1 500 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "42%",
+          "value": "от 1.5k ₽"
+        },
+        {
+          "label": "Скорость",
+          "w": "85%",
+          "value": "1–3 дня"
+        }
+      ],
+      "tags": [
+        "Лого",
+        "Аватар",
+        "SVG",
+        "Площадки"
+      ]
+    },
+    {
+      "id": "market",
+      "label": "05 — Маркетплейс",
+      "code": "MS-MKT-01",
+      "title": "Карточки WB / Ozon",
+      "lead": "Обложка и инфографика под сетку маркетплейса: единый стиль, читаемые слайды выгод и аккуратный вид в выдаче.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-mkt-buds",
+        "demo-mkt-brew"
+      ],
+      "specs": [
+        {
+          "k": "Площадки",
+          "v": "Wildberries · Ozon"
+        },
+        {
+          "k": "Срок",
+          "v": "1–2 дня"
+        },
+        {
+          "k": "Состав",
+          "v": "Главное фото + инфо-слайды"
+        },
+        {
+          "k": "Стиль",
+          "v": "Единый визуальный язык"
+        },
+        {
+          "k": "Правки",
+          "v": "Включены"
+        },
+        {
+          "k": "Цена",
+          "v": "от 1 000 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "36%",
+          "value": "от 1k ₽"
+        },
+        {
+          "label": "Скорость",
+          "w": "88%",
+          "value": "1–2 дня"
+        }
+      ],
+      "tags": [
+        "WB",
+        "Ozon",
+        "Инфографика",
+        "Обложка"
+      ]
+    },
+    {
+      "id": "print",
+      "label": "06 — Печать",
+      "code": "MS-PRINT-01",
+      "title": "Макеты под печать",
+      "lead": "Листовки, флаеры, визитки, меню и прайсы, грамоты и сертификаты — макет в PDF, готовый к типографии. Тираж и монтаж не берём.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-print-card",
+        "demo-print-flyer"
+      ],
+      "specs": [
+        {
+          "k": "Форматы",
+          "v": "A5 · A4 · визитка"
+        },
+        {
+          "k": "Срок",
+          "v": "1–3 дня"
+        },
+        {
+          "k": "Сдача",
+          "v": "PDF в печать"
+        },
+        {
+          "k": "Также",
+          "v": "Грамоты · сертификаты · меню"
+        },
+        {
+          "k": "Не берём",
+          "v": "Тираж · монтаж · билборды"
+        },
+        {
+          "k": "Цена",
+          "v": "от 900 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "32%",
+          "value": "от 900 ₽"
+        },
+        {
+          "label": "Скорость",
+          "w": "82%",
+          "value": "1–3 дня"
+        }
+      ],
+      "tags": [
+        "Листовка",
+        "Визитка",
+        "Грамота",
+        "Меню",
+        "PDF"
+      ]
+    },
+    {
+      "id": "stickers",
+      "label": "07 — Стикеры",
+      "code": "MS-STK-01",
+      "title": "Стикеры и вектор",
+      "lead": "Стикер-паки и Telegram-стикеры студии: персонажи, реакции, иконки в SVG/PNG — для чата, канала и печати.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-stickers",
+        "demo-logo-volt"
+      ],
+      "specs": [
+        {
+          "k": "Формат",
+          "v": "PNG · SVG · TG-пак"
+        },
+        {
+          "k": "Срок",
+          "v": "1–2 дня"
+        },
+        {
+          "k": "Telegram",
+          "v": "Стикерпак под @Stickers"
+        },
+        {
+          "k": "Сдача",
+          "v": "Вектор + растр"
+        },
+        {
+          "k": "Правки",
+          "v": "Включены"
+        },
+        {
+          "k": "Цена",
+          "v": "от 800 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "28%",
+          "value": "от 800 ₽"
+        },
+        {
+          "label": "Скорость",
+          "w": "90%",
+          "value": "1–2 дня"
+        }
+      ],
+      "tags": [
+        "Стикеры",
+        "Telegram",
+        "Вектор",
+        "Пак"
+      ]
+    },
+    {
+      "id": "present",
+      "label": "08 — Презентации",
+      "code": "MS-PRS-01",
+      "title": "Презентации под продажу",
+      "lead": "Слайды для питча, коммерческого предложения или отчёта: структура, визуал и единый стиль без перегруза.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-present-pitch",
+        "demo-present-offer"
+      ],
+      "specs": [
+        {
+          "k": "Объём",
+          "v": "10–20 слайдов"
+        },
+        {
+          "k": "Срок",
+          "v": "2–4 дня"
+        },
+        {
+          "k": "Сдача",
+          "v": "PDF · PPTX"
+        },
+        {
+          "k": "Стиль",
+          "v": "Под ваш бренд"
+        },
+        {
+          "k": "Правки",
+          "v": "Включены"
+        },
+        {
+          "k": "Цена",
+          "v": "от 1 000 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "40%",
+          "value": "от 1k ₽"
+        },
+        {
+          "label": "Скорость",
+          "w": "78%",
+          "value": "2–4 дня"
+        }
+      ],
+      "tags": [
+        "Питч",
+        "КП",
+        "Слайды",
+        "PDF"
+      ]
+    },
+    {
+      "id": "game",
+      "label": "09 — Игры",
+      "code": "MS-GAME-01",
+      "title": "Спрайты и ассеты",
+      "lead": "Инвентарь в стиле ресурспака, item-паки и UI-спрайты по узкому ТЗ. Игру целиком не берём.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-sprites-mc",
+        "demo-sprites-rpg"
+      ],
+      "specs": [
+        {
+          "k": "Формат",
+          "v": "PNG · SVG · GLB"
+        },
+        {
+          "k": "Срок",
+          "v": "2–5 дней"
+        },
+        {
+          "k": "Тип",
+          "v": "Спрайты · UI · low-poly"
+        },
+        {
+          "k": "Условие",
+          "v": "Чёткое ТЗ"
+        },
+        {
+          "k": "Не берём",
+          "v": "Игра целиком"
+        },
+        {
+          "k": "Цена",
+          "v": "от 1 500 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "44%",
+          "value": "от 1.5k ₽"
+        },
+        {
+          "label": "Фокус",
+          "w": "86%",
+          "value": "По ТЗ"
+        }
+      ],
+      "tags": [
+        "Спрайты",
+        "UI",
+        "Low-poly",
+        "По ТЗ"
+      ]
+    },
+    {
+      "id": "poster",
+      "label": "10 — Афиши",
+      "code": "MS-AFI-01",
+      "title": "Афиши и обложки",
+      "lead": "Постеры на любые темы (космос, орбита, индустриал) и обложки к роликам: YouTube 16:9, Reels / Shorts 9:16. Не только студия — любой сюжет.",
+      "href": "prices",
+      "zone": "studio",
+      "cta": "directionLinkDesign",
+      "portfolioIds": [
+        "demo-poster-cosmos",
+        "demo-cover-yt-print"
+      ],
+      "specs": [
+        {
+          "k": "Афиша",
+          "v": "A3 · A2 · сторис"
+        },
+        {
+          "k": "YouTube",
+          "v": "обложка 16:9"
+        },
+        {
+          "k": "Reels",
+          "v": "превью 9:16"
+        },
+        {
+          "k": "Срок",
+          "v": "1–3 дня"
+        },
+        {
+          "k": "Сдача",
+          "v": "PNG · PDF"
+        },
+        {
+          "k": "Цена",
+          "v": "от 1 200 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Бюджет",
+          "w": "42%",
+          "value": "от 1.2k ₽"
+        },
+        {
+          "label": "Скорость",
+          "w": "84%",
+          "value": "1–3 дня"
+        }
+      ],
+      "tags": [
+        "Афиша",
+        "YouTube",
+        "Reels",
+        "Превью"
+      ]
     },
     {
       "id": "3d",
-      "label": "03 — 3D GRBNK",
+      "label": "11 — 3D GRBNK",
       "code": "GRBNK-3D",
-      "title": "Модели и печать",
-      "lead": "Подготовка моделей к FDM/SLA-печати, low-poly ассеты и доставка готовых изделий по России.",
+      "title": "Модели, печать и мерч",
+      "lead": "FDM и SLA: модели STL/OBJ/GLB, проверка на печать и доставка по РФ. Ответвления мерча: литофания, брелки, магниты, брелок с номером авто — фото работ подключим отдельно.",
       "href": "grbnk",
       "zone": "grbnk",
-      "portfolioIds": ["grbnk-3d", "maxspas-bot-3d", "tech-clips"],
+      "cta": "directionLink3d",
+      "portfolioIds": [
+        "grbnk-3d",
+        "lithophane-soon"
+      ],
       "specs": [
-        { "k": "Технологии", "v": "FDM · SLA" },
-        { "k": "Форматы", "v": "STL · OBJ · GLB" },
-        { "k": "Срок", "v": "1–5 дней" },
-        { "k": "Контроль", "v": "Проверка на печать" },
-        { "k": "Доставка", "v": "По РФ" }
+        {
+          "k": "Технологии",
+          "v": "FDM · SLA"
+        },
+        {
+          "k": "Форматы",
+          "v": "STL · OBJ · GLB"
+        },
+        {
+          "k": "Мерч",
+          "v": "Литофания · брелки · магниты"
+        },
+        {
+          "k": "Ещё",
+          "v": "Брелок — номер авто"
+        },
+        {
+          "k": "Доставка",
+          "v": "По РФ"
+        },
+        {
+          "k": "Заказ",
+          "v": "Сайт · @MAXSPAS_BOT"
+        }
       ],
       "bars": [
-        { "label": "Цена", "w": "38%", "value": "от 300 ₽" },
-        { "label": "Детализация", "w": "92%", "value": "SLA высокая" }
+        {
+          "label": "Цена",
+          "w": "38%",
+          "value": "от 300 ₽"
+        },
+        {
+          "label": "Детализация",
+          "w": "92%",
+          "value": "SLA высокая"
+        }
       ],
-      "tags": ["FDM", "SLA", "Печать", "STL"]
+      "tags": [
+        "FDM",
+        "SLA",
+        "Литофания",
+        "Брелки",
+        "Магниты"
+      ]
     }
   ]
 }

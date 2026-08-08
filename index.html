@@ -7,7 +7,22 @@
   <meta name="description" content="MAXSPAS Studio — сайты, Telegram-боты и 3D GRBNK. Горбунки, работаем онлайн.">
   <base href="/">
   <script src="js/portal-guard.js"></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAXSPAS Studio">
+  <meta property="og:url" content="https://maxspas.ru/">
+  <meta property="og:title" content="MAXSPAS Studio — сайты, боты и 3D GRBNK">
+  <meta property="og:description" content="MAXSPAS Studio — сайты, Telegram-боты и 3D GRBNK. Горбунки, работаем онлайн.">
+  <meta property="og:image" content="https://maxspas.ru/assets/favicon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://maxspas.ru/assets/favicon-512.png">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="home" data-theme="studio">
@@ -27,18 +42,18 @@
         </div>
       </div>
       <div>
-        <span class="badge">MAXSPAS Studio</span>
-        <h1>Цифровые<br><span class="gradient-text">продукты</span></h1>
-        <p class="hero-split__lead" id="hero-tagline">Сайты и Telegram-боты под ключ — отдельно от линейки 3D GRBNK.</p>
+        <span class="badge" data-i18n="home.badge">MAXSPAS Studio</span>
+        <h1 data-i18n="home.hero.title" data-i18n-mode="html">Цифровые<br><span class="gradient-text">продукты</span></h1>
+        <p class="hero-split__lead" id="hero-tagline" data-i18n="home.hero.lead">Сайты, боты, дизайн под продажи и 3D GRBNK — одна студия.</p>
         <div class="hero-split__actions home-hero__actions" style="justify-content:flex-start">
-          <a href="contacts" class="btn btn--fill">Обсудить проект</a>
-          <a href="prices" class="btn">Цены</a>
+          <a href="contacts" class="btn btn--fill" data-i18n="home.hero.cta1">Обсудить проект</a>
+          <a href="prices" class="btn" data-i18n="home.hero.cta2">Цены</a>
         </div>
       </div>
     </section>
 
     <div class="spec-strip reveal" data-theme-zone="studio" data-cursor-grid="off">
-      <p class="spec-strip__label">Можем · MAXSPAS Studio</p>
+      <p class="spec-strip__label" data-i18n="home.ticker.label">Можем · MAXSPAS Studio</p>
       <div class="spec-ticker" aria-label="Услуги студии">
         <div class="spec-ticker__track">
           <ul class="spec-ticker__group">
@@ -48,6 +63,14 @@
             <li>Telegram-боты</li>
             <li>Заявки с сайта в бот</li>
             <li>Сайт + бот под ключ</li>
+            <li>Логотипы и аватары</li>
+            <li>Карточки маркетплейсов</li>
+            <li>Листовки и флаеры</li>
+            <li>Стикеры и вектор</li>
+            <li>Презентации</li>
+            <li>Спрайты и UI игр</li>
+            <li>Грамоты и сертификаты</li>
+            <li>Баннеры и иконки</li>
             <li>Формы и CRM-заявки</li>
             <li>SEO и мета-теги</li>
             <li>Адаптив под телефон</li>
@@ -55,6 +78,8 @@
             <li>Меню и запись в боте</li>
             <li>Деплой, домен, SSL</li>
             <li>3D-модели STL / OBJ</li>
+            <li>Литофания и брелки</li>
+            <li>Магниты и номер авто</li>
             <li>3D-печать с доставкой</li>
             <li>Low-poly и игровые ассеты</li>
             <li>Визуализация и рендер</li>
@@ -66,6 +91,14 @@
             <li>Telegram-боты</li>
             <li>Заявки с сайта в бот</li>
             <li>Сайт + бот под ключ</li>
+            <li>Логотипы и аватары</li>
+            <li>Карточки маркетплейсов</li>
+            <li>Листовки и флаеры</li>
+            <li>Стикеры и вектор</li>
+            <li>Презентации</li>
+            <li>Спрайты и UI игр</li>
+            <li>Грамоты и сертификаты</li>
+            <li>Баннеры и иконки</li>
             <li>Формы и CRM-заявки</li>
             <li>SEO и мета-теги</li>
             <li>Адаптив под телефон</li>
@@ -73,6 +106,8 @@
             <li>Меню и запись в боте</li>
             <li>Деплой, домен, SSL</li>
             <li>3D-модели STL / OBJ</li>
+            <li>Литофания и брелки</li>
+            <li>Магниты и номер авто</li>
             <li>3D-печать с доставкой</li>
             <li>Low-poly и игровые ассеты</li>
             <li>Визуализация и рендер</li>
@@ -83,60 +118,61 @@
 
     <section class="section section--tight">
       <div class="section__head reveal">
-        <h2>Направления</h2>
-        <p>Три линейки — спецификация, объёмы и референсные кейсы</p>
+        <h2 data-i18n="home.directions.title">Направления</h2>
+        <p data-i18n="home.directions.sub">Листайте стрелками — сайты, боты, дизайн и 3D с полной спецификацией</p>
       </div>
-      <div class="directions-grid reveal-stagger" id="directions-grid"></div>
+      <div class="directions-carousel" id="directions-carousel">
+        <div class="directions-carousel__viewport">
+          <div class="directions-grid directions-carousel__track" id="directions-grid"></div>
+        </div>
+        <div class="directions-carousel__nav" id="directions-nav" hidden>
+          <button type="button" class="directions-carousel__btn" id="directions-prev" aria-label="Предыдущее направление">←</button>
+          <span class="directions-carousel__counter" aria-live="polite">
+            <span id="directions-current">1</span>
+            <span class="directions-carousel__sep">/</span>
+            <span id="directions-total">1</span>
+          </span>
+          <button type="button" class="directions-carousel__btn" id="directions-next" aria-label="Следующее направление">→</button>
+        </div>
+      </div>
       <p class="directions-foot reveal">
-        <a href="works" class="btn btn--ghost">Все работы →</a>
+        <a href="works" class="btn btn--ghost" data-i18n="home.directions.link">Все работы →</a>
       </p>
     </section>
 
     <section class="section reveal" data-theme-zone="studio">
       <div class="section__head">
-        <h2>Бюджет · студия</h2>
+        <h2 id="home-budget-studio-title">MAXSPAS Studio</h2>
       </div>
-      <div class="spec-bar" style="--spec-w:72%">
-        <span>Сайт</span>
-        <div class="spec-bar__track"><div class="spec-bar__fill"></div></div>
-        <span class="spec-bar__value">2.5k ₽</span>
-      </div>
-      <div class="spec-bar" style="--spec-w:88%">
-        <span>Сайт+бот</span>
-        <div class="spec-bar__track"><div class="spec-bar__fill"></div></div>
-        <span class="spec-bar__value">от 5k ₽</span>
-      </div>
+      <div id="home-budget-studio"></div>
       <div class="cta-band" style="margin-top:32px">
         <div>
-          <h3>MAXSPAS Studio</h3>
-          <p>Сайты и боты — заявка в один клик</p>
+          <h3 data-i18n="home.budget.studio.ctaTitle">MAXSPAS Studio</h3>
+          <p data-i18n="home.budget.studio.ctaText">Сайты и боты — заявка в один клик</p>
         </div>
-        <a href="contacts" class="btn btn--fill">Связаться</a>
+        <a href="contacts" class="btn btn--fill" data-i18n="home.budget.studio.ctaBtn">Связаться</a>
       </div>
     </section>
 
     <section class="section reveal" data-theme-zone="grbnk" data-theme-scroll="grbnk">
       <div class="section__head">
-        <h2>3D GRBNK</h2>
-        <p>Отдельное направление — модели для печати</p>
+        <h2 id="home-budget-grbnk-title">3D GRBNK</h2>
+        <p id="home-budget-grbnk-sub">Модели, печать и файлы</p>
       </div>
-      <div class="spec-bar" style="--spec-w:55%">
-        <span>STL</span>
-        <div class="spec-bar__track"><div class="spec-bar__fill spec-bar__fill--grbnk"></div></div>
-        <span class="spec-bar__value">от 300 ₽</span>
-      </div>
+      <div id="home-budget-grbnk"></div>
       <div class="cta-band" style="margin-top:24px">
         <div>
-          <h3>3D GRBNK</h3>
-          <p>Модели, печать, заказ через бота</p>
+          <h3 data-i18n="home.budget.grbnk.ctaTitle">3D GRBNK</h3>
+          <p data-i18n="home.budget.grbnk.ctaText">Модели, печать, заказ через бота</p>
         </div>
         <div class="btn-row">
-          <a href="grbnk" class="btn btn--fill">Раздел 3D →</a>
-          <a href="https://t.me/maxspas_studio_bot?start=3d" class="btn btn--ghost" target="_blank" rel="noopener">Бот · 3D →</a>
+          <a href="grbnk" class="btn btn--fill" data-i18n="home.budget.grbnk.ctaBtn3d">Раздел 3D →</a>
+          <a href="https://t.me/maxspas_studio_bot?start=3d" class="btn btn--ghost" target="_blank" rel="noopener" data-i18n="home.budget.grbnk.ctaBtnBot">Бот · 3D →</a>
         </div>
       </div>
     </section>
   </main>
+  <script src="js/i18n.js"></script>
   <script src="/js/icons.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/motion.js"></script>

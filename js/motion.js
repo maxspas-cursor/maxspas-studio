@@ -46,7 +46,14 @@
       },
       { threshold: 0.35 }
     );
-    bars.forEach((b) => io.observe(b));
+    bars.forEach((b) => {
+      const r = b.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        b.classList.add("is-visible");
+        return;
+      }
+      io.observe(b);
+    });
   }
 
   function initParallax() {

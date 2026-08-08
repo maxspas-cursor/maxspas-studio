@@ -212,7 +212,13 @@
   function localizePortfolioItem(item) {
     const en = isEn() && localeEn?.portfolio?.[item.id];
     if (!en) return item;
-    return { ...item, desc: en.desc ?? item.desc, tag: en.tag ?? item.tag };
+    return {
+      ...item,
+      title: en.title ?? item.title,
+      desc: en.desc ?? item.desc,
+      tag: en.tag ?? item.tag,
+      price: en.price ?? item.price,
+    };
   }
 
   function budgetLabel(keys, index, fallback) {
@@ -307,6 +313,7 @@
   }
 
   function directionWorkLogo(item) {
+    // Reference thumbs on the home carousel: small tinted squares — not page screenshots.
     if (item.logoAsset) {
       return `<img src="${assetSrc(item.logoAsset)}" alt="" class="direction-work__logo" width="28" height="28" loading="lazy">`;
     }
@@ -321,9 +328,10 @@
     const isExternal = /^https?:\/\//i.test(item.url || "");
     const href = resolveHref(item.url);
     const thumb = directionWorkLogo(item);
+    const tint = item.color ? ` style="background:${esc(item.color)}"` : "";
     return `
       <a href="${esc(href)}" class="direction-work"${isExternal ? ' target="_blank" rel="noopener"' : ""}>
-        <span class="direction-work__thumb">${thumb}</span>
+        <span class="direction-work__thumb"${tint}>${thumb}</span>
         <span class="direction-work__body">
           <span class="direction-work__tag">${esc(item.tag)}</span>
           <strong>${esc(item.title)}</strong>
@@ -336,19 +344,23 @@
   function directionCard(dir, portfolioById) {
     const works = (dir.portfolioIds || [])
       .map((id) => portfolioById[id] && localizePortfolioItem(portfolioById[id]))
-      .filter(Boolean);
+      .filter(Boolean)
+      .slice(0, 2);
     const worksHtml = works.map(directionWork).join("");
     const grbnk = dir.zone === "grbnk";
     const grbnkClass = grbnk ? " direction-card--grbnk" : "";
     const code = dir.code ? `<span class="direction-card__code">${esc(dir.code)}</span>` : "";
-    const linkLabel =
-      dir.id === "3d"
-        ? ui("directionLink3d", "Спецификация 3D")
-        : dir.id === "bot"
-          ? ui("directionLinkBot", "Заказать бота")
-          : ui("directionLinkWeb", "Цены и пакеты");
+    const ctaMap = {
+      directionLinkWeb: "Цены и пакеты",
+      directionLinkBot: "Заказать бота",
+      directionLinkBundle: "Пакеты и цены",
+      directionLinkDesign: "Заказать дизайн",
+      directionLink3d: "Спецификация 3D",
+    };
+    const ctaKey = dir.cta || (dir.id === "3d" ? "directionLink3d" : dir.id === "bot" ? "directionLinkBot" : "directionLinkWeb");
+    const linkLabel = ui(ctaKey, ctaMap[ctaKey] || "Подробнее");
     return `
-      <article class="direction-card reveal${grbnkClass}" data-theme-zone="${esc(dir.zone || "studio")}">
+      <article class="direction-card reveal${grbnkClass}" data-theme-zone="${esc(dir.zone || "studio")}" data-direction-id="${esc(dir.id)}">
         <span class="direction-card__corner direction-card__corner--tl"></span>
         <span class="direction-card__corner direction-card__corner--tr"></span>
         <span class="direction-card__corner direction-card__corner--bl"></span>
@@ -369,20 +381,123 @@
       </article>`;
   }
 
+  function bindDirectionsCarousel(total) {
+    const root = document.getElementById("directions-carousel");
+    const viewport = root?.querySelector(".directions-carousel__viewport");
+    const track = document.getElementById("directions-grid");
+    const nav = document.getElementById("directions-nav");
+    const prev = document.getElementById("directions-prev");
+    const next = document.getElementById("directions-next");
+    const currentEl = document.getElementById("directions-current");
+    const totalEl = document.getElementById("directions-total");
+    if (!root || !viewport || !track || total < 1) return;
+
+    const GAP = 16;
+    let page = 0;
+    let resizeTimer = 0;
+
+    function perView() {
+      if (window.matchMedia("(max-width: 720px)").matches) return 1;
+      if (window.matchMedia("(max-width: 980px)").matches) return 2;
+      return 3;
+    }
+
+    const prevLabel = ui("directionsPrev", "Предыдущее направление");
+    const nextLabel = ui("directionsNext", "Следующее направление");
+    if (prev) prev.setAttribute("aria-label", prevLabel);
+    if (next) next.setAttribute("aria-label", nextLabel);
+
+    function layout() {
+      const pv = perView();
+      const pages = Math.max(1, Math.ceil(total / pv));
+      if (page >= pages) page = pages - 1;
+      const maxIndex = Math.max(0, total - pv);
+      const index = Math.min(page * pv, maxIndex);
+      const w = viewport.clientWidth;
+      const cardW = Math.max(0, (w - (pv - 1) * GAP) / pv);
+      const cards = track.querySelectorAll(".direction-card");
+      cards.forEach((card, i) => {
+        card.style.flex = `0 0 ${cardW}px`;
+        card.style.width = `${cardW}px`;
+        card.style.minWidth = `${cardW}px`;
+        card.style.maxWidth = `${cardW}px`;
+        const visible = i >= index && i < index + pv;
+        card.setAttribute("aria-hidden", visible ? "false" : "true");
+        card.classList.toggle("is-active-slide", visible);
+      });
+      track.style.gap = `${GAP}px`;
+      track.style.transform = `translateX(-${index * (cardW + GAP)}px)`;
+
+      if (nav) nav.hidden = pages <= 1;
+      if (currentEl) currentEl.textContent = String(page + 1);
+      if (totalEl) totalEl.textContent = String(pages);
+      if (prev) prev.disabled = page <= 0;
+      if (next) next.disabled = page >= pages - 1;
+      if (window.MSMotion?.refresh) window.MSMotion.refresh();
+    }
+
+    function go(delta) {
+      const pv = perView();
+      const pages = Math.max(1, Math.ceil(total / pv));
+      page = Math.max(0, Math.min(pages - 1, page + delta));
+      layout();
+    }
+
+    if (prev) prev.onclick = () => go(-1);
+    if (next) next.onclick = () => go(1);
+
+    root.onkeydown = (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        go(-1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        go(1);
+      }
+    };
+    root.tabIndex = 0;
+
+    let touchX = null;
+    track.ontouchstart = (e) => {
+      touchX = e.changedTouches[0]?.clientX ?? null;
+    };
+    track.ontouchend = (e) => {
+      if (touchX == null) return;
+      const dx = (e.changedTouches[0]?.clientX ?? touchX) - touchX;
+      touchX = null;
+      if (Math.abs(dx) < 40) return;
+      go(dx < 0 ? 1 : -1);
+    };
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(layout, 120);
+    });
+
+    layout();
+  }
+
   function renderDirections() {
     const grid = document.getElementById("directions-grid");
     const dirs = site.directions || [];
     if (!grid || !dirs.length) return;
     const portfolioById = Object.fromEntries((site.portfolio || []).map((p) => [p.id, p]));
     grid.innerHTML = dirs.map((d) => directionCard(localizeDirection(d), portfolioById)).join("");
+    bindDirectionsCarousel(dirs.length);
     if (window.MSMotion?.refresh) window.MSMotion.refresh();
   }
 
   function portfolioCard(item) {
     const loc = localizePortfolioItem(item);
     const iconName = loc.icon || loc.emoji || "sparkle";
+    const coverSrc = loc.cover ? assetSrc(loc.cover) : "";
     let visualIcon;
-    if (loc.logoAsset || loc.logo || loc.id === "maxspas-site") {
+    let visualClass = "portfolio-card__visual";
+    if (coverSrc) {
+      visualClass += " portfolio-card__visual--cover";
+      const fitClass = loc.coverFit === "cover" ? " portfolio-card__cover--fill" : "";
+      visualIcon = `<img src="${coverSrc}" alt="" class="portfolio-card__cover${fitClass}" width="480" height="320" loading="lazy">`;
+    } else if (loc.logoAsset || loc.logo || loc.id === "maxspas-site") {
       const src = loc.logoAsset ? assetSrc(loc.logoAsset) : "/assets/logo-mark.svg";
       visualIcon = `<img src="${src}" alt="" class="portfolio-card__logo" width="64" height="64" loading="lazy">`;
     } else if (window.MSIcons) {
@@ -396,15 +511,21 @@
         ? `<span class="portfolio-card__soon">${esc(isEn() ? "Photos soon" : "Фото скоро")}</span>`
         : "";
     const isExternal = /^https?:\/\//i.test(loc.url || "");
-    const link = loc.url
-      ? `<a href="${esc(resolveHref(loc.url))}" class="btn btn--ghost btn--sm"${isExternal ? ' target="_blank" rel="noopener"' : ""}>${esc(ui("view", "Смотреть"))}</a>`
+    const href = loc.url ? resolveHref(loc.url) : "";
+    const extAttrs = isExternal ? ' target="_blank" rel="noopener"' : "";
+    const link = href
+      ? `<a href="${esc(href)}" class="btn btn--ghost btn--sm"${extAttrs}>${esc(ui("view", "Смотреть"))}</a>`
       : "";
+    const visualStyle = coverSrc ? "" : ` style="background:${esc(loc.color || "rgba(124,58,237,0.08)")}"`;
+    const visualInner = `
+          ${visualIcon}
+          ${soon}`;
+    const visualBlock = href
+      ? `<a href="${esc(href)}" class="${visualClass} portfolio-card__visual-link"${visualStyle}${extAttrs}>${visualInner}</a>`
+      : `<div class="${visualClass}"${visualStyle}>${visualInner}</div>`;
     return `
       <article class="portfolio-card" data-direction="${esc(loc.direction || "all")}">
-        <div class="portfolio-card__visual" style="background:${esc(loc.color || "rgba(124,58,237,0.08)")}">
-          ${visualIcon}
-          ${soon}
-        </div>
+        ${visualBlock}
         <div class="portfolio-card__body">
           ${tag}
           <h3>${esc(loc.title)}</h3>
@@ -521,6 +642,7 @@
     renderHome();
     renderPortfolio();
     renderGrbnk();
+    renderDesignBranches();
     if (window.MSI18n) {
       window.MSI18n.applyStatic();
       window.MSI18n.applyTicker();
@@ -535,10 +657,28 @@
 
     const status = document.getElementById("form-status");
     const submitBtn = document.getElementById("lead-submit");
+    const serviceSelect = document.getElementById("lead-service");
+    const customWrap = document.getElementById("service-custom-wrap");
+    const customInput = document.getElementById("lead-service-custom");
     const apiUrl =
       window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
         ? "http://127.0.0.1:8787/api/lead"
         : "/api/lead";
+
+    function msg(key, fallback) {
+      return window.MSI18n?.t(key) || fallback;
+    }
+
+    function syncServiceCustom() {
+      const isOther = serviceSelect?.value === "other";
+      if (customWrap) customWrap.hidden = !isOther;
+      if (customInput) {
+        customInput.required = !!isOther;
+        if (!isOther) customInput.value = "";
+      }
+    }
+    serviceSelect?.addEventListener("change", syncServiceCustom);
+    syncServiceCustom();
 
     function showStatus(text, ok) {
       if (!status) return;
@@ -547,16 +687,32 @@
       status.className = "form-status " + (ok ? "form-status--ok" : "form-status--err");
     }
 
-    const submitLabel = () =>
-      window.MSI18n?.t("contacts.form.submit") || "Отправить заявку";
+    const submitLabel = () => msg("contacts.form.submit", "Отправить заявку");
+
+    function selectedServiceLabel() {
+      const opt = serviceSelect?.selectedOptions?.[0];
+      return (opt?.textContent || serviceSelect?.value || "").trim();
+    }
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const fd = new FormData(form);
+      const serviceValue = String(fd.get("service") || "").trim();
+      const custom = String(fd.get("service_custom") || "").trim();
+      let service = selectedServiceLabel() || serviceValue || (isEn() ? "not specified" : "не указана");
+      if (serviceValue === "other") {
+        if (!custom) {
+          showStatus(msg("contacts.form.errOther", "Опишите услугу в поле ниже."), false);
+          customInput?.focus();
+          return;
+        }
+        service = `${msg("contacts.service.other", "Другое")}: ${custom}`;
+      }
+
       const payload = {
         name: String(fd.get("name") || "").trim(),
         contact: String(fd.get("contact") || "").trim(),
-        service: String(fd.get("service") || "не указана"),
+        service,
         message: String(fd.get("message") || "").trim(),
         company: String(fd.get("company") || "").trim(),
         budget: String(fd.get("budget") || "").trim(),
@@ -567,17 +723,17 @@
       };
 
       if (!fd.get("consent")) {
-        showStatus("Нужно согласие на обработку данных.", false);
+        showStatus(msg("contacts.form.errConsent", "Нужно согласие на обработку данных."), false);
         return;
       }
       if (!payload.name || !payload.contact || !isValidContact(payload.contact)) {
-        showStatus("Укажите имя и контакт (телефон или email).", false);
+        showStatus(msg("contacts.form.errContact", "Укажите имя и контакт (телефон или email)."), false);
         return;
       }
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = "Отправляем…";
+        submitBtn.textContent = msg("contacts.form.sending", "Отправляем…");
       }
       if (status) status.hidden = true;
 
@@ -589,15 +745,18 @@
         });
         if (!res.ok) {
           const err = await res.json().catch(() => ({}));
-          throw new Error(err.detail || "Ошибка отправки");
+          throw new Error(err.detail || msg("contacts.form.errSend", "Ошибка отправки"));
         }
         form.reset();
-        showStatus("Заявка отправлена! Свяжемся в ближайшее время.", true);
+        syncServiceCustom();
+        showStatus(msg("contacts.form.ok", "Заявка отправлена! Свяжемся в ближайшее время."), true);
       } catch (err) {
         showStatus(
           err.message !== "Failed to fetch"
             ? err.message
-            : "Не удалось отправить. Запустите бот или напишите в @maxspas_studio_bot",
+            : isEn()
+              ? "Could not send. Start the bot or message @maxspas_studio_bot"
+              : "Не удалось отправить. Запустите бот или напишите в @maxspas_studio_bot",
           false
         );
       } finally {
@@ -609,6 +768,22 @@
     });
   }
 
+  function renderDesignBranches() {
+    const branches = site?.designBranches;
+    if (!branches) return;
+    const en = isEn() && localeEn?.designBranches;
+    const map = [
+      ["branches-now", en?.now || branches.now],
+      ["branches-later", en?.later || branches.later],
+      ["branches-skip", en?.skip || branches.skip],
+    ];
+    map.forEach(([id, items]) => {
+      const el = document.getElementById(id);
+      if (!el || !items?.length) return;
+      el.innerHTML = items.map((t) => `<li>${esc(t)}</li>`).join("");
+    });
+  }
+
   function bindPayCopy() {
     document.querySelectorAll("[data-copy]").forEach((btn) => {
       btn.addEventListener("click", async () => {
@@ -616,7 +791,7 @@
         try {
           await navigator.clipboard.writeText(value);
           const prev = btn.textContent;
-          btn.textContent = "Скопировано";
+          btn.textContent = window.MSI18n?.t("contacts.pay.copied") || "Скопировано";
           setTimeout(() => {
             btn.textContent = prev;
           }, 1600);
@@ -643,6 +818,7 @@
     renderGrbnk();
     bindContactForm();
     bindPayCopy();
+    renderDesignBranches();
     if (window.MSIcons) MSIcons.hydrate();
     if (window.MSMotion?.refresh) window.MSMotion.refresh();
     loadCursorGrid();

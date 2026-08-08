@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Презентация — питч MAXSPAS</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0d14;--card:#151925;--text:#f4f6fb;--muted:#95a0b5;--a:#a78bfa;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box} html,body{height:100%;margin:0}
+    body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);overflow:hidden}
+    .deck{height:100%;display:grid;place-items:center;padding:20px}
+    .slide{width:min(960px,100%);aspect-ratio:16/9;border-radius:18px;border:1px solid var(--line);background:linear-gradient(145deg,#1a1430,var(--card));padding:clamp(24px,5vw,56px);display:none;flex-direction:column;justify-content:center;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+    .slide.is-on{display:flex}
+    .kicker{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a);margin:0 0 14px}
+    h1,h2{font-family:Syne,sans-serif;letter-spacing:-.04em;margin:0 0 14px;line-height:1.05}
+    h1{font-size:clamp(2rem,5vw,3.4rem)} h2{font-size:clamp(1.5rem,3.5vw,2.4rem)}
+    p{margin:0;color:var(--muted);font-size:clamp(.95rem,1.6vw,1.15rem);max-width:42ch;line-height:1.5}
+    ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    li{padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+    .nav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:rgba(10,11,16,.8);border:1px solid var(--line);padding:8px 12px;border-radius:999px;backdrop-filter:blur(8px)}
+    button{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:#1a1d28;color:var(--text);cursor:pointer}
+    .count{min-width:52px;text-align:center;font-size:.8rem;color:var(--muted)}
+    .top{position:fixed;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;z-index:2}
+    .top a{color:var(--muted);font-size:.82rem;text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:999px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .stat{padding:16px;border-radius:14px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25)}
+    .stat b{display:block;font-family:Syne,sans-serif;font-size:1.4rem;margin-bottom:4px}
+    @media(max-width:700px){.grid2{grid-template-columns:1fr}.slide{aspect-ratio:auto;min-height:70vh}}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <a href="/works">← Работы</a>
+    <a href="/contacts">Заказать</a>
+  </div>
+  <div class="deck" id="deck">
+    <section class="slide is-on">
+      <p class="kicker">MAXSPAS Studio · питч</p>
+      <h1>Сайт и бот,<br>которые приводят заявки</h1>
+      <p>Короткий питч для локального бизнеса: что делаем, за сколько и как запускаем.</p>
+    </section>
+    <section class="slide">
+      <p class="kicker">Проблема</p>
+      <h2>Клиент не понимает, куда писать</h2>
+      <ul>
+        <li>Сайт без формы — теряются обращения</li>
+        <li>Бот без меню — хаос в личке</li>
+        <li>Нет связки «сайт → Telegram»</li>
+      </ul>
+    </section>
+    <section class="slide">
+      <p class="kicker">Решение</p>
+      <h2>Один контур продаж</h2>
+      <div class="grid2">
+        <div class="stat"><b>Сайт</b>визитка / лендинг</div>
+        <div class="stat"><b>Бот</b>меню и заявка</div>
+        <div class="stat"><b>Уведомление</b>вам в чат</div>
+        <div class="stat"><b>Срок</b>5–7 дней</div>
+      </div>
+    </section>
+    <section class="slide">
+      <p class="kicker">Пакет</p>
+      <h2>От 5 000 ₽ под ключ</h2>
+      <p>Предоплата 50%. Самозанятость — с чеком. Горбунки · работаем онлайн.</p>
+    </section>
+    <section class="slide">
+      <p class="kicker">Следующий шаг</p>
+      <h2>Напишите задачу</h2>
+      <p>+7 (911) 715-60-06 · @Maxspas · maxspas.ru/contacts</p>
+    </section>
+  </div>
+  <div class="nav">
+    <button type="button" id="prev" aria-label="Назад">←</button>
+    <span class="count"><span id="cur">1</span>/<span id="total">5</span></span>
+    <button type="button" id="next" aria-label="Вперёд">→</button>
+  </div>
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    let i=0; const cur=document.getElementById('cur'); document.getElementById('total').textContent=slides.length;
+    function show(n){i=(n+slides.length)%slides.length;slides.forEach((s,x)=>s.classList.toggle('is-on',x===i));cur.textContent=i+1}
+    document.getElementById('prev').onclick=()=>show(i-1);
+    document.getElementById('next').onclick=()=>show(i+1);
+    window.onkeydown=e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();show(i+1)} if(e.key==='ArrowLeft')show(i-1)};
+  </script>
+</body>
+</html>

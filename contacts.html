@@ -56,21 +56,21 @@
             <span data-i18n="contacts.card.phone">Телефон</span><strong>+7 (911) 715-60-06</strong>
           </a>
           <ul class="contact-note--list">
-            <li>Горбунки · сайты и боты — онлайн по всему миру</li>
-            <li>Самозанятость, чек по запросу</li>
+            <li data-i18n="contacts.note.geo">Горбунки · сайты и боты — онлайн по всему миру</li>
+            <li data-i18n="contacts.note.self">Самозанятость, чек по запросу</li>
           </ul>
           <div class="pay-box" id="payment">
-            <h3>Оплата</h3>
-            <p>Перевод на <strong>Т‑Банк</strong> по номеру телефона:</p>
+            <h3 data-i18n="contacts.pay.title">Оплата</h3>
+            <p data-i18n="contacts.pay.lead" data-i18n-mode="html">Перевод на <strong>Т‑Банк</strong> по номеру телефона:</p>
             <p class="pay-box__num">
               <a href="tel:+79117156006">+7 (911) 715-60-06</a>
-              <button type="button" class="pay-box__copy" data-copy="79117156006" aria-label="Скопировать номер">Копировать</button>
+              <button type="button" class="pay-box__copy" data-copy="79117156006" data-i18n="contacts.pay.copy" data-i18n-aria="contacts.pay.copyAria" aria-label="Скопировать номер">Копировать</button>
             </p>
             <ul>
-              <li>СБП / перевод по номеру · банк получателя Т‑Банк</li>
-              <li>В комментарии — ваше имя или услуга</li>
-              <li>После оплаты напишите в <a href="https://t.me/Maxspas" target="_blank" rel="noopener">@Maxspas</a> — вышлем чек НПД</li>
-              <li>Сайты/боты: предоплата 50%. Мелкая 3D-печать: 100% до печати (от 500 ₽)</li>
+              <li data-i18n="contacts.pay.li1">СБП / перевод по номеру · банк получателя Т‑Банк</li>
+              <li data-i18n="contacts.pay.li2">В комментарии — ваше имя или услуга</li>
+              <li data-i18n="contacts.pay.li3" data-i18n-mode="html">После оплаты напишите в <a href="https://t.me/Maxspas" target="_blank" rel="noopener">@Maxspas</a> — вышлем чек НПД</li>
+              <li data-i18n="contacts.pay.li4">Сайты/боты: предоплата 50%. Мелкая 3D-печать: 100% до печати (от 500 ₽)</li>
             </ul>
           </div>
         </div>
@@ -78,25 +78,51 @@
           <h3 style="margin:0 0 4px" data-i18n="contacts.form.title">Заявка с сайта</h3>
           <p class="form-hint" style="text-align:left" data-i18n="contacts.form.hint">Данные отправляются напрямую</p>
           <div class="form-status" id="form-status" hidden></div>
-          <label>Имя *<input type="text" name="name" required autocomplete="name"></label>
-          <label>Телефон или email *<input type="text" name="contact" required></label>
-          <label>Компания<input type="text" name="company"></label>
-          <label>Услуга
-            <select name="service">
-              <option>Сайт / лендинг</option>
-              <option>Telegram-бот</option>
-              <option>Сайт + бот</option>
-              <option>3D GRBNK</option>
-              <option>Другое</option>
+          <label><span data-i18n="contacts.form.name">Имя *</span><input type="text" name="name" required autocomplete="name"></label>
+          <label><span data-i18n="contacts.form.contact">Телефон или email *</span><input type="text" name="contact" required></label>
+          <label><span data-i18n="contacts.form.company">Компания</span><input type="text" name="company"></label>
+          <label><span data-i18n="contacts.form.service">Услуга</span>
+            <select name="service" id="lead-service">
+              <option value="web" data-i18n="contacts.service.web">Сайт / лендинг</option>
+              <option value="bot" data-i18n="contacts.service.bot">Telegram-бот</option>
+              <option value="bundle" data-i18n="contacts.service.bundle">Сайт + бот</option>
+              <option value="logo" data-i18n="contacts.service.logo">Логотип / аватар</option>
+              <option value="market" data-i18n="contacts.service.market">Карточки маркетплейса</option>
+              <option value="print" data-i18n="contacts.service.print">Макеты печати</option>
+              <option value="stickers" data-i18n="contacts.service.stickers">Стикеры / вектор</option>
+              <option value="present" data-i18n="contacts.service.present">Презентация</option>
+              <option value="game" data-i18n="contacts.service.game">Спрайты / ассеты</option>
+              <option value="poster" data-i18n="contacts.service.poster">Афиша / обложка</option>
+              <option value="3d" data-i18n="contacts.service.3d">3D GRBNK</option>
+              <option value="other" data-i18n="contacts.service.other">Другое</option>
             </select>
           </label>
+          <label id="service-custom-wrap" class="service-custom" hidden>
+            <span data-i18n="contacts.form.serviceCustom">Опишите услугу *</span>
+            <input type="text" name="service_custom" id="lead-service-custom" autocomplete="off" placeholder="">
+          </label>
           <div class="form-row">
-            <label>Бюджет<select name="budget"><option value="">—</option><option>до 10 000 ₽</option><option>10–30 000 ₽</option><option>30–80 000 ₽</option><option>от 80 000 ₽</option></select></label>
-            <label>Срок<select name="deadline"><option value="">—</option><option>Срочно</option><option>1–2 недели</option><option>Месяц</option></select></label>
+            <label><span data-i18n="contacts.form.budget">Бюджет</span>
+              <select name="budget">
+                <option value="" data-i18n="contacts.budget.empty">—</option>
+                <option value="lt10" data-i18n="contacts.budget.lt10">до 10 000 ₽</option>
+                <option value="10-30" data-i18n="contacts.budget.10-30">10–30 000 ₽</option>
+                <option value="30-80" data-i18n="contacts.budget.30-80">30–80 000 ₽</option>
+                <option value="80plus" data-i18n="contacts.budget.80plus">от 80 000 ₽</option>
+              </select>
+            </label>
+            <label><span data-i18n="contacts.form.deadline">Срок</span>
+              <select name="deadline">
+                <option value="" data-i18n="contacts.deadline.empty">—</option>
+                <option value="asap" data-i18n="contacts.deadline.asap">Срочно</option>
+                <option value="1-2w" data-i18n="contacts.deadline.1-2w">1–2 недели</option>
+                <option value="month" data-i18n="contacts.deadline.month">Месяц</option>
+              </select>
+            </label>
           </div>
-          <label>Сообщение<textarea name="message" rows="4"></textarea></label>
+          <label><span data-i18n="contacts.form.message">Сообщение</span><textarea name="message" rows="4"></textarea></label>
           <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off">
-          <label class="form-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку данных для связи</span></label>
+          <label class="form-consent"><input type="checkbox" name="consent" required><span data-i18n="contacts.form.consent">Согласен на обработку данных для связи</span></label>
           <button type="submit" class="btn btn--fill btn--block" id="lead-submit" data-i18n="contacts.form.submit">Отправить заявку</button>
         </form>
       </div>

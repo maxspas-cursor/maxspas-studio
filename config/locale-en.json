@@ -1,0 +1,879 @@
+{
+  "themes": {
+    "studio": {
+      "sub": "Websites · bots",
+      "primary": "Request",
+      "switch": "3D GRBNK →"
+    },
+    "grbnk": {
+      "sub": "Models for printing",
+      "primary": "Order 3D",
+      "switch": "MAXSPAS Studio →"
+    }
+  },
+  "chrome": {
+    "channel": "Channel",
+    "telegram": "Telegram",
+    "mail": "Email",
+    "watermarkBrand3d": "MAXSPAS 3D"
+  },
+  "ui": {
+    "reference": "Reference",
+    "view": "View",
+    "directionLinkWeb": "Prices & packages",
+    "directionLinkBot": "Order a bot",
+    "directionLinkBundle": "Packages",
+    "directionLinkDesign": "Order design",
+    "directionLink3d": "3D specs",
+    "directionsPrev": "Previous direction",
+    "directionsNext": "Next direction",
+    "portfolioEmptyTitle": "Cases by direction",
+    "portfolioEmptyDesc": "maxspas.ru site, @maxspas_studio_bot bot and 3D GRBNK orders in the same bot",
+    "portfolioEmptyCta": "Be the first client"
+  },
+  "homeBudget": {
+    "studio": {
+      "ctaTitle": "MAXSPAS Studio",
+      "ctaText": "Websites and bots — one-click request",
+      "ctaBtn": "Contact us"
+    },
+    "grbnk": {
+      "subtitle": "Models, printing and files",
+      "ctaTitle": "3D GRBNK",
+      "ctaText": "Models, printing, order via bot",
+      "ctaBtn3d": "3D section →",
+      "ctaBtnBot": "Bot · 3D →"
+    },
+    "items": {
+      "landing": "Landing",
+      "site": "Website",
+      "bot": "Bot",
+      "siteBot": "Site+bot",
+      "stl": "STL / file",
+      "model": "Model creation",
+      "print": "Printing"
+    }
+  },
+  "ticker": [
+    "Ad landing pages",
+    "Business card sites",
+    "Multi-page websites",
+    "Telegram bots",
+    "Site leads to bot",
+    "Site + bot turnkey",
+    "Forms & CRM leads",
+    "SEO & meta tags",
+    "Mobile responsive",
+    "Telegram notifications",
+    "Bot menus & booking",
+    "Deploy, domain, SSL",
+    "STL / OBJ 3D models",
+    "3D printing & delivery",
+    "Low-poly & game assets",
+    "Visualization & render"
+  ],
+  "directions": {
+    "web": {
+      "label": "01 — Websites",
+      "title": "Landings & business cards",
+      "lead": "Ad landings and digital business cards: structure, layout, mobile-ready, SEO base, Vercel deploy and Telegram lead forms.",
+      "specs": [
+        {
+          "k": "Format",
+          "v": "1–6 pages"
+        },
+        {
+          "k": "Timeline",
+          "v": "3–5 days"
+        },
+        {
+          "k": "Stack",
+          "v": "HTML · CSS · JS"
+        },
+        {
+          "k": "Deploy",
+          "v": "Vercel · SSL · domain"
+        },
+        {
+          "k": "Leads",
+          "v": "Telegram · email"
+        },
+        {
+          "k": "Included",
+          "v": "Responsive · SEO · analytics"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "72%",
+          "value": "from 2.5k ₽"
+        },
+        {
+          "label": "Ready",
+          "w": "90%",
+          "value": "Turnkey"
+        }
+      ],
+      "tags": [
+        "Landing",
+        "Card site",
+        "Responsive",
+        "SEO",
+        "Forms"
+      ]
+    },
+    "bot": {
+      "label": "02 — Bots",
+      "title": "Telegram turnkey",
+      "lead": "Service menu, booking and step leads, calculator, FAQ, files and alerts to your chat — no separate app. Runs 24/7 on a server.",
+      "specs": [
+        {
+          "k": "Platform",
+          "v": "Telegram Bot API"
+        },
+        {
+          "k": "Modules",
+          "v": "20+ in demo"
+        },
+        {
+          "k": "Stack",
+          "v": "Python · aiogram"
+        },
+        {
+          "k": "Alerts",
+          "v": "TG · email"
+        },
+        {
+          "k": "Uptime",
+          "v": "24/7 on VPS"
+        },
+        {
+          "k": "Integration",
+          "v": "Site → bot"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "48%",
+          "value": "from 1.5k ₽"
+        },
+        {
+          "label": "Features",
+          "w": "95%",
+          "value": "Extended"
+        }
+      ],
+      "tags": [
+        "FSM forms",
+        "Calculator",
+        "FAQ",
+        "Booking",
+        "Alerts"
+      ]
+    },
+    "bundle": {
+      "label": "03 — Bundle",
+      "title": "Site + bot turnkey",
+      "lead": "Connected kit: landing captures leads, the bot guides the client and notifies you. One month of edits and a short handoff after delivery.",
+      "specs": [
+        {
+          "k": "Includes",
+          "v": "Landing + Telegram bot"
+        },
+        {
+          "k": "Timeline",
+          "v": "5–7 days"
+        },
+        {
+          "k": "Edits",
+          "v": "1 month after delivery"
+        },
+        {
+          "k": "Training",
+          "v": "How to take leads"
+        },
+        {
+          "k": "Deploy",
+          "v": "Site + bot on server"
+        },
+        {
+          "k": "Payment",
+          "v": "50% upfront"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "78%",
+          "value": "from 5k ₽"
+        },
+        {
+          "label": "Link",
+          "w": "96%",
+          "value": "Site ↔ bot"
+        }
+      ],
+      "tags": [
+        "Turnkey",
+        "Leads",
+        "Training",
+        "Edits"
+      ]
+    },
+    "logo": {
+      "label": "04 — Logo",
+      "title": "Logo & avatar",
+      "lead": "Mark and avatar for socials, Avito, Kwork and channel. AI draft plus hand polish in studio style — 2–3 options and revisions.",
+      "specs": [
+        {
+          "k": "Format",
+          "v": "PNG · SVG"
+        },
+        {
+          "k": "Timeline",
+          "v": "1–3 days"
+        },
+        {
+          "k": "Options",
+          "v": "2–3 drafts"
+        },
+        {
+          "k": "Revisions",
+          "v": "Included"
+        },
+        {
+          "k": "Extra",
+          "v": "Avatar · platforms"
+        },
+        {
+          "k": "Price",
+          "v": "from 1 500 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "42%",
+          "value": "from 1.5k ₽"
+        },
+        {
+          "label": "Speed",
+          "w": "85%",
+          "value": "1–3 days"
+        }
+      ],
+      "tags": [
+        "Logo",
+        "Avatar",
+        "SVG",
+        "Platforms"
+      ]
+    },
+    "market": {
+      "label": "05 — Marketplace",
+      "title": "WB / Ozon cards",
+      "lead": "Cover and infographics for marketplace grids: one visual language, clear benefit slides and a clean listing look.",
+      "specs": [
+        {
+          "k": "Platforms",
+          "v": "Wildberries · Ozon"
+        },
+        {
+          "k": "Timeline",
+          "v": "1–2 days"
+        },
+        {
+          "k": "Includes",
+          "v": "Main photo + info slides"
+        },
+        {
+          "k": "Style",
+          "v": "Unified visual language"
+        },
+        {
+          "k": "Revisions",
+          "v": "Included"
+        },
+        {
+          "k": "Price",
+          "v": "from 1 000 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "36%",
+          "value": "from 1k ₽"
+        },
+        {
+          "label": "Speed",
+          "w": "88%",
+          "value": "1–2 days"
+        }
+      ],
+      "tags": [
+        "WB",
+        "Ozon",
+        "Infographic",
+        "Cover"
+      ]
+    },
+    "print": {
+      "label": "06 — Print",
+      "title": "Print-ready layouts",
+      "lead": "Flyers, leaflets, business cards, menus and price lists, certificates — PDF ready for the print shop. We don’t do print runs or install.",
+      "specs": [
+        {
+          "k": "Sizes",
+          "v": "A5 · A4 · card"
+        },
+        {
+          "k": "Timeline",
+          "v": "1–3 days"
+        },
+        {
+          "k": "Delivery",
+          "v": "Print-ready PDF"
+        },
+        {
+          "k": "Also",
+          "v": "Certificates · menus"
+        },
+        {
+          "k": "Skip",
+          "v": "Print runs · install · billboards"
+        },
+        {
+          "k": "Price",
+          "v": "from 900 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "32%",
+          "value": "from 900 ₽"
+        },
+        {
+          "label": "Speed",
+          "w": "82%",
+          "value": "1–3 days"
+        }
+      ],
+      "tags": [
+        "Flyer",
+        "Card",
+        "Certificate",
+        "Menu",
+        "PDF"
+      ]
+    },
+    "stickers": {
+      "label": "07 — Stickers",
+      "title": "Stickers & Telegram packs",
+      "lead": "Studio sticker packs and Telegram stickers: characters, reactions, SVG/PNG icons for chat, channel and print.",
+      "specs": [
+        {
+          "k": "Format",
+          "v": "PNG · SVG · TG pack"
+        },
+        {
+          "k": "Timeline",
+          "v": "1–2 days"
+        },
+        {
+          "k": "Telegram",
+          "v": "Pack for @Stickers"
+        },
+        {
+          "k": "Delivery",
+          "v": "Vector + raster"
+        },
+        {
+          "k": "Revisions",
+          "v": "Included"
+        },
+        {
+          "k": "Price",
+          "v": "from 800 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "28%",
+          "value": "from 800 ₽"
+        },
+        {
+          "label": "Speed",
+          "w": "90%",
+          "value": "1–2 days"
+        }
+      ],
+      "tags": [
+        "Stickers",
+        "Telegram",
+        "Vector",
+        "Pack"
+      ]
+    },
+    "present": {
+      "label": "08 — Presentations",
+      "title": "Sales presentations",
+      "lead": "Slides for a pitch, commercial offer or report: structure, visuals and a clean shared style.",
+      "specs": [
+        {
+          "k": "Volume",
+          "v": "10–20 slides"
+        },
+        {
+          "k": "Timeline",
+          "v": "2–4 days"
+        },
+        {
+          "k": "Delivery",
+          "v": "PDF · PPTX"
+        },
+        {
+          "k": "Style",
+          "v": "Matched to brand"
+        },
+        {
+          "k": "Revisions",
+          "v": "Included"
+        },
+        {
+          "k": "Price",
+          "v": "from 1 000 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "40%",
+          "value": "from 1k ₽"
+        },
+        {
+          "label": "Speed",
+          "w": "78%",
+          "value": "2–4 days"
+        }
+      ],
+      "tags": [
+        "Pitch",
+        "Offer",
+        "Slides",
+        "PDF"
+      ]
+    },
+    "game": {
+      "label": "09 — Games",
+      "title": "Sprites & assets",
+      "lead": "Resource-pack inventory icons, item packs and UI sprites from a clear brief. We don’t take a full game.",
+      "specs": [
+        {
+          "k": "Format",
+          "v": "PNG · SVG · GLB"
+        },
+        {
+          "k": "Timeline",
+          "v": "2–5 days"
+        },
+        {
+          "k": "Type",
+          "v": "Sprites · UI · low-poly"
+        },
+        {
+          "k": "Need",
+          "v": "Clear brief"
+        },
+        {
+          "k": "Skip",
+          "v": "Full game"
+        },
+        {
+          "k": "Price",
+          "v": "from 1 500 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "44%",
+          "value": "from 1.5k ₽"
+        },
+        {
+          "label": "Focus",
+          "w": "86%",
+          "value": "By brief"
+        }
+      ],
+      "tags": [
+        "Sprites",
+        "UI",
+        "Low-poly",
+        "Brief"
+      ]
+    },
+    "poster": {
+      "label": "10 — Posters",
+      "title": "Posters & video covers",
+      "lead": "Posters on any theme (space, orbit, industrial) and video covers: YouTube 16:9, Reels / Shorts 9:16. Not only the studio — any story.",
+      "specs": [
+        {
+          "k": "Poster",
+          "v": "A3 · A2 · stories"
+        },
+        {
+          "k": "YouTube",
+          "v": "16:9 cover"
+        },
+        {
+          "k": "Reels",
+          "v": "9:16 preview"
+        },
+        {
+          "k": "Timeline",
+          "v": "1–3 days"
+        },
+        {
+          "k": "Delivery",
+          "v": "PNG · PDF"
+        },
+        {
+          "k": "Price",
+          "v": "from 1 200 ₽"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Budget",
+          "w": "42%",
+          "value": "from 1.2k ₽"
+        },
+        {
+          "label": "Speed",
+          "w": "84%",
+          "value": "1–3 days"
+        }
+      ],
+      "tags": [
+        "Poster",
+        "YouTube",
+        "Reels",
+        "Thumbnail"
+      ]
+    },
+    "3d": {
+      "label": "11 — 3D GRBNK",
+      "title": "Models, print & merch",
+      "lead": "FDM and SLA: STL/OBJ/GLB, print check and delivery across Russia. Merch lines: lithophane, keychains, magnets, car-plate keychain — photos to follow.",
+      "specs": [
+        {
+          "k": "Tech",
+          "v": "FDM · SLA"
+        },
+        {
+          "k": "Formats",
+          "v": "STL · OBJ · GLB"
+        },
+        {
+          "k": "Merch",
+          "v": "Lithophane · keychains · magnets"
+        },
+        {
+          "k": "Also",
+          "v": "Car-plate keychain"
+        },
+        {
+          "k": "Delivery",
+          "v": "Russia"
+        },
+        {
+          "k": "Order",
+          "v": "Site · @MAXSPAS_BOT"
+        }
+      ],
+      "bars": [
+        {
+          "label": "Price",
+          "w": "38%",
+          "value": "from 300 ₽"
+        },
+        {
+          "label": "Detail",
+          "w": "92%",
+          "value": "High SLA"
+        }
+      ],
+      "tags": [
+        "FDM",
+        "SLA",
+        "Lithophane",
+        "Keychains",
+        "Magnets"
+      ]
+    }
+  },
+  "portfolio": {
+    "maxspas-site": {
+      "title": "maxspas.ru",
+      "desc": "Studio site: services, pricing, 3D GRBNK, lead form. Vercel deploy, domain & SSL",
+      "tag": "Site",
+      "price": "6 pages · live"
+    },
+    "maxspas-bot": {
+      "title": "@maxspas_studio_bot",
+      "desc": "Studio showcase: 20+ modules — menu, calculator, FAQ, step leads, files, order status",
+      "tag": "Bot",
+      "price": "20+ features · demo"
+    },
+    "grbnk-3d": {
+      "title": "3D GRBNK — showroom",
+      "desc": "Model catalog with 3D view, quote and order. FDM + SLA, delivery across Russia",
+      "tag": "3D",
+      "price": "from 300 ₽",
+      "botLabel": "Order in bot"
+    },
+    "maxspas-bot-3d": {
+      "title": "@MAXSPAS_BOT",
+      "desc": "Retail 3D bot: catalog, material quote (plastic + grams), print order",
+      "tag": "Bot · 3D",
+      "price": "calculator · orders",
+      "botLabel": "Bot · 3D →"
+    },
+    "demo-severny-bereg": {
+      "title": "Severny Bereg",
+      "desc": "Demo bathhouse landing: full-screen hero, Telegram booking. Local service example",
+      "tag": "Site · demo",
+      "price": "1-page landing"
+    },
+    "demo-velokuhnya": {
+      "title": "VeloKitchen",
+      "desc": "Demo workshop + cafe landing: services, prices, booking. Bright local brand example",
+      "tag": "Site · demo",
+      "price": "1-page landing"
+    },
+    "demo-barber-noir": {
+      "title": "BARBER NOIR",
+      "desc": "B&W barbershop: pick a barber and time slots, book in Telegram",
+      "tag": "Site · demo",
+      "price": "booking landing"
+    },
+    "demo-shkola": {
+      "title": "School of Meaning",
+      "desc": "Online course: Start/Pro/Team plans and signup modal",
+      "tag": "Site · demo",
+      "price": "course landing"
+    },
+    "demo-chistotakt": {
+      "title": "ChistoTakt",
+      "desc": "Cleaning with calculator: area, type, extras → price estimate",
+      "tag": "Site · demo",
+      "price": "calculator landing"
+    },
+    "demo-kadr": {
+      "title": "Studio KADR",
+      "desc": "Photo portfolio: genre filter and lightbox viewer",
+      "tag": "Site · demo",
+      "price": "portfolio site"
+    },
+    "demo-domremont": {
+      "title": "DomRemont",
+      "desc": "3-step quote quiz: room → scope → contact and price estimate",
+      "tag": "Site · demo",
+      "price": "quiz landing"
+    },
+    "demo-logo-nord": {
+      "title": "NORD BREW",
+      "desc": "Specialty coffee mark: geometric N, calm palette, 1:1 avatar for platforms",
+      "tag": "Logo",
+      "price": "mark · SVG"
+    },
+    "demo-logo-volt": {
+      "title": "VOLT LAB",
+      "desc": "Tech mark for gadgets: lightning on black, works as avatar and product badge",
+      "tag": "Logo",
+      "price": "mark · SVG"
+    },
+    "demo-logo-flora": {
+      "title": "FLORA HOME",
+      "desc": "Soft plants & care mark: leaf, warm accent, calm brand tone",
+      "tag": "Logo",
+      "price": "mark · SVG"
+    },
+    "demo-mkt-buds": {
+      "title": "Pulse X — WB / Ozon",
+      "desc": "Earbuds card: product photo, price and benefit slides for marketplace grid",
+      "tag": "Marketplace",
+      "price": "cover + slides"
+    },
+    "demo-mkt-brew": {
+      "title": "NORD BREW pour-over",
+      "desc": "Ceramic pour-over card: product photo, specs and benefits",
+      "tag": "Marketplace",
+      "price": "cover + slides"
+    },
+    "demo-mkt-plant": {
+      "title": "Starter set",
+      "desc": "Pot + soil set card: live product photo and short benefits",
+      "tag": "Marketplace",
+      "price": "cover + slides"
+    },
+    "demo-print-card": {
+      "title": "NORD BREW business card",
+      "desc": "90×50 layout: mark, name and contacts — print-ready file",
+      "tag": "Print",
+      "price": "business card"
+    },
+    "demo-print-flyer": {
+      "title": "VOLT LAB flyer",
+      "desc": "A5 promo with discount code — high-contrast handout layout",
+      "tag": "Print",
+      "price": "A5 flyer"
+    },
+    "demo-print-cert": {
+      "title": "FLORA HOME certificate",
+      "desc": "Workshop certificate: frame, mark and participant name",
+      "tag": "Print",
+      "price": "A5 certificate"
+    },
+    "demo-stickers": {
+      "title": "MAXSPAS stickers",
+      "desc": "Studio Telegram sticker pack: characters, reactions, chat and channel",
+      "tag": "Stickers",
+      "price": "from 800 ₽"
+    },
+    "demo-present-pitch": {
+      "title": "Pitch: site + bot",
+      "desc": "Short pitch for local business — problem, solution, package",
+      "tag": "Presentation",
+      "price": "from 1 000 ₽"
+    },
+    "demo-present-offer": {
+      "title": "Offer: 3D GRBNK",
+      "desc": "Commercial offer for print and models — partner-ready slides",
+      "tag": "Presentation",
+      "price": "from 1 000 ₽"
+    },
+    "demo-sprites-mc": {
+      "title": "Inventory · resource pack",
+      "desc": "Tool and food icons in a modern resource-pack style",
+      "tag": "Sprites",
+      "price": "from 1 500 ₽"
+    },
+    "demo-sprites-rpg": {
+      "title": "RPG item pack",
+      "desc": "Rings, potions, bags, books, keys — unified UI item pack",
+      "tag": "Sprites",
+      "price": "from 1 500 ₽"
+    },
+    "demo-poster-cosmos": {
+      "title": "Poster “COSMOS”",
+      "desc": "Retro space propaganda — no studio branding, pure theme",
+      "tag": "Poster",
+      "price": "from 1 200 ₽"
+    },
+    "demo-poster-orbit": {
+      "title": "Poster “ORBIT”",
+      "desc": "Rocket silhouette and typography — free-theme graphic poster",
+      "tag": "Poster",
+      "price": "from 1 200 ₽"
+    },
+    "demo-poster-print": {
+      "title": "Poster “PRINT”",
+      "desc": "Industrial character and bold typography",
+      "tag": "Poster",
+      "price": "from 1 200 ₽"
+    },
+    "demo-poster-space": {
+      "title": "Poster “Studio online”",
+      "desc": "Brand poster example — retro space",
+      "tag": "Poster",
+      "price": "from 1 200 ₽"
+    },
+    "demo-cover-yt-print": {
+      "title": "Preview · 3D print",
+      "desc": "YouTube 16:9 cover — bold type and object to win the click",
+      "tag": "Cover",
+      "price": "from 1 200 ₽"
+    },
+    "demo-cover-yt-bot": {
+      "title": "Preview · Bot",
+      "desc": "Telegram bot video cover — premium thumbnail for the feed",
+      "tag": "Cover",
+      "price": "from 1 200 ₽"
+    },
+    "demo-cover-reels": {
+      "title": "Preview · Reels",
+      "desc": "9:16 vertical cover for Reels / Shorts — readable on phone",
+      "tag": "Cover",
+      "price": "from 1 200 ₽"
+    },
+    "lithophane-soon": {
+      "title": "Lithophane",
+      "desc": "Glowing portrait or photo in a frame. Sample photos to follow",
+      "tag": "3D · merch",
+      "price": "from 2 000 ₽"
+    },
+    "keychain-soon": {
+      "title": "Keychains",
+      "desc": "Branded and souvenir keychains for print. Photos later",
+      "tag": "3D · merch",
+      "price": "from 500 ₽"
+    },
+    "magnet-soon": {
+      "title": "Magnets",
+      "desc": "Souvenir magnets with logo or photo. Samples when photos are ready",
+      "tag": "3D · merch",
+      "price": "from 400 ₽"
+    },
+    "plate-keychain-soon": {
+      "title": "Car-plate keychain",
+      "desc": "Keychain with a car plate number. Layout and print when sample is agreed",
+      "tag": "3D · merch",
+      "price": "from 800 ₽"
+    }
+  },
+  "grbnkShowroom": {
+    "lead": "Catalog · rotate model · quote · order in bot",
+    "demoTag": "Demo",
+    "orderBtn": "Order this model"
+  },
+  "designBranches": {
+    "now": [
+      "Logos and avatars",
+      "Stickers, prints, vector",
+      "Telegram sticker packs",
+      "Web: banners and icons",
+      "Marketplace cards",
+      "Flyers, leaflets, business cards",
+      "Certificates and diplomas",
+      "Menus and price lists",
+      "Presentations",
+      "Posters and flyers",
+      "Video covers / thumbnails",
+      "Sprites / game assets — clear brief",
+      "Websites and Telegram bots",
+      "3D models and printing",
+      "Lithophane, keychains, magnets"
+    ],
+    "later": [
+      "Brand identity / brand book",
+      "Complex infographics",
+      "Maps and diagrams",
+      "Brochures, catalogs, books",
+      "Packaging and labels (layout)",
+      "Souvenirs — layout only",
+      "AI illustration series"
+    ],
+    "skip": [
+      "Body tattoo prints",
+      "Billboards, stands, storefronts, turnkey signs",
+      "Full game",
+      "Print runs and install"
+    ]
+  }
+}

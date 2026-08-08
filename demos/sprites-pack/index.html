@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Спрайты и ассеты — MAXSPAS</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0b0f;--text:#f2f4f8;--muted:#9aa3b5;--line:rgba(255,255,255,.1);--card:#13151d}
+    *{box-sizing:border-box} body{margin:0;font-family:"DM Sans",sans-serif;background:radial-gradient(800px 400px at 80% -10%,rgba(56,189,248,.1),transparent 45%),var(--bg);color:var(--text)}
+    .wrap{width:min(1100px,calc(100% - 32px));margin:0 auto;padding:24px 0 56px}
+    a{color:inherit;text-decoration:none}
+    .top{display:flex;justify-content:space-between;margin-bottom:24px}
+    .top .back{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:.82rem}
+    h1{font-family:Syne,sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.04em;margin:0 0 10px;line-height:1.05}
+    .lead{color:var(--muted);max-width:56ch;margin:0 0 28px}
+    .block{margin-bottom:36px}
+    .block h2{font-family:Syne,sans-serif;margin:0 0 8px;font-size:1.3rem}
+    .block p{margin:0 0 14px;color:var(--muted);font-size:.92rem}
+    .frame{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+    .frame img{width:100%;display:block}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .meta span{font-size:.75rem;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+    .cta{margin-top:8px}
+    .btn{display:inline-flex;padding:12px 18px;border-radius:999px;background:#38bdf8;color:#041018;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a href="/">MAXSPAS Studio</a>
+      <a class="back" href="/works">← Работы</a>
+    </div>
+    <h1>Спрайты и ассеты игр</h1>
+    <p class="lead">Инвентарь в стиле ресурспака и фэнтези-пак предметов — по узкому ТЗ. Игру целиком не берём.</p>
+
+    <section class="block" id="mc">
+      <h2>Инвентарь · ресурспак</h2>
+      <p>Инструменты и еда: кирка, меч, топор, яблоко, хлеб, зелье — иконки под слоты инвентаря.</p>
+      <div class="frame"><img src="assets/mc-inventory.png" alt="Инвентарь: инструменты и еда" width="1024" height="1024"></div>
+      <div class="meta">
+        <span>PNG · сетка слотов</span>
+        <span>Инструменты</span>
+        <span>Еда</span>
+        <span>от 1 500 ₽</span>
+      </div>
+    </section>
+
+    <section class="block" id="rpg">
+      <h2>Пак предметов · RPG</h2>
+      <p>Кольца, очки, сумки, зелья, книги, пояса, ключи и кристаллы — один визуальный язык пака.</p>
+      <div class="frame"><img src="assets/rpg-pack.png" alt="Фэнтези-пак предметов" width="1536" height="864"></div>
+      <div class="meta">
+        <span>Item pack</span>
+        <span>Единый стиль</span>
+        <span>Под UI игры</span>
+      </div>
+    </section>
+
+    <div class="cta"><a class="btn" href="/contacts">Заказать ассеты</a></div>
+  </div>
+</body>
+</html>

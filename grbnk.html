@@ -4,72 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D GRBNK — MAXSPAS Studio</title>
+  <meta name="description" content="3D GRBNK — каталог моделей для печати, просмотр STL, расчёт и заказ. Горбунки, доставка по России.">
   <base href="/">
   <script src="js/portal-guard.js"></script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/assets/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAXSPAS Studio">
+  <meta property="og:url" content="https://maxspas.ru/grbnk">
+  <meta property="og:title" content="3D GRBNK — MAXSPAS Studio">
+  <meta property="og:description" content="3D GRBNK — каталог моделей для печати, просмотр STL, расчёт и заказ. Горбунки, доставка по России.">
+  <meta property="og:image" content="https://maxspas.ru/assets/favicon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://maxspas.ru/assets/favicon-512.png">
   <link rel="stylesheet" href="css/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "/js/vendor/three/build/three.module.js",
+      "three/addons/": "/js/vendor/three/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body data-page="grbnk" data-theme="grbnk">
   <div id="site-chrome"></div>
   <main>
-    <section class="page-hero">
-      <span class="badge badge--3d">3D GRBNK</span>
-      <h1>Модели для <span class="gradient-text">печати</span></h1>
-      <p>Горбунки · доставка по России · STL, OBJ, игровые ассеты</p>
-      <div class="page-hero__line"></div>
+    <section class="page-hero page-hero--grbnk">
+      <div class="page-hero__copy">
+        <span class="badge badge--3d" data-i18n="grbnk.badge">3D GRBNK</span>
+        <h1 data-i18n="grbnk.title" data-i18n-mode="html">Модели для <span class="gradient-text">печати</span></h1>
+        <p id="grbnk-hero-lead">Каталог · покрутить модель · расчёт · заказ в боте</p>
+        <div class="page-hero__line"></div>
+      </div>
+      <div class="page-hero__cube" aria-hidden="true">
+        <div class="cube-scene cube-scene--hero">
+          <div class="cube-scene__grid"></div>
+          <div class="cube-ring cube-ring--1"></div>
+          <div class="cube-ring cube-ring--2"></div>
+          <div class="cube-wrap">
+            <div class="cube cube--wireframe">
+              <div class="cube__face cube__face--front"></div>
+              <div class="cube__face cube__face--back"></div>
+              <div class="cube__face cube__face--right"></div>
+              <div class="cube__face cube__face--left"></div>
+              <div class="cube__face cube__face--top"></div>
+              <div class="cube__face cube__face--bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <section class="grbnk-stage" id="grbnk-showroom" aria-label="Витрина 3D">
+      <header class="grbnk-stage__head">
+        <div class="grbnk-stage__title">
+          <span class="badge badge--3d" data-i18n="grbnk.showroom.title">Витрина</span>
+          <p class="grbnk-stage__sub" data-i18n="grbnk.showroom.sub">Крутите модель мышью или пальцем — как в конфигураторе</p>
+        </div>
+      </header>
+
+      <div class="grbnk-stage__screen">
+        <nav class="grbnk-picklist" id="grbnk-catalog" aria-label="Каталог моделей"></nav>
+        <div class="grbnk-stage__viewport">
+          <div class="grbnk-viewer-frame">
+            <div class="grbnk-viewer-frame__fx" aria-hidden="true">
+              <span class="grbnk-viewer-frame__grid"></span>
+              <span class="grbnk-viewer-frame__scan"></span>
+            </div>
+            <canvas id="grbnk-viewer" aria-label="3D просмотр модели"></canvas>
+            <div class="grbnk-viewer-frame__status" id="grbnk-viewer-status" aria-live="polite"></div>
+            <div class="grbnk-viewer-frame__hint" data-i18n="grbnk.showroom.hint">↻ ЛКМ — крутить · колесо — зум · двойной клик — сброс</div>
+          </div>
+        </div>
+        <aside class="grbnk-stage__dock" aria-label="О модели">
+          <div class="grbnk-viewer-meta" id="grbnk-viewer-meta">
+            <span class="grbnk-viewer-meta__tag">Демо</span>
+            <strong id="grbnk-viewer-title">3DBenchy</strong>
+            <p class="grbnk-viewer-meta__desc" id="grbnk-viewer-desc"></p>
+            <span class="grbnk-viewer-meta__price" id="grbnk-viewer-price">от 300 ₽</span>
+            <a
+              id="grbnk-viewer-order"
+              class="btn btn--fill btn--sm grbnk-viewer-meta__order"
+              href="https://t.me/maxspas_studio_bot?start=3d_benchy"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="grbnk.showroom.orderBtn"
+            >Заказать эту модель</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reveal" data-theme-zone="grbnk">
+      <div class="section__head">
+        <h2 id="grbnk-budget-title">3D GRBNK</h2>
+        <p data-i18n="grbnk.budget.sub">STL, создание модели, печать — как в боте</p>
+      </div>
+      <div id="grbnk-calc-bars"></div>
+      <div class="grbnk-calc-grid" id="grbnk-calc-grid"></div>
+    </section>
+
     <section class="section section--tight">
       <div class="grbnk-hero">
         <div class="grbnk-brand">
           <img id="grbnk-brand-logo" class="grbnk-brand__logo" src="/assets/logo-3dgrbnk.svg" alt="3DGRBNK" width="200" height="200" loading="lazy">
           <span class="grbnk-brand__label">3D GRBNK · MAXSPAS Studio</span>
-          <h2 style="margin:0 0 10px;font-size:1.5rem">Модели, которые печатаются</h2>
-          <p style="color:var(--muted);margin:0 0 14px">STL/OBJ, декор, миниатюры, запчасти, low-poly для игр</p>
+          <h2 style="margin:0 0 10px;font-size:1.5rem" data-i18n="grbnk.order.title">Заказ и файлы</h2>
+          <p style="color:var(--muted);margin:0 0 14px" data-i18n="grbnk.order.sub">STL · OBJ · GLB — загрузка в боте, статус заказа, доставка по РФ</p>
           <ul class="grbnk-list">
-            <li>Печать с доставкой по России</li>
-            <li>Cults3D, Sketchfab — скоро</li>
+            <li>Пришлите файл или опишите задачу</li>
+            <li>Печать FDM или SLA (высокая детализация)</li>
+            <li>Проверка модели и доставка по России</li>
           </ul>
-          <div class="platform-tags">
-            <span>Cults3D — скоро</span>
-            <span>VK 3D — есть</span>
-          </div>
           <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px">
-            <a href="contacts" class="btn btn--fill">Заказать модель</a>
-            <a id="grbnk-brand-bot" href="https://t.me/maxspas_studio_bot?start=3d" class="btn btn--ghost" target="_blank" rel="noopener">Telegram · 3D</a>
-            <a href="prices" class="btn btn--ghost">Цены</a>
+            <a href="contacts" class="btn btn--fill">Заявка на сайте</a>
+            <a id="grbnk-brand-bot" href="https://t.me/maxspas_studio_bot?start=3d" class="btn btn--ghost" target="_blank" rel="noopener">Бот · 3D →</a>
           </div>
         </div>
-        <div class="grbnk-visual" id="grbnk-visual" aria-label="3D GRBNK"></div>
-      </div>
-    </section>
-    <hr class="section-divider">
-    <section class="section">
-      <div class="section__head"><h2>Форматы</h2><p>Выберите удобный вариант</p></div>
-      <div class="cards">
-        <article class="card">
-          <div class="card__icon" data-ms-icon="folder"></div>
-          <h3>Готовая модель</h3>
-          <p>STL/OBJ — печатаете сами</p>
-          <div class="card__meta"><span>от 300 ₽</span><span>1–2 дня</span></div>
-        </article>
-        <article class="card">
-          <div class="card__icon" data-ms-icon="printer"></div>
-          <h3>Печать + доставка</h3>
-          <p>Печатаем и отправляем</p>
-          <div class="card__meta"><span>от 500 ₽</span><span>2–5 дней</span></div>
-        </article>
-        <article class="card">
-          <div class="card__icon" data-ms-icon="pencil"></div>
-          <h3>На заказ</h3>
-          <p>По вашему ТЗ</p>
-          <div class="card__meta"><span>от 2 000 ₽</span><span>3–7 дней</span></div>
-        </article>
+        <div class="grbnk-order-demo card">
+          <h3 style="margin:0 0 8px;font-size:1rem" data-i18n="grbnk.order.demoTitle">Как в боте</h3>
+          <p style="color:var(--muted);font-size:0.86rem;margin:0 0 12px" data-i18n="grbnk.order.demoSub">Демо статуса заказа — в боевом боте этапы обновляются из админки</p>
+          <ul class="grbnk-status-demo">
+            <li class="is-done">Заявка принята</li>
+            <li class="is-done">Файл STL проверен</li>
+            <li class="is-active">Печать — в работе</li>
+            <li>Доставка по РФ</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
-  <script src="/js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/icons.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/motion.js"></script>
   <script src="js/theme-transition.js"></script>
+  <script src="js/grbnk-page.js" defer></script>
+  <script type="module" src="js/grbnk-viewer.js?v=18"></script>
 </body>
 </html>
