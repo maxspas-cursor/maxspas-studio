@@ -428,6 +428,10 @@ a.portfolio-card__visual-link {
   max-width: 52ch;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .empty-state {
   text-align: center;
   padding: 48px 24px;

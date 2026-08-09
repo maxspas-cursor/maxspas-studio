@@ -638,8 +638,8 @@
       "botLabel": "Order in bot"
     },
     "maxspas-bot-3d": {
-      "title": "@MAXSPAS_BOT",
-      "desc": "Retail 3D bot: catalog, material quote (plastic + grams), print order",
+      "title": "@maxspas_studio_bot · 3D",
+      "desc": "Order 3D in the same bot: catalog, material quote, print and delivery",
       "tag": "Bot · 3D",
       "price": "calculator · orders",
       "botLabel": "Bot · 3D →"

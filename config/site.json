@@ -497,15 +497,15 @@
     },
     {
       "id": "maxspas-bot-3d",
-      "title": "@MAXSPAS_BOT",
-      "desc": "Розничный бот 3D: каталог, расчёт материала (пластик + граммы), заказ печати",
+      "title": "@maxspas_studio_bot · 3D",
+      "desc": "Заказ 3D в том же боте: каталог, расчёт материала, печать и доставка",
       "tag": "Бот · 3D",
       "direction": "3d",
       "price": "калькулятор · заказы",
       "icon": "bot",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(139,157,200,0.22), rgba(251,146,60,0.12))",
-      "url": "https://t.me/MAXSPAS_BOT",
+      "url": "https://t.me/maxspas_studio_bot?start=3d",
       "cover": "assets/shots/bot-ui.png"
     },
     {

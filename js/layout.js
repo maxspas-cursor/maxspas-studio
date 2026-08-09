@@ -538,30 +538,77 @@
 
   function renderPortfolio() {
     const grid = document.getElementById("portfolio-grid");
-    const items = site.portfolio || [];
+    const empty = document.getElementById("portfolio-empty");
+    const note = document.getElementById("portfolio-note");
+    const items = [...(site.portfolio || [])].sort((a, b) => {
+      const as = a.status === "photo-soon" ? 1 : 0;
+      const bs = b.status === "photo-soon" ? 1 : 0;
+      return as - bs;
+    });
     if (!grid) return;
     if (!items.length) {
-      const empty = document.getElementById("portfolio-empty");
       if (empty) empty.hidden = false;
+      if (note) note.hidden = true;
       return;
     }
     grid.innerHTML = items.map(portfolioCard).join("");
-    const empty = document.getElementById("portfolio-empty");
     if (empty) empty.hidden = true;
+    if (note) note.hidden = false;
 
     const filters = document.getElementById("portfolio-filters");
-    if (!filters || filters.dataset.bound === "1") return;
-    filters.dataset.bound = "1";
-    filters.addEventListener("click", (e) => {
-      const btn = e.target.closest(".portfolio-filter");
-      if (!btn) return;
-      filters.querySelectorAll(".portfolio-filter").forEach((b) => b.classList.toggle("is-active", b === btn));
-      const filter = btn.dataset.filter || "all";
+    if (!filters) return;
+
+    const applyFilter = (filter) => {
+      const f = filter || "all";
+      filters.querySelectorAll(".portfolio-filter").forEach((b) => {
+        b.classList.toggle("is-active", (b.dataset.filter || "all") === f);
+      });
+      let visible = 0;
       grid.querySelectorAll(".portfolio-card").forEach((card) => {
         const dir = card.dataset.direction || "all";
-        card.hidden = filter !== "all" && dir !== filter;
+        const show = f === "all" || dir === f;
+        card.hidden = !show;
+        if (show) visible += 1;
       });
-    });
+      if (empty) {
+        empty.hidden = visible > 0;
+        if (!visible) {
+          const title = empty.querySelector("h3");
+          const desc = empty.querySelector("p");
+          if (title) title.textContent = isEn() ? "Nothing in this filter" : "В этой категории пока пусто";
+          if (desc) {
+            desc.textContent = isEn()
+              ? "Try another filter or open All."
+              : "Выберите другой фильтр или «Все».";
+          }
+        }
+      }
+      if (note) note.hidden = visible === 0;
+      try {
+        const url = new URL(location.href);
+        if (f === "all") url.searchParams.delete("filter");
+        else url.searchParams.set("filter", f);
+        history.replaceState(null, "", url.pathname + url.search + url.hash);
+      } catch (_) {}
+    };
+
+    if (filters.dataset.bound !== "1") {
+      filters.dataset.bound = "1";
+      filters.addEventListener("click", (e) => {
+        const btn = e.target.closest(".portfolio-filter");
+        if (!btn) return;
+        applyFilter(btn.dataset.filter || "all");
+      });
+    }
+
+    let initial = "all";
+    try {
+      initial = new URLSearchParams(location.search).get("filter") || "all";
+    } catch (_) {}
+    if (![...filters.querySelectorAll(".portfolio-filter")].some((b) => b.dataset.filter === initial)) {
+      initial = "all";
+    }
+    applyFilter(initial);
   }
 
   function isValidEmail(value) {
