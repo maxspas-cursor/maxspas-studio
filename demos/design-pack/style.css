@@ -1,3 +1,6 @@
+/* ms-img-fix */
+img { max-width: 100%; height: auto; }
+
 :root {
   --bg: #0a0b0f;
   --text: #f2f4f8;

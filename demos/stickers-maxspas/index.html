@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <style>
+    /* ms-img-fix */ img{max-width:100%;height:auto}
+    
     :root { --bg:#0a0b10; --card:#141722; --text:#f2f4f8; --muted:#9aa3b5; --accent:#a78bfa; --line:rgba(255,255,255,.1); }
     *{box-sizing:border-box} body{margin:0;font-family:"DM Sans",sans-serif;background:radial-gradient(700px 360px at 20% -10%,rgba(167,139,250,.18),transparent 50%),var(--bg);color:var(--text)}
     .wrap{width:min(980px,calc(100% - 32px));margin:0 auto;padding:24px 0 56px}
@@ -22,7 +24,7 @@
     .note strong{display:block;margin-bottom:4px}
     .note p{margin:0;color:var(--muted);font-size:.92rem}
     .sheet{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#1a1030}
-    .sheet img{width:100%;display:block}
+    .sheet img{width:100%;height:auto;max-width:100%;display:block;object-fit:contain;vertical-align:middle}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
     .chip{padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--card);font-size:.86rem;color:var(--muted)}
     .chip b{display:block;color:var(--text);margin-bottom:4px;font-family:Syne,sans-serif}

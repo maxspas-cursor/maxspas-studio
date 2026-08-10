@@ -391,6 +391,7 @@ a.portfolio-card__visual-link {
 .portfolio-card__cover {
   width: 100%;
   height: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
   display: block;

@@ -8,6 +8,8 @@
   <meta name="robots" content="noindex">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <style>
+    /* ms-img-fix */ img{max-width:100%;height:auto}
+    
     :root{--bg:#0a0b0f;--text:#f2f4f8;--muted:#9aa3b5;--line:rgba(255,255,255,.1);--card:#13151d}
     *{box-sizing:border-box} body{margin:0;font-family:"DM Sans",sans-serif;background:radial-gradient(800px 400px at 80% -10%,rgba(56,189,248,.1),transparent 45%),var(--bg);color:var(--text)}
     .wrap{width:min(1100px,calc(100% - 32px));margin:0 auto;padding:24px 0 56px}
@@ -20,7 +22,7 @@
     .block h2{font-family:Syne,sans-serif;margin:0 0 8px;font-size:1.3rem}
     .block p{margin:0 0 14px;color:var(--muted);font-size:.92rem}
     .frame{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
-    .frame img{width:100%;display:block}
+    .frame img{width:100%;height:auto;max-width:100%;display:block;object-fit:contain}
     .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .meta span{font-size:.75rem;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
     .cta{margin-top:8px}

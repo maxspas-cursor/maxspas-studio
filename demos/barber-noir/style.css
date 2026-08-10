@@ -1,3 +1,6 @@
+/* ms-img-fix */
+img { max-width: 100%; height: auto; }
+
 :root {
   --bg: #0a0a0a; --ink: #f5f5f5; --muted: #8a8a8a; --line: #2a2a2a; --accent: #fff;
   --display: "Bebas Neue", sans-serif; --font: "DM Sans", system-ui, sans-serif;

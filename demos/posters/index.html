@@ -8,6 +8,8 @@
   <meta name="robots" content="noindex">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <style>
+    /* ms-img-fix */ img{max-width:100%;height:auto}
+    
     :root{--bg:#0a0a0c;--text:#f3f3f5;--muted:#9a9aa8;--line:rgba(255,255,255,.1);--frame:#121214}
     *{box-sizing:border-box} body{margin:0;font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text)}
     .wrap{width:min(1100px,calc(100% - 32px));margin:0 auto;padding:24px 0 56px}
@@ -23,7 +25,7 @@
     .grid--reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,240px));gap:16px}
     figure{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--frame);display:flex;flex-direction:column}
     .frame{flex:1;display:flex;align-items:center;justify-content:center;padding:10px;background:#0d0d10;min-height:0;overflow:hidden;box-sizing:border-box}
-    .frame img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center;display:block}
+    .frame img{max-width:100%;width:100%;height:auto;object-fit:contain;object-position:center;display:block}
     .cover .frame{aspect-ratio:16/9}
     .reel .frame{aspect-ratio:9/16;max-width:240px}
     .poster .frame{aspect-ratio:3/4}
