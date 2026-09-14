@@ -189,6 +189,12 @@
   }
 
   window.MSTheme = { setTheme, getTheme: () => activeTheme };
+  window.MSApp = {
+    getSite: () => site,
+    getTheme: () => activeTheme,
+    setTheme,
+    refresh: refreshLocalized,
+  };
 
   function grbnkLogoImg(className, size) {
     const logo = site?.grbnk3d?.logo || "/assets/logo-3dgrbnk.svg";
@@ -503,7 +509,7 @@
     } else if (window.MSIcons) {
       visualIcon = `<span class="portfolio-card__icon-host">${MSIcons.icon(iconName, { xl: true })}</span>`;
     } else {
-      visualIcon = `<span class="portfolio-card__emoji">${esc(loc.emoji || "✨")}</span>`;
+      visualIcon = `<span class="portfolio-card__emoji">${esc(loc.emoji || "\u2728")}</span>`;
     }
     const tag = loc.tag ? `<span class="portfolio-card__tag">${esc(loc.tag)}</span>` : "";
     const soon =

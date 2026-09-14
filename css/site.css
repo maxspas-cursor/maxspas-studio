@@ -613,6 +613,49 @@ body[data-page="grbnk"] .page-hero {
 }
 
 .grbnk-viewer-wrap { display: flex; flex-direction: column; gap: 12px; }
+
+.grbnk-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.grbnk-products__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(139, 157, 200, 0.18);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(8, 11, 20, 0.65);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.grbnk-products__item:hover {
+  border-color: rgba(251, 146, 60, 0.45);
+  transform: translateY(-2px);
+}
+.grbnk-products__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: #0b0d12;
+}
+.grbnk-products__item span {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 10px 10px;
+}
+@media (max-width: 700px) {
+  .grbnk-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .grbnk-viewer-frame {
   position: absolute;
   inset: 0;

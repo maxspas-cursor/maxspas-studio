@@ -68,111 +68,27 @@
     "lead": "Витрина моделей с просмотром как в конфигураторе — каталог, расчёт и заказ как в Telegram-боте.",
     "models": [
       {
-        "id": "benchy",
-        "title": "3DBenchy",
-        "tag": "Демо",
-        "price": "от 300 ₽",
-        "desc": "Тестовая модель для калибровки принтера — классика FDM (CC0, CreativeTools)",
-        "format": "STL",
-        "shape": "benchy",
-        "file": "/assets/models/benchy.stl",
-        "previewFile": "/assets/models/web/benchy.glb",
-        "days": "1–2 дня"
-      },
-      {
-        "id": "vase",
-        "title": "Blossom Vase Twist",
-        "tag": "Декор",
-        "price": "от 500 ₽",
-        "desc": "Витая ваза с blossom-узором — печать в vase mode (AndreasMass)",
-        "format": "STL",
-        "shape": "vase",
-        "file": "/assets/models/vase.stl",
-        "previewFile": "/assets/models/web/vase.glb",
-        "days": "2–3 дня"
-      },
-      {
         "id": "gear",
         "title": "Шестерня",
         "tag": "Запчасть",
         "price": "от 400 ₽",
-        "desc": "Эвольвентная шестерня 24 зуба, 20° — под печать (mdsSpurGear)",
-        "format": "STL",
+        "desc": "Эвольвентная шестерня 24 зуба — под печать",
+        "format": "GLB",
         "shape": "gear",
-        "file": "/assets/models/gear.stl",
+        "file": "/assets/models/web/gear.glb",
         "previewFile": "/assets/models/web/gear.glb",
         "days": "1–3 дня"
-      },
-      {
-        "id": "axolotl",
-        "title": "Аксолотль",
-        "tag": "Фигурка",
-        "price": "от 600 ₽",
-        "desc": "Фигурка аксолотля — размеры S/M/L (15–30 г пластика)",
-        "format": "STL",
-        "shape": "figurine",
-        "file": "/assets/models/catalog/axolotl.stl",
-        "previewFile": "/assets/models/web/catalog/axolotl.glb",
-        "days": "2–4 дня"
-      },
-      {
-        "id": "shark",
-        "title": "Акула",
-        "tag": "Фигурка",
-        "price": "от 500 ₽",
-        "desc": "Фигурка акулы — размеры S/M/L (10–20 г пластика)",
-        "format": "STL",
-        "shape": "figurine",
-        "file": "/assets/models/catalog/shark.stl",
-        "previewFile": "/assets/models/web/catalog/shark.glb",
-        "days": "2–3 дня"
-      },
-      {
-        "id": "poison-dragon",
-        "title": "Ядовитый дракон",
-        "tag": "Фигурка",
-        "price": "от 700 ₽",
-        "desc": "Дракон с детализацией — размеры S/M/L (15–35 г пластика)",
-        "format": "STL",
-        "shape": "figurine",
-        "file": "/assets/models/catalog/poison-dragon.stl",
-        "previewFile": "/assets/models/web/catalog/poison-dragon.glb",
-        "days": "3–5 дней"
-      },
-      {
-        "id": "snake",
-        "title": "Змейка",
-        "tag": "Фигурка",
-        "price": "от 500 ₽",
-        "desc": "Гибкая змейка — мини / средняя / большая (15–35 г)",
-        "format": "STL",
-        "shape": "figurine",
-        "file": "/assets/models/catalog/snake.stl",
-        "previewFile": "/assets/models/web/catalog/snake.glb",
-        "days": "2–4 дня"
       },
       {
         "id": "chameleon",
         "title": "Хамелеон",
         "tag": "Фигурка",
         "price": "от 450 ₽",
-        "desc": "Фигурка хамелеона — S/M/L (15–30 г пластика)",
-        "format": "STL",
+        "desc": "Фигурка хамелеона — S/M/L",
+        "format": "GLB",
         "shape": "figurine",
-        "file": "/assets/models/catalog/chameleon.stl",
+        "file": "/assets/models/web/catalog/chameleon.glb",
         "previewFile": "/assets/models/web/catalog/chameleon.glb",
-        "days": "2–3 дня"
-      },
-      {
-        "id": "yasher",
-        "title": "Ящер",
-        "tag": "Фигурка",
-        "price": "от 400 ₽",
-        "desc": "Фигурка ящера — XS/S/M (5–15 г пластика)",
-        "format": "STL",
-        "shape": "figurine",
-        "file": "/assets/models/catalog/yasher.stl",
-        "previewFile": "/assets/models/web/catalog/yasher.glb",
         "days": "2–3 дня"
       },
       {
@@ -181,9 +97,9 @@
         "tag": "Аксессуар",
         "price": "от 350 ₽",
         "desc": "Держатель для телефона в форме сердца",
-        "format": "STL",
+        "format": "GLB",
         "shape": "holder",
-        "file": "/assets/models/catalog/heart-holder.stl",
+        "file": "/assets/models/web/catalog/heart-holder.glb",
         "previewFile": "/assets/models/web/catalog/heart-holder.glb",
         "days": "1–2 дня"
       },
@@ -192,10 +108,10 @@
         "title": "Держатель «Лис»",
         "tag": "Аксессуар",
         "price": "от 400 ₽",
-        "desc": "Держатель / брелок «Лис» — несколько толщин корпуса телефона",
-        "format": "STL",
+        "desc": "Держатель / брелок «Лис»",
+        "format": "GLB",
         "shape": "holder",
-        "file": "/assets/models/catalog/fox-holder.stl",
+        "file": "/assets/models/web/catalog/fox-holder.glb",
         "previewFile": "/assets/models/web/catalog/fox-holder.glb",
         "days": "1–2 дня"
       },
@@ -205,9 +121,9 @@
         "tag": "Аксессуар",
         "price": "от 450 ₽",
         "desc": "Подставка-поросёнок для телефона + брелок",
-        "format": "STL",
+        "format": "GLB",
         "shape": "holder",
-        "file": "/assets/models/catalog/piggy-holder.stl",
+        "file": "/assets/models/web/catalog/piggy-holder.glb",
         "previewFile": "/assets/models/web/catalog/piggy-holder.glb",
         "days": "1–2 дня"
       }
@@ -371,15 +287,15 @@
     },
     {
       "id": "stickers",
-      "title": "Стикеры и вектор",
-      "desc": "Стикер-паки, простые принты, отрисовка лого и иконок в вектор",
-      "price": "от 800 ₽",
+      "title": "Telegram-стикерпак",
+      "desc": "Пак для чата и канала: персонажи, реакции — файл под @Stickers",
+      "price": "от 1 200 ₽",
       "days": "1–2 дня",
       "features": [
-        "Стикеры",
-        "Иконки",
-        "SVG / PDF",
-        "Под печать"
+        "8 или 16 стикеров",
+        "Персонажи · реакции",
+        "PNG под @Stickers",
+        "Инструкция в TG"
       ]
     },
     {
@@ -425,8 +341,8 @@
   "designBranches": {
     "now": [
       "Логотипы и аватары",
-      "Стикеры, принты, вектор",
       "Telegram-стикерпаки",
+      "Вектор и простые принты",
       "Веб: баннеры и иконки",
       "Карточки маркетплейсов",
       "Листовки, флаеры, визитки",
@@ -493,7 +409,8 @@
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(251,146,60,0.15), rgba(124,58,237,0.12))",
       "url": "/grbnk",
-      "cover": "assets/shots/grbnk.png"
+      "cover": "assets/shots/products/figure-marksman.jpg",
+      "coverFit": "cover"
     },
     {
       "id": "maxspas-bot-3d",
@@ -714,11 +631,11 @@
     },
     {
       "id": "demo-stickers",
-      "title": "Стикеры MAXSPAS",
-      "desc": "Стикер-пак студии для Telegram: персонажи, реакции, чат и канал",
-      "tag": "Стикеры",
+      "title": "Telegram-стикерпак MAXSPAS",
+      "desc": "Пак для чата и канала: персонажи, реакции — готово под @Stickers",
+      "tag": "TG-стикеры",
       "direction": "stickers",
-      "price": "от 800 ₽",
+      "price": "от 1 200 ₽",
       "icon": "sparkle",
       "cover": "assets/shots/stickers.png",
       "logoAsset": "assets/logo-mark.svg",
@@ -812,16 +729,16 @@
       "url": "/demos/posters/#print-poster"
     },
     {
-      "id": "demo-poster-space",
-      "title": "Постер «Студия в сети»",
-      "desc": "Пример постера под бренд — ретро-космос",
+      "id": "demo-poster-stanok",
+      "title": "Плакат «Станок должен мотать!»",
+      "desc": "Намотка ленты на жгут · отсылка: часть станка, часть команды",
       "tag": "Афиша",
       "direction": "poster",
       "price": "от 1 200 ₽",
       "icon": "poster",
-      "cover": "assets/shots/poster-space.png",
-      "color": "linear-gradient(135deg, rgba(249,115,22,0.25), #0b1220)",
-      "url": "/demos/posters/#space"
+      "cover": "demos/posters/assets/poster-stanok-motat.svg",
+      "color": "linear-gradient(135deg, rgba(139,46,26,0.28), #1a1410)",
+      "url": "/demos/posters/#stanok"
     },
     {
       "id": "demo-cover-yt-print",
@@ -860,30 +777,32 @@
       "url": "/demos/posters/#reels"
     },
     {
-      "id": "lithophane-soon",
+      "id": "lithophane",
       "title": "Литофания",
-      "desc": "Светящийся портрет или фото в рамке. Примеры работ подключим отдельно",
+      "desc": "Светящийся портрет или фото: круг, рамка, шар — под заказ по вашему снимку",
       "tag": "3D · мерч",
       "direction": "3d",
       "price": "от 2 000 ₽",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(251,191,36,0.2), rgba(124,58,237,0.12))",
-      "url": "https://t.me/MAXSPAS_BOT",
-      "status": "photo-soon"
+      "url": "https://t.me/maxspas_studio_bot?start=3d_lithophane",
+      "cover": "assets/shots/products/lithophane-set.jpg",
+      "coverFit": "cover"
     },
     {
-      "id": "keychain-soon",
+      "id": "keychain",
       "title": "Брелки",
-      "desc": "Фирменные и сувенирные брелки под печать. Фото работ — позже",
+      "desc": "Фирменные и сувенирные брелки под печать — логотип, имя, подарок",
       "tag": "3D · мерч",
       "direction": "3d",
       "price": "от 150 ₽",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(244,114,182,0.2), rgba(124,58,237,0.15))",
-      "url": "https://t.me/MAXSPAS_BOT",
-      "status": "photo-soon"
+      "url": "https://t.me/maxspas_studio_bot?start=3d_keychain",
+      "cover": "assets/shots/products/keychain-lorentz.jpg",
+      "coverFit": "cover"
     },
     {
       "id": "magnet-soon",
@@ -899,17 +818,60 @@
       "status": "photo-soon"
     },
     {
-      "id": "plate-keychain-soon",
+      "id": "plate-keychain",
       "title": "Брелок — номер авто",
-      "desc": "Брелок с номером автомобиля. Макет и печать — когда согласуем образец",
+      "desc": "Брелок с номером автомобиля — макет и печать под ваш номер",
       "tag": "3D · мерч",
       "direction": "3d",
       "price": "под заказ",
       "icon": "grbnk",
       "logoAsset": "assets/logo-3dgrbnk.svg",
       "color": "linear-gradient(135deg, rgba(248,113,113,0.18), rgba(15,23,42,0.4))",
-      "url": "https://t.me/MAXSPAS_BOT",
-      "status": "photo-soon"
+      "url": "https://t.me/maxspas_studio_bot?start=3d_plate",
+      "cover": "assets/shots/products/keychain-plate.jpg",
+      "coverFit": "cover"
+    },
+    {
+      "id": "plaque-vader",
+      "title": "Панно Vader",
+      "desc": "Рельефное панно с эффектом рёбер — декоративная печать под заказ",
+      "tag": "3D · декор",
+      "direction": "3d",
+      "price": "под заказ",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(30,30,30,0.5), rgba(124,58,237,0.15))",
+      "url": "https://t.me/maxspas_studio_bot?start=3d_vader",
+      "cover": "assets/shots/products/plaque-vader.jpg",
+      "coverFit": "cover"
+    },
+    {
+      "id": "figures-pack",
+      "title": "Фигурки и миниатюры",
+      "desc": "Солдаты, аниме, динозавры, стрелки — печать по модели или вашему STL",
+      "tag": "3D · фигурки",
+      "direction": "3d",
+      "price": "от 500 ₽",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(251,146,60,0.22), rgba(15,23,42,0.35))",
+      "url": "https://t.me/maxspas_studio_bot?start=3d_figures",
+      "cover": "assets/shots/products/figure-soldier.jpg",
+      "coverFit": "cover"
+    },
+    {
+      "id": "bust-print",
+      "title": "Бюсты",
+      "desc": "Мини-бюсты и портретные скульптуры — печать с гладкой подачей",
+      "tag": "3D · бюст",
+      "direction": "3d",
+      "price": "под заказ",
+      "icon": "grbnk",
+      "logoAsset": "assets/logo-3dgrbnk.svg",
+      "color": "linear-gradient(135deg, rgba(148,163,184,0.25), rgba(30,41,59,0.4))",
+      "url": "https://t.me/maxspas_studio_bot?start=3d_bust",
+      "cover": "assets/shots/products/bust-historical.jpg",
+      "coverFit": "cover"
     }
   ],
   "directions": [
@@ -1265,10 +1227,10 @@
     },
     {
       "id": "stickers",
-      "label": "07 — Стикеры",
+      "label": "07 — TG-стикерпак",
       "code": "MS-STK-01",
-      "title": "Стикеры и вектор",
-      "lead": "Стикер-паки и Telegram-стикеры студии: персонажи, реакции, иконки в SVG/PNG — для чата, канала и печати.",
+      "title": "Telegram-стикерпак",
+      "lead": "Свой пак для чата и канала: персонажи бренда, реакции, акции. От идеи до файла под бота @Stickers — 8 или 16 стикеров.",
       "href": "prices",
       "zone": "studio",
       "cta": "directionLinkDesign",
@@ -1279,19 +1241,19 @@
       "specs": [
         {
           "k": "Формат",
-          "v": "PNG · SVG · TG-пак"
+          "v": "PNG · под @Stickers"
+        },
+        {
+          "k": "Объём",
+          "v": "8 или 16 шт."
+        },
+        {
+          "k": "Telegram",
+          "v": "Готовый стикерпак"
         },
         {
           "k": "Срок",
           "v": "1–2 дня"
-        },
-        {
-          "k": "Telegram",
-          "v": "Стикерпак под @Stickers"
-        },
-        {
-          "k": "Сдача",
-          "v": "Вектор + растр"
         },
         {
           "k": "Правки",
@@ -1299,14 +1261,14 @@
         },
         {
           "k": "Цена",
-          "v": "от 800 ₽"
+          "v": "от 1 200 ₽"
         }
       ],
       "bars": [
         {
           "label": "Бюджет",
-          "w": "28%",
-          "value": "от 800 ₽"
+          "w": "32%",
+          "value": "от 1 200 ₽"
         },
         {
           "label": "Скорость",
@@ -1315,10 +1277,10 @@
         }
       ],
       "tags": [
-        "Стикеры",
         "Telegram",
-        "Вектор",
-        "Пак"
+        "Стикерпак",
+        "@Stickers",
+        "Бренд"
       ]
     },
     {
@@ -1447,6 +1409,7 @@
       "zone": "studio",
       "cta": "directionLinkDesign",
       "portfolioIds": [
+        "demo-poster-stanok",
         "demo-poster-cosmos",
         "demo-cover-yt-print"
       ],
@@ -1500,13 +1463,17 @@
       "label": "11 — 3D GRBNK",
       "code": "GRBNK-3D",
       "title": "Модели, печать и мерч",
-      "lead": "FDM и SLA: модели STL/OBJ/GLB, проверка на печать и доставка по РФ. Ответвления мерча: литофания, брелки, магниты, брелок с номером авто — фото работ подключим отдельно.",
+      "lead": "FDM и SLA: модели STL/OBJ/GLB, фигурки, литофания, брелки и декор — с реальными фото работ. Доставка по РФ, заказ в боте.",
       "href": "grbnk",
       "zone": "grbnk",
       "cta": "directionLink3d",
       "portfolioIds": [
         "grbnk-3d",
-        "lithophane-soon"
+        "figures-pack",
+        "lithophane",
+        "plaque-vader",
+        "keychain",
+        "plate-keychain"
       ],
       "specs": [
         {

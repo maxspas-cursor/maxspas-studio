@@ -1,0 +1,322 @@
+{
+  "products": [
+    {
+      "id": "DSC_2923",
+      "file": "figure-soldier.jpg",
+      "role": "hero",
+      "src": 2923
+    },
+    {
+      "id": "DSC_2930",
+      "file": "figure-tactical.jpg",
+      "role": "hero",
+      "src": 2930
+    },
+    {
+      "id": "DSC_2935",
+      "file": "bust-historical.jpg",
+      "role": "hero",
+      "src": 2935
+    },
+    {
+      "id": "DSC_2940",
+      "file": "figure-anime.jpg",
+      "role": "hero",
+      "src": 2940
+    },
+    {
+      "id": "DSC_2946",
+      "file": "figure-flexi-dino.jpg",
+      "role": "hero",
+      "src": 2946
+    },
+    {
+      "id": "DSC_2950",
+      "file": "figure-marksman.jpg",
+      "role": "hero",
+      "src": 2950
+    },
+    {
+      "id": "DSC_2954",
+      "file": "plaque-vader.jpg",
+      "role": "hero",
+      "src": 2954
+    },
+    {
+      "id": "DSC_2958",
+      "file": "lamp-silhouette.jpg",
+      "role": "hero",
+      "src": 2958
+    },
+    {
+      "id": "DSC_2962",
+      "file": "lithophane-framed.jpg",
+      "role": "hero",
+      "src": 2962
+    },
+    {
+      "id": "DSC_2965",
+      "file": "lithophane-set.jpg",
+      "role": "hero",
+      "src": 2965
+    },
+    {
+      "id": "DSC_2968",
+      "file": "lithophane-sphere.jpg",
+      "role": "hero",
+      "src": 2968
+    },
+    {
+      "id": "DSC_2970",
+      "file": "lithophane-round.jpg",
+      "role": "hero",
+      "src": 2970
+    },
+    {
+      "id": "DSC_2973",
+      "file": "keychain-plate.jpg",
+      "role": "hero",
+      "src": 2973
+    },
+    {
+      "id": "DSC_2974",
+      "file": "keychain-name-tag.jpg",
+      "role": "hero",
+      "src": 2974
+    },
+    {
+      "id": "DSC_2975",
+      "file": "keychain-lorentz.jpg",
+      "role": "hero",
+      "src": 2975
+    },
+    {
+      "id": "DSC_2924",
+      "file": "gallery-DSC_2924.jpg",
+      "role": "gallery",
+      "src": 2924
+    },
+    {
+      "id": "DSC_2925",
+      "file": "gallery-DSC_2925.jpg",
+      "role": "gallery",
+      "src": 2925
+    },
+    {
+      "id": "DSC_2926",
+      "file": "gallery-DSC_2926.jpg",
+      "role": "gallery",
+      "src": 2926
+    },
+    {
+      "id": "DSC_2927",
+      "file": "gallery-DSC_2927.jpg",
+      "role": "gallery",
+      "src": 2927
+    },
+    {
+      "id": "DSC_2928",
+      "file": "gallery-DSC_2928.jpg",
+      "role": "gallery",
+      "src": 2928
+    },
+    {
+      "id": "DSC_2929",
+      "file": "gallery-DSC_2929.jpg",
+      "role": "gallery",
+      "src": 2929
+    },
+    {
+      "id": "DSC_2931",
+      "file": "gallery-DSC_2931.jpg",
+      "role": "gallery",
+      "src": 2931
+    },
+    {
+      "id": "DSC_2932",
+      "file": "gallery-DSC_2932.jpg",
+      "role": "gallery",
+      "src": 2932
+    },
+    {
+      "id": "DSC_2933",
+      "file": "gallery-DSC_2933.jpg",
+      "role": "gallery",
+      "src": 2933
+    },
+    {
+      "id": "DSC_2934",
+      "file": "gallery-DSC_2934.jpg",
+      "role": "gallery",
+      "src": 2934
+    },
+    {
+      "id": "DSC_2936",
+      "file": "gallery-DSC_2936.jpg",
+      "role": "gallery",
+      "src": 2936
+    },
+    {
+      "id": "DSC_2937",
+      "file": "gallery-DSC_2937.jpg",
+      "role": "gallery",
+      "src": 2937
+    },
+    {
+      "id": "DSC_2938",
+      "file": "gallery-DSC_2938.jpg",
+      "role": "gallery",
+      "src": 2938
+    },
+    {
+      "id": "DSC_2939",
+      "file": "gallery-DSC_2939.jpg",
+      "role": "gallery",
+      "src": 2939
+    },
+    {
+      "id": "DSC_2941",
+      "file": "gallery-DSC_2941.jpg",
+      "role": "gallery",
+      "src": 2941
+    },
+    {
+      "id": "DSC_2942",
+      "file": "gallery-DSC_2942.jpg",
+      "role": "gallery",
+      "src": 2942
+    },
+    {
+      "id": "DSC_2943",
+      "file": "gallery-DSC_2943.jpg",
+      "role": "gallery",
+      "src": 2943
+    },
+    {
+      "id": "DSC_2944",
+      "file": "gallery-DSC_2944.jpg",
+      "role": "gallery",
+      "src": 2944
+    },
+    {
+      "id": "DSC_2945",
+      "file": "gallery-DSC_2945.jpg",
+      "role": "gallery",
+      "src": 2945
+    },
+    {
+      "id": "DSC_2947",
+      "file": "gallery-DSC_2947.jpg",
+      "role": "gallery",
+      "src": 2947
+    },
+    {
+      "id": "DSC_2948",
+      "file": "gallery-DSC_2948.jpg",
+      "role": "gallery",
+      "src": 2948
+    },
+    {
+      "id": "DSC_2949",
+      "file": "gallery-DSC_2949.jpg",
+      "role": "gallery",
+      "src": 2949
+    },
+    {
+      "id": "DSC_2951",
+      "file": "gallery-DSC_2951.jpg",
+      "role": "gallery",
+      "src": 2951
+    },
+    {
+      "id": "DSC_2952",
+      "file": "gallery-DSC_2952.jpg",
+      "role": "gallery",
+      "src": 2952
+    },
+    {
+      "id": "DSC_2953",
+      "file": "gallery-DSC_2953.jpg",
+      "role": "gallery",
+      "src": 2953
+    },
+    {
+      "id": "DSC_2955",
+      "file": "gallery-DSC_2955.jpg",
+      "role": "gallery",
+      "src": 2955
+    },
+    {
+      "id": "DSC_2956",
+      "file": "gallery-DSC_2956.jpg",
+      "role": "gallery",
+      "src": 2956
+    },
+    {
+      "id": "DSC_2957",
+      "file": "gallery-DSC_2957.jpg",
+      "role": "gallery",
+      "src": 2957
+    },
+    {
+      "id": "DSC_2959",
+      "file": "gallery-DSC_2959.jpg",
+      "role": "gallery",
+      "src": 2959
+    },
+    {
+      "id": "DSC_2960",
+      "file": "gallery-DSC_2960.jpg",
+      "role": "gallery",
+      "src": 2960
+    },
+    {
+      "id": "DSC_2961",
+      "file": "gallery-DSC_2961.jpg",
+      "role": "gallery",
+      "src": 2961
+    },
+    {
+      "id": "DSC_2963",
+      "file": "gallery-DSC_2963.jpg",
+      "role": "gallery",
+      "src": 2963
+    },
+    {
+      "id": "DSC_2964",
+      "file": "gallery-DSC_2964.jpg",
+      "role": "gallery",
+      "src": 2964
+    },
+    {
+      "id": "DSC_2966",
+      "file": "gallery-DSC_2966.jpg",
+      "role": "gallery",
+      "src": 2966
+    },
+    {
+      "id": "DSC_2967",
+      "file": "gallery-DSC_2967.jpg",
+      "role": "gallery",
+      "src": 2967
+    },
+    {
+      "id": "DSC_2969",
+      "file": "gallery-DSC_2969.jpg",
+      "role": "gallery",
+      "src": 2969
+    },
+    {
+      "id": "DSC_2971",
+      "file": "gallery-DSC_2971.jpg",
+      "role": "gallery",
+      "src": 2971
+    },
+    {
+      "id": "DSC_2972",
+      "file": "gallery-DSC_2972.jpg",
+      "role": "gallery",
+      "src": 2972
+    }
+  ]
+}

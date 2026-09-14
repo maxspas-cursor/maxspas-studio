@@ -4,5 +4,13 @@
   "redirects": [
     { "source": "/services", "destination": "/", "permanent": true },
     { "source": "/services.html", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
   ]
 }

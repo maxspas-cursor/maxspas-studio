@@ -99,6 +99,34 @@
     });
   }
 
+  function renderProductsGallery() {
+    const grid = document.getElementById("grbnk-products-grid");
+    if (!grid) return;
+    const heroes = [
+      { file: "figure-soldier.jpg", label: "Фигурки" },
+      { file: "figure-marksman.jpg", label: "Миниатюры" },
+      { file: "figure-anime.jpg", label: "Аниме" },
+      { file: "bust-historical.jpg", label: "Бюсты" },
+      { file: "plaque-vader.jpg", label: "Панно" },
+      { file: "lithophane-set.jpg", label: "Литофания" },
+      { file: "lithophane-sphere.jpg", label: "Шар" },
+      { file: "lithophane-round.jpg", label: "Круг" },
+      { file: "keychain-lorentz.jpg", label: "Брелки" },
+      { file: "keychain-plate.jpg", label: "Номер авто" },
+      { file: "figure-flexi-dino.jpg", label: "Flexi" },
+      { file: "lamp-silhouette.jpg", label: "Светильник" },
+    ];
+    grid.innerHTML = heroes
+      .map(
+        (h) => `
+      <a class="grbnk-products__item" href="https://t.me/maxspas_studio_bot?start=3d" target="_blank" rel="noopener">
+        <img src="/assets/shots/products/${esc(h.file)}" alt="${esc(h.label)}" width="480" height="360" loading="lazy">
+        <span>${esc(h.label)}</span>
+      </a>`
+      )
+      .join("");
+  }
+
   function init(site) {
     if (document.body.dataset.page !== "grbnk") return;
     activeSite = site;
@@ -115,6 +143,7 @@
     const first = showroom.models[0];
     renderCatalog(showroom, first?.id);
     renderCalc(showroom);
+    renderProductsGallery();
     if (first) {
       updateViewerMeta(first, site);
       loadViewerModel(first);

@@ -371,25 +371,25 @@
       ]
     },
     "stickers": {
-      "label": "07 — Stickers",
-      "title": "Stickers & Telegram packs",
-      "lead": "Studio sticker packs and Telegram stickers: characters, reactions, SVG/PNG icons for chat, channel and print.",
+      "label": "07 — TG sticker pack",
+      "title": "Telegram sticker pack",
+      "lead": "Your pack for chat and channel: brand characters, reactions, promos. From idea to a file for @Stickers — 8 or 16 stickers.",
       "specs": [
         {
           "k": "Format",
-          "v": "PNG · SVG · TG pack"
+          "v": "PNG · for @Stickers"
+        },
+        {
+          "k": "Size",
+          "v": "8 or 16 pcs"
+        },
+        {
+          "k": "Telegram",
+          "v": "Ready sticker pack"
         },
         {
           "k": "Timeline",
           "v": "1–2 days"
-        },
-        {
-          "k": "Telegram",
-          "v": "Pack for @Stickers"
-        },
-        {
-          "k": "Delivery",
-          "v": "Vector + raster"
         },
         {
           "k": "Revisions",
@@ -397,14 +397,14 @@
         },
         {
           "k": "Price",
-          "v": "from 800 ₽"
+          "v": "from 1 200 ₽"
         }
       ],
       "bars": [
         {
           "label": "Budget",
-          "w": "28%",
-          "value": "from 800 ₽"
+          "w": "32%",
+          "value": "from 1 200 ₽"
         },
         {
           "label": "Speed",
@@ -413,10 +413,10 @@
         }
       ],
       "tags": [
-        "Stickers",
         "Telegram",
-        "Vector",
-        "Pack"
+        "Sticker pack",
+        "@Stickers",
+        "Brand"
       ]
     },
     "present": {
@@ -569,7 +569,7 @@
     "3d": {
       "label": "11 — 3D GRBNK",
       "title": "Models, print & merch",
-      "lead": "FDM and SLA: STL/OBJ/GLB, print check and delivery across Russia. Merch lines: lithophane, keychains, magnets, car-plate keychain — photos to follow.",
+      "lead": "FDM and SLA: STL/OBJ/GLB, figures, lithophane, keychains and decor — with real product photos. Shipping across Russia, order in the bot.",
       "specs": [
         {
           "k": "Tech",
@@ -741,10 +741,10 @@
       "price": "A5 certificate"
     },
     "demo-stickers": {
-      "title": "MAXSPAS stickers",
-      "desc": "Studio Telegram sticker pack: characters, reactions, chat and channel",
-      "tag": "Stickers",
-      "price": "from 800 ₽"
+      "title": "MAXSPAS Telegram sticker pack",
+      "desc": "Pack for chat and channel: characters, reactions — ready for @Stickers",
+      "tag": "TG stickers",
+      "price": "from 1 200 ₽"
     },
     "demo-present-pitch": {
       "title": "Pitch: site + bot",
@@ -788,9 +788,9 @@
       "tag": "Poster",
       "price": "from 1 200 ₽"
     },
-    "demo-poster-space": {
-      "title": "Poster “Studio online”",
-      "desc": "Brand poster example — retro space",
+    "demo-poster-stanok": {
+      "title": "Poster “The machine must wind!”",
+      "desc": "Tape winding on a harness — ‘part of the machine, part of the crew’",
       "tag": "Poster",
       "price": "from 1 200 ₽"
     },
@@ -812,17 +812,17 @@
       "tag": "Cover",
       "price": "from 1 200 ₽"
     },
-    "lithophane-soon": {
+    "lithophane": {
       "title": "Lithophane",
-      "desc": "Glowing portrait or photo in a frame. Sample photos to follow",
+      "desc": "Glowing portrait or photo — round, framed or sphere, made from your picture",
       "tag": "3D · merch",
       "price": "from 2 000 ₽"
     },
-    "keychain-soon": {
+    "keychain": {
       "title": "Keychains",
-      "desc": "Branded and souvenir keychains for print. Photos later",
+      "desc": "Branded and souvenir keychains — logo, name, gift print",
       "tag": "3D · merch",
-      "price": "from 500 ₽"
+      "price": "from 150 ₽"
     },
     "magnet-soon": {
       "title": "Magnets",
@@ -830,11 +830,29 @@
       "tag": "3D · merch",
       "price": "from 400 ₽"
     },
-    "plate-keychain-soon": {
+    "plate-keychain": {
       "title": "Car-plate keychain",
-      "desc": "Keychain with a car plate number. Layout and print when sample is agreed",
+      "desc": "Keychain with a car plate number — layout and print for your plate",
       "tag": "3D · merch",
-      "price": "from 800 ₽"
+      "price": "on request"
+    },
+    "plaque-vader": {
+      "title": "Vader plaque",
+      "desc": "Relief plaque with intentional rib texture — decorative print on request",
+      "tag": "3D · decor",
+      "price": "on request"
+    },
+    "figures-pack": {
+      "title": "Figures & miniatures",
+      "desc": "Soldiers, anime, dinos, marksmen — print from catalog or your STL",
+      "tag": "3D · figures",
+      "price": "from 500 ₽"
+    },
+    "bust-print": {
+      "title": "Busts",
+      "desc": "Mini busts and portrait sculptures — smooth finish presentation",
+      "tag": "3D · bust",
+      "price": "on request"
     }
   },
   "grbnkShowroom": {

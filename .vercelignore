@@ -7,16 +7,19 @@ config/cloudpub.json
 idei/
 archive/
 node_modules/
-scripts/decimate-stl.py
-scripts/import-catalog.py
-scripts/generate_favicons.py
+docs/tech-models-pack/
+docs/**/*.xlsx
+scripts/
+*.ps1
+*.py
+.env
+.env.*
 
-# Old broken previews
+# Old broken previews / heavy STL
 assets/models/lite/
 assets/models/catalog/lite/
+assets/models/**/*.stl
 
-# Full STL for print — viewer uses assets/models/web/*.glb
-assets/models/benchy.stl
-assets/models/vase.stl
-assets/models/gear.stl
-assets/models/catalog/*.stl
+# Local work packs
+demos/posters/assets/avito-pack/
+demos/posters/assets/poster-stanok*
