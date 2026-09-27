@@ -618,6 +618,12 @@
     }
   },
   "portfolio": {
+    "demo-nordline": {
+      "title": "NORDLINE",
+      "desc": "Full engineering-studio site: video, 3D model, theme switch, estimate calculator and a lead form. Main portfolio example",
+      "tag": "Site · main",
+      "price": "multi-page · demo"
+    },
     "maxspas-site": {
       "title": "maxspas.ru",
       "desc": "Studio site: services, pricing, 3D GRBNK, lead form. Vercel deploy, domain & SSL",

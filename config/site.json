@@ -65,7 +65,7 @@
   },
   "grbnkShowroom": {
     "watermark": "MAXSPAS 3D",
-    "lead": "Витрина моделей с просмотром как в конфигураторе — каталог, расчёт и заказ как в Telegram-боте.",
+    "lead": "Каталог · покрутить модель · расчёт · заказ в боте",
     "models": [
       {
         "id": "gear",
@@ -373,6 +373,19 @@
     ]
   },
   "portfolio": [
+    {
+      "id": "demo-nordline",
+      "title": "NORDLINE",
+      "desc": "Полный сайт инженерной студии: видео, 3D-модель, смена стиля, калькулятор сметы и заявка. Основной пример портфолио",
+      "tag": "Сайт · основной",
+      "direction": "web",
+      "price": "многостраничный · демо",
+      "icon": "web",
+      "color": "linear-gradient(135deg, rgba(43,58,54,0.85), rgba(196,165,116,0.28))",
+      "url": "/demos/nordline/",
+      "cover": "assets/shots/nordline.jpg",
+      "coverFit": "cover"
+    },
     {
       "id": "maxspas-site",
       "title": "maxspas.ru",
@@ -885,6 +898,7 @@
       "zone": "studio",
       "cta": "directionLinkWeb",
       "portfolioIds": [
+        "demo-nordline",
         "maxspas-site",
         "demo-severny-bereg"
       ],

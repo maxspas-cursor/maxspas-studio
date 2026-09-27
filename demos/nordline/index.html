@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NORDLINE — инженерия пространства под ключ</title>
+  <meta name="description" content="Проектирование и сопровождение производственных и коммерческих пространств. СПб.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=12">
+</head>
+<body data-theme="a">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="glow" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#">NORDLINE</a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#film">Видео</a>
+      <a href="#work">Проекты</a>
+      <a href="#orbit">3D</a>
+      <a href="#compare">Стили</a>
+      <a href="#calc">Смета</a>
+      <a href="design.html">Дизайн</a>
+      <a href="#contact">Контакт</a>
+    </nav>
+    <a class="nav__cta" href="#contact">Бриф</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/globe-poster.jpg">
+          <source src="media/globe.mp4" type="video/mp4">
+        </video>
+        <div class="hero__ambient" id="heroAmbient" hidden></div>
+        <div class="hero__veil"></div>
+      </div>
+      <p class="hero__eyebrow reveal">Ателье инженерного пространства · СПб</p>
+      <h1 class="hero__title reveal">
+        <span class="line"><span>Пространства,</span></span>
+        <span class="line"><span>которые</span></span>
+        <span class="line line--accent"><span>держат</span></span>
+        <span class="line line--accent"><span>нагрузку</span></span>
+      </h1>
+      <p class="hero__lead reveal">
+        Проектируем цеха, шоурумы и B2B-локации: планировка, видео-витрина,
+        сайт запуска и цифровой контур заявок — в одном контуре ответственности.
+      </p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--solid" href="#film">Смотреть ролик</a>
+        <a class="btn btn--ghost" href="#contact">Обсудить задачу</a>
+      </div>
+      <div class="hero__meta reveal">
+        <div><strong>48</strong><span>запусков</span></div>
+        <div><strong>12</strong><span>городов</span></div>
+        <div><strong>3–8</strong><span>недель цикл</span></div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>СБОРКА</span><span>·</span>
+          <span>ОТК</span><span>·</span>
+          <span>СКЛАД</span><span>·</span>
+          <span>ОФИС</span><span>·</span>
+          <span>3D-РАЗРЕЗ</span><span>·</span>
+          <span>СТИЛЬ A/B</span><span>·</span>
+          <span>ПЛАНИРОВКА</span><span>·</span>
+          <span>ВИТРИНА</span><span>·</span>
+          <span>СМЕТА</span><span>·</span>
+          <span>ЗАПУСК</span><span>·</span>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span>СБОРКА</span><span>·</span>
+          <span>ОТК</span><span>·</span>
+          <span>СКЛАД</span><span>·</span>
+          <span>ОФИС</span><span>·</span>
+          <span>3D-РАЗРЕЗ</span><span>·</span>
+          <span>СТИЛЬ A/B</span><span>·</span>
+          <span>ПЛАНИРОВКА</span><span>·</span>
+          <span>ВИТРИНА</span><span>·</span>
+          <span>СМЕТА</span><span>·</span>
+          <span>ЗАПУСК</span><span>·</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="film" id="film">
+      <div class="section-head">
+        <p class="eyebrow">Витрина кейсов</p>
+        <h2>Атмосфера цеха — без пустых плееров</h2>
+        <p class="section-lead">По умолчанию — цветок. Клипы меняют кадр и оставляют его.</p>
+      </div>
+      <div class="film__stage reveal" id="filmStage">
+        <video class="film__video" id="filmVideo" autoplay muted loop playsinline preload="auto" poster="img/flower-poster.jpg">
+          <source src="media/flower.webm" type="video/webm">
+          <source src="media/flower.mp4" type="video/mp4">
+        </video>
+        <div class="film__ken" id="filmKen" hidden aria-hidden="true" style="background-image:url('img/flower-poster.jpg')"></div>
+        <div class="film__grade" aria-hidden="true"></div>
+        <div class="film__caption">
+          <strong id="filmCaptionTitle">Атмосфера · цветок</strong>
+          <span id="filmCaptionSub">Мягкий фон · без пустого плеера</span>
+        </div>
+        <span class="film__live">LIVE · LOOP</span>
+      </div>
+      <div class="film__grid">
+        <button type="button" class="clip reveal is-on" data-mode="video" data-src="media/flower.mp4" data-webm="media/flower.webm" data-poster="img/flower-poster.jpg" data-title="Атмосфера · цветок" data-sub="Мягкий фон · без пустого плеера">
+          <span class="clip__badge">FLOW</span>
+          <strong>Цветок</strong>
+          <em>атмосфера</em>
+        </button>
+        <button type="button" class="clip reveal" data-mode="still" data-poster="img/clip-assembly.jpg" data-title="Сборка · линия" data-sub="Маршруты деталей и зоны контроля">
+          <span class="clip__badge">LINE</span>
+          <strong>Сборка</strong>
+          <em>сборочный контур</em>
+        </button>
+        <button type="button" class="clip reveal" data-mode="still" data-poster="img/clip-showroom.jpg" data-title="Шоурум · свет" data-sub="Витрины и демо-зона">
+          <span class="clip__badge">SHOW</span>
+          <strong>Шоурум</strong>
+          <em>свет и витрины</em>
+        </button>
+        <button type="button" class="clip reveal" data-mode="still" data-poster="img/clip-mood.jpg" data-title="Офис при цехе" data-sub="Планерка / диспетчерская">
+          <span class="clip__badge">OPS</span>
+          <strong>Офис</strong>
+          <em>операционный контур</em>
+        </button>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="section-head">
+        <p class="eyebrow">Избранные кейсы</p>
+        <h2>Большие объекты.<br>Чистая подача.</h2>
+      </div>
+      <div class="work__grid">
+        <article class="case case--wide reveal">
+          <div class="case__visual case__visual--cutaway">
+            <div class="workshop3d workshop3d--mini" id="workshop3dMini"></div>
+            <div class="cutaway__hint">⟷ тяни · крути</div>
+            <span class="case__tag">Цех · 2400 м²</span>
+          </div>
+          <div class="case__body">
+            <h3>ФОРЖ-12</h3>
+            <p>Перепланировка сборочного цеха: маршруты деталей, зоны контроля, цифровой паспорт смены.</p>
+            <ul>
+              <li>Схема потоков</li>
+              <li>3D-разрез зон</li>
+              <li>Лендинг тендера</li>
+              <li>Видео-обход</li>
+            </ul>
+          </div>
+        </article>
+        <article class="case reveal">
+          <div class="case__visual" style="background-image:url('img/case-seam.jpg')">
+            <span class="case__tag">Шоурум</span>
+          </div>
+          <div class="case__body">
+            <h3>SEAM</h3>
+            <p>Шоурум поставщика фурнитуры: свет, витрины, запись демо через Telegram.</p>
+          </div>
+        </article>
+        <article class="case reveal">
+          <div class="case__visual" style="background-image:url('img/case-kilvater.jpg')">
+            <span class="case__tag">B2B</span>
+          </div>
+          <div class="case__body">
+            <h3>КИЛЬВАТЕР</h3>
+            <p>Сайт и бот для инженерного бюро: заявки, файлы STL, статусы расчёта.</p>
+          </div>
+        </article>
+        <article class="case case--wide reveal">
+          <div class="case__visual" style="background-image:url('img/case-contour.jpg')">
+            <span class="case__tag">Ретейл · запуск</span>
+          </div>
+          <div class="case__body">
+            <h3>СЕВЕРНЫЙ КОНТУР</h3>
+            <p>Пять точек самовывоза + единый сайт: карта, слоты, уведомления кладовщику.</p>
+            <ul>
+              <li>Мультистраница</li>
+              <li>Интеграция слотов</li>
+              <li>Бот склада</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="orbit" id="orbit">
+      <div class="section-head">
+        <p class="eyebrow">3D-модель цеха</p>
+        <h2>Настоящий разрез · крути мышью</h2>
+        <p class="section-lead">Витринная диорама цеха: печь, ковш, кран. Тяни мышью, колёсико приближает. Дым из ковша идёт сам.</p>
+      </div>
+      <div class="orbit__stage reveal" id="orbitStage">
+        <div class="orbit__hint">⟷ тяни · крути · колёсико зум</div>
+        <div class="workshop3d workshop3d--main" id="workshop3d"></div>
+      </div>
+    </section>
+
+    <section class="compare" id="compare">
+      <div class="section-head">
+        <p class="eyebrow">Смена атмосферы</p>
+        <h2>Тяни — завод или современный</h2>
+        <p class="section-lead">Кардинально: слева индустриальный цех, справа светлый contemporary. Меняются фон, шрифты, кнопки, карточки, атмосфера hero.</p>
+      </div>
+      <div class="theme-switch reveal" id="themeSwitch" style="--pos:8%">
+        <div class="theme-switch__a" aria-hidden="true">
+          <span class="theme-switch__stamp">Завод</span>
+          <p class="theme-switch__sample theme-switch__sample--a">Тёмный цех · Syne · металл / зелень</p>
+        </div>
+        <div class="theme-switch__b" id="themeB" aria-hidden="true">
+          <span class="theme-switch__stamp theme-switch__stamp--b">Modern</span>
+          <p class="theme-switch__sample theme-switch__sample--b">Светлый studio · Outfit · стекло / cyan</p>
+        </div>
+        <div class="theme-switch__handle" aria-hidden="true"><i></i></div>
+        <p class="theme-switch__hint">← ЗАВОД · MODERN →</p>
+        <input class="theme-switch__range" id="themeRange" type="range" min="0" max="100" value="8" aria-label="Завод или современный стиль">
+      </div>
+      <p class="theme-switch__note" id="themeNote">Сейчас: ЗАВОД · индустриальная атмосфера</p>
+    </section>
+
+    <section class="method" id="method">
+      <div class="method__sticky">
+        <p class="eyebrow">Метод</p>
+        <h2>Сначала каркас.<br>Потом оболочка.</h2>
+        <p class="method__text">Не рисуем «красивую картинку» до потоков людей, деталей и заявок. Красота держится на логике.</p>
+      </div>
+      <ol class="method__steps">
+        <li class="reveal"><span>01</span><div><h3>Аудит объекта</h3><p>Замеры, фото, узкие места, цели запуска.</p></div></li>
+        <li class="reveal"><span>02</span><div><h3>Каркас решений</h3><p>Планировка + сценарии пользователя + объём сайта/бота.</p></div></li>
+        <li class="reveal"><span>03</span><div><h3>Визуал и прототип</h3><p>3D-разрез, видео-референсы, moodboard.</p></div></li>
+        <li class="reveal"><span>04</span><div><h3>Цифровой контур</h3><p>Лендинг/сайт, формы, Telegram, статусы.</p></div></li>
+        <li class="reveal"><span>05</span><div><h3>Запуск</h3><p>Публикация, обучение, чек-лист приёмки.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="calc" id="calc">
+      <div class="section-head">
+        <p class="eyebrow">Калькулятор</p>
+        <h2>Грубая смета за 20 секунд</h2>
+        <p class="section-lead">Частый запрос на Kwork: «чтобы клиент сразу видел вилку цены».</p>
+      </div>
+      <div class="calc__card reveal">
+        <label class="calc__field">Тип объекта
+          <select id="cType">
+            <option value="15000">Лендинг услуг</option>
+            <option value="28000">Сайт 5–7 стр</option>
+            <option value="45000">Цех / шоурум + сайт</option>
+          </select>
+        </label>
+        <label class="calc__field">Видео
+          <select id="cVideo">
+            <option value="0">Без видео</option>
+            <option value="8000">Hero-ролик (монтаж)</option>
+            <option value="15000">Hero + 3 кейс-клипа</option>
+          </select>
+        </label>
+        <label class="calc__field">Telegram-бот
+          <select id="cBot">
+            <option value="0">Не нужен</option>
+            <option value="8000">Заявки + уведомления</option>
+            <option value="14000">Заявки + файлы + статусы</option>
+          </select>
+        </label>
+        <label class="calc__field">Срок
+          <select id="cRush">
+            <option value="1">Обычный</option>
+            <option value="1.25">Ускорение ×1.25</option>
+            <option value="1.5">Срочно ×1.5</option>
+          </select>
+        </label>
+        <div class="calc__out">
+          <span>Ориентир</span>
+          <strong id="cSum">23 000 ₽</strong>
+        </div>
+        <a class="btn btn--solid" id="cSend" href="#contact">Забрать в бриф</a>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head">
+        <p class="eyebrow">Услуги</p>
+        <h2>Что берём на себя</h2>
+      </div>
+      <div class="pack-tabs" role="tablist">
+        <button type="button" class="pack-tab is-on" data-pack="start">Старт</button>
+        <button type="button" class="pack-tab" data-pack="growth">Рост</button>
+        <button type="button" class="pack-tab" data-pack="full">Полный контур</button>
+      </div>
+      <div class="pack-panels">
+        <article class="pack is-on" data-pack="start">
+          <h3>Старт</h3>
+          <p class="pack__price">от 15 000 ₽</p>
+          <ul>
+            <li>1 лендинг</li>
+            <li>Форма → Telegram</li>
+            <li>Адаптив</li>
+            <li>2 раунда правок</li>
+          </ul>
+        </article>
+        <article class="pack" data-pack="growth">
+          <h3>Рост</h3>
+          <p class="pack__price">от 28 000 ₽</p>
+          <ul>
+            <li>5–7 страниц</li>
+            <li>Видео-hero</li>
+            <li>Калькулятор / квиз</li>
+            <li>Бот заявок</li>
+          </ul>
+        </article>
+        <article class="pack" data-pack="full">
+          <h3>Полный контур</h3>
+          <p class="pack__price">от 55 000 ₽</p>
+          <ul>
+            <li>Планировка + сайт</li>
+            <li>Видео-кейсы</li>
+            <li>Бот + статусы</li>
+            <li>Запуск «под ключ»</li>
+          </ul>
+        </article>
+      </div>
+      <div class="services__grid" style="margin-top:28px">
+        <article class="svc reveal">
+          <h3>Планировка и зонирование</h3>
+          <p>Цех, склад, шоурум, офис при производстве.</p>
+          <p class="svc__price">от 45 000 ₽</p>
+        </article>
+        <article class="svc reveal">
+          <h3>3D-разрез зон</h3>
+          <p>Ключевые ракурсы для согласования с собственником.</p>
+          <p class="svc__price">от 18 000 ₽</p>
+        </article>
+        <article class="svc reveal">
+          <h3>Сайт запуска</h3>
+          <p>Лендинг или 5–7 страниц: услуги, кейсы, заявка.</p>
+          <p class="svc__price">от 15 000 ₽</p>
+        </article>
+        <article class="svc reveal">
+          <h3>Бот заявок</h3>
+          <p>Меню, файлы, уведомления команде.</p>
+          <p class="svc__price">от 8 000 ₽</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="section-head">
+        <p class="eyebrow">Галерея зон</p>
+        <h2>Горизонтальный скролл — «вау» в портфолио</h2>
+        <p class="section-lead">Только индустриальные кадры: сборка, ОТК, склад, шоурум, офис.</p>
+      </div>
+      <div class="gallery__rail" id="rail">
+        <figure class="gallery__card" style="background-image:url('img/gal-1.jpg')"><figcaption>Сборка · линия</figcaption></figure>
+        <figure class="gallery__card" style="background-image:url('img/gal-2.jpg')"><figcaption>ОТК · контроль</figcaption></figure>
+        <figure class="gallery__card" style="background-image:url('img/gal-3.jpg')"><figcaption>Склад · стеллажи</figcaption></figure>
+        <figure class="gallery__card" style="background-image:url('img/gal-4.jpg')"><figcaption>Шоурум · свет</figcaption></figure>
+        <figure class="gallery__card" style="background-image:url('img/gal-5.jpg')"><figcaption>Офис при цехе</figcaption></figure>
+        <figure class="gallery__card" style="background-image:url('img/gal-6.jpg')"><figcaption>Конвейер · поток</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="split__panel split__panel--dark reveal">
+        <p class="eyebrow">Для кого</p>
+        <h2>Собственники и операционные директора</h2>
+        <p>Когда нельзя «просто сделать сайт» — нужна связка пространства и цифрового входа клиентов.</p>
+      </div>
+      <div class="split__panel split__panel--warm reveal">
+        <p class="eyebrow">Не берём</p>
+        <ul class="deny">
+          <li>Декор без ТЗ и ответственности</li>
+          <li>Магазины с 1С «на вчера»</li>
+          <li>Демпинг и серые схемы оплаты</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="section-head">
+        <p class="eyebrow">Процесс</p>
+        <h2>Прозрачный цикл</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item reveal"><strong>День 1–2</strong><span>Бриф, выезд/созвон, фиксация объёма</span></div>
+        <div class="timeline__item reveal"><strong>Неделя 1</strong><span>Каркас планировки и структура сайта</span></div>
+        <div class="timeline__item reveal"><strong>Неделя 2–3</strong><span>Визуал, разрез, прототип цифрового контура</span></div>
+        <div class="timeline__item reveal"><strong>Неделя 4+</strong><span>Правки, публикация, передача</span></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Вопросы, которые пишут в ТЗ</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item reveal" open>
+          <summary>Можно ли видео с YouTube / Rutube / файл?</summary>
+          <p>Да. На проде — ваш ролик. В демо — индустриальные stills без внешних CDN.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>Адаптив и скорость?</summary>
+          <p>Моб-first, лёгкие шрифты, ленивые секции.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>Форма куда уходит?</summary>
+          <p>В Telegram (как у MAXSPAS), либо на почту / CRM — по ТЗ.</p>
+        </details>
+        <details class="faq__item reveal">
+          <summary>Можно Tilda вместо кода?</summary>
+          <p>Да. Те же блоки собираются и в Tilda (+ Zero Block).</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="quote reveal">
+      <blockquote>
+        «Нам нужна была не картинка шоурума, а маршрут клиента от входа до заявки.
+        NORDLINE собрал оба слоя.»
+      </blockquote>
+      <cite>— операционный директор, SEAM</cite>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact__card reveal">
+        <p class="eyebrow">Старт</p>
+        <h2>Короткий бриф — и считаем срок</h2>
+        <form class="form" id="briefForm">
+          <label>Имя<input name="name" required placeholder="Как к вам обращаться"></label>
+          <label>Компания / объект<input name="company" placeholder="Цех, шоурум, бюро…"></label>
+          <label>Задача<textarea name="task" rows="4" required placeholder="Что нужно получить на выходе"></textarea></label>
+          <label class="check"><input type="checkbox" name="wantVideo" value="1"> Нужен видео-блок</label>
+          <button class="btn btn--solid" type="submit">Отправить в Telegram</button>
+          <p class="form__hint" id="formHint">Демо-форма · откроет чат @Maxspas</p>
+        </form>
+      </div>
+      <aside class="contact__aside reveal">
+        <p>Связь напрямую</p>
+        <a href="https://t.me/Maxspas" target="_blank" rel="noopener">@Maxspas</a>
+        <a href="tel:+79117156006">+7 (911) 715-60-06</a>
+        <a href="https://maxspas.ru" target="_blank" rel="noopener">maxspas.ru</a>
+        <a href="design.html">Дизайн решения →</a>
+        <a href="../kwork-lab/">Ещё: лаборатория фич Kwork →</a>
+        <p class="tiny">Демо MAXSPAS Studio для портфолио Kwork. Не реальная студия NORDLINE.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>NORDLINE · демо MAXSPAS</span>
+    <span>СПб / Горбунки</span>
+  </footer>
+
+  <a class="sticky-cta" href="#contact">Получить смету</a>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script src="app.js?v=12"></script>
+  <script type="module" src="workshop3d.js?v=27"></script>
+</body>
+</html>

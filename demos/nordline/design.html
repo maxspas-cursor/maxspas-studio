@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LORENTZ · Дизайн решения</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css?v=53">
+</head>
+<body>
+  <header class="top">
+    <a class="top__brand" href="./">NORDLINE × LORENTZ</a>
+    <a class="top__back" href="./">← Лендинг</a>
+  </header>
+
+  <section class="intro" id="intro">
+    <div class="intro__sticky">
+      <div class="intro__stage" id="stage" style="--p1:0;--p2:0;--scale:1.55">
+        <div class="rig" id="rig">
+          <div class="lockup" id="lockup" aria-label="LORENTZ">
+            <div class="lockup__window">
+              <video id="heroVideo" autoplay muted loop playsinline preload="auto">
+                <source src="media/harness-wide.mp4" type="video/mp4">
+              </video>
+            </div>
+            <svg class="lockup__frame" viewBox="0 0 1024 1024" aria-hidden="true">
+              <path fill="#2b3a36" d="M0.00 1023.16 L355.37 1023.16 L355.37 1019.79 L534.74 839.58 L0.00 839.58 Z M1023.16 747.79 L1016.42 752.00 L796.63 972.63 L778.95 987.79 L751.16 1015.58 L746.11 1023.16 L1023.16 1023.16 Z M1023.16 199.58 L966.74 252.63 L656.84 562.53 L1023.16 562.53 Z M826.11 0.00 L0.00 0.00 L0.00 826.95 Z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="intro__tag" id="introTag">
+          <p>Кабельно-жгутовое производство</p>
+          <strong>Скролль — знак приближается</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="growth" id="growth">
+    <div class="growth__sticky">
+      <div class="growth__inner">
+        <p class="eyebrow">Рост и развитие</p>
+        <h1>LORENTZ · от знака к цеху</h1>
+        <p class="lead">Скролль — годы идут по дуге, от первых жгутов к знаку цеха.</p>
+        <div class="years" id="years">
+          <span class="year is-on" data-i="0">2019</span>
+          <span class="year" data-i="1">2021</span>
+          <span class="year" data-i="2">2023</span>
+          <span class="year" data-i="3">2024</span>
+          <span class="year" data-i="4">2026</span>
+        </div>
+        <div class="year-panel">
+          <h2 id="yTitle">2019 · Старт</h2>
+          <p id="yText">Первые жгуты и отладка линии.</p>
+        </div>
+        <svg class="arc" viewBox="0 0 800 220" aria-hidden="true">
+          <path id="arcBase" d="M40 40 C180 40, 260 80, 360 120 S560 200, 760 170" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+          <path id="arcGlow" d="M40 40 C180 40, 260 80, 360 120 S560 200, 760 170" fill="none" stroke="#ff5a1f" stroke-width="3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+          <circle id="arcDot" r="7" cx="40" cy="40" fill="#ff5a1f"/>
+        </svg>
+        <a class="btn" href="./">На лендинг NORDLINE</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="design.js?v=33"></script>
+</body>
+</html>
