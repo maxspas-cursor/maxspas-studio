@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kwork Lab — фичи, которые просят в откликах</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0c0f;--card:#14161c;--ink:#eef1f6;--mut:#9aa3b2;--acc:#7dffa8;--line:rgba(255,255,255,.1);--f:"Outfit",system-ui,sans-serif;--m:"IBM Plex Mono",monospace}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);line-height:1.45}
+    a{color:var(--acc);text-decoration:none}
+    header{padding:28px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    header strong{font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase}
+    main{padding:28px 20px 80px;max-width:980px;margin:0 auto}
+    h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin:0 0 12px}
+    .lead{color:var(--mut);max-width:50ch}
+    .grid{display:grid;gap:14px;margin-top:28px}
+    @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+    .card{background:var(--card);border:1px solid var(--line);padding:18px 18px 20px}
+    .card h2{margin:0 0 8px;font-size:1.15rem}
+    .card p{margin:0;color:var(--mut);font-size:.95rem}
+    .tag{display:inline-block;margin-bottom:10px;font-family:var(--m);font-size:.72rem;color:var(--acc);letter-spacing:.04em}
+    .demo{margin-top:14px;padding:12px;border:1px dashed var(--line);font-family:var(--m);font-size:.8rem}
+    .quiz{display:grid;gap:8px}
+    .quiz button{text-align:left;padding:10px 12px;background:#0b0c0f;border:1px solid var(--line);color:var(--ink);font:inherit;cursor:pointer}
+    .quiz button.on{border-color:var(--acc);color:var(--acc)}
+    .bar{height:8px;background:#0b0c0f;border:1px solid var(--line);margin-top:8px}
+    .bar>i{display:block;height:100%;width:40%;background:var(--acc)}
+    .slots{display:flex;flex-wrap:wrap;gap:6px}
+    .slots button{padding:8px 10px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font:inherit;font-size:.85rem}
+    .slots button.on{background:var(--acc);color:#04140a;border-color:var(--acc)}
+    footer{padding:20px;border-top:1px solid var(--line);color:var(--mut);font-size:.85rem}
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Kwork Lab · MAXSPAS</strong>
+    <a href="../nordline/">← NORDLINE (большой сайт)</a>
+  </header>
+  <main>
+    <h1>Что часто просят в откликах — и как закрываем</h1>
+    <p class="lead">Мини-лаборатория паттернов для портфолио и для ответов заказчику: «да, вот так это выглядит».</p>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">#video</span>
+        <h2>Видео в hero / кейсах</h2>
+        <p>Автоплей muted + модалка с controls. Файл клиента, YouTube или сток на демо.</p>
+        <div class="demo">См. NORDLINE → блок «Видео» и кейс ФОРЖ-12</div>
+      </article>
+      <article class="card">
+        <span class="tag">#before-after</span>
+        <h2>До / После ползунок</h2>
+        <p>Ремонт, редизайн, ретушь 3D — один жест, сразу понятно.</p>
+        <div class="demo">NORDLINE → «До/После»</div>
+      </article>
+      <article class="card">
+        <span class="tag">#calc</span>
+        <h2>Калькулятор сметы</h2>
+        <p>Вилка цены до заявки. Снижает «сколько будет?» в переписке.</p>
+        <div class="demo">NORDLINE → «Смета»</div>
+      </article>
+      <article class="card">
+        <span class="tag">#quiz</span>
+        <h2>Квиз 3 шага</h2>
+        <p>Как у ДомРемонт / ЧистоТакт — для услуг с вариантами.</p>
+        <div class="demo quiz" id="quiz">
+          <button type="button" data-v="1">1. Услуга: лендинг</button>
+          <button type="button" data-v="2">2. Срок: 5 дней</button>
+          <button type="button" data-v="3">3. Бот: да</button>
+          <div class="bar"><i id="qBar"></i></div>
+          <div id="qOut">Шаг 0/3</div>
+        </div>
+      </article>
+      <article class="card">
+        <span class="tag">#booking</span>
+        <h2>Слоты записи</h2>
+        <p>Барбер / мастер / демо. Связка с Telegram.</p>
+        <div class="demo slots" id="slots"></div>
+      </article>
+      <article class="card">
+        <span class="tag">#faq-tabs</span>
+        <h2>FAQ + пакеты табами</h2>
+        <p>Снимает 50% типовых вопросов до заказа.</p>
+        <div class="demo">NORDLINE → FAQ и пакеты Старт/Рост/Полный</div>
+      </article>
+      <article class="card">
+        <span class="tag">#sticky-cta</span>
+        <h2>Липкая кнопка на моб</h2>
+        <p>«Получить смету» всегда под рукой — конверсия.</p>
+        <div class="demo">NORDLINE · только mobile</div>
+      </article>
+      <article class="card">
+        <span class="tag">#tg-form</span>
+        <h2>Форма → Telegram</h2>
+        <p>Без бэкенда на старте. Предоплата всё равно через Kwork.</p>
+        <div class="demo">Открывает t.me/Maxspas с текстом брифа</div>
+      </article>
+    </div>
+  </main>
+  <footer>Демо для портфолио · не продакшен-CRM</footer>
+  <script>
+    const quiz = document.getElementById('quiz');
+    let step = 0;
+    quiz.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      b.classList.add('on'); step = Math.min(3, step + 1);
+      document.getElementById('qBar').style.width = (step/3*100)+'%';
+      document.getElementById('qOut').textContent = 'Шаг '+step+'/3'+(step===3?' · готово': '');
+    });
+    const slots = ['12:00','13:30','15:00','16:30','18:00'];
+    const box = document.getElementById('slots');
+    box.innerHTML = slots.map(t=>`<button type="button">${t}</button>`).join('');
+    box.onclick = e => {
+      const b = e.target.closest('button'); if (!b) return;
+      [...box.children].forEach(x=>x.classList.toggle('on', x===b));
+    };
+  </script>
+</body>
+</html>
